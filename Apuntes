@@ -1,0 +1,20 @@
+Algoritmos de ordenamiento
+
+Divide y venceras:
+	-> Dividir
+	-> Vencer 
+	-> Combinar
+
+Diseño de algoritmos, paradigmas de solución de problemas:
+	-> Divide y venceras
+	-> Incrementales	
+	-> Estructura de datos
+
+Merge sort esta divido en tres partes
+	Merge es divide y venceras
+
+	Recurrencia: Es una ecuación que se describe a si misma con términos
+	pequeños Método del arbol de recursión
+
+INVERSIONES:
+	Se pueden realizar utilizando el merge, ya que el 
