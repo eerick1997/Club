@@ -1,92 +1,43 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
-#include <stdlib.h>
+#include <vector>
 
 using namespace std;
 
-int main(){
+//Hay entre 1 y 100 estudiantes vestidos de manera grotesca
+/**Debemos encontrar la velocidad mínima a la que debe correr el payaso
+Sin que sea atrapado**/
+/**	Entrada
+   	Primer línea contiene un entero menor o igual a 50, con el número de casos de prueba
+   	A continuación se leen T casos. Cada línea del caso es un entero separado por espacios
+   	el primer entero N es es el número de estudiantes vestidos de manera grotesca el resto
+   	de la línea tiene N enteros cada uno representa la velocidad de la criatura en metros
+   	por segundo 1 <= c_i <= 10,000
 
+   	Salida:
+   	Una línea **/
+	int main(){
 	vector<int> v;
-	bool isJolly = true;
-	int n = 0, actual = 0, next  = 0;
+	int T, N, X;
+	string str;
+	cin>>T;
+	//T casos
+	for(int i = 1; i <= T; i++){
 
-	//We read n if n > 0
-	while(cin>>n && n > 0){
-
-		isJolly = true;
-		v.clear();
-
-		//We read the first number
-		cin>>actual;
-		//Case when n == 1 (we read just a number)
-		if(n == 1){
-			//Ever it is Jolly
-			v.push_back(1);
-
-		} 
-		//Case when n == 2 (we read two numbers [a line])
-		else if(n == 2) {
-			//We read the second number
-			cin>>next;
-			//We store |actual - next|
-			v.push_back(abs(actual - next));
-			//We need to know if the value stored is less than (n-1)
-			//this condition it's necessary to know if it's a Jolly jumper
-			if(v[0] > (n-1))
-				isJolly = false;
-
-		} 
-		//We read n - 1 numbers (We read 1 number before)
-		else {
-			//We read the second number
-			cin>>next;
-			//We store |actual  - next| value
-			v.push_back(abs(actual-next));
-			//We read n - 2 numbers
-			for(int i = 2; i < n; i++){
-				//The actual value now it's the next
-				actual = next;
-				//So next need to be a new value
-				cin>>next;
-				//We sote |actual - next| value
-				v.push_back(abs(actual - next));
-			}
-
-			//We order the vector
-			sort(v.begin(), v.end());
-
-			//We add a number at the end of our vector
-			v.push_back(0);
-
-			//We need to know if each element of our vector has a sequence
-			for(int  i = 0; i < v.size()-2; i++){
-
-				//We make an operation to know if each element it's an element of this sequence
-				int dif = abs(v[i] - v[i+1]);
-
-				//If it's not an element, numbers aren't a Jolly jumper
-				if(dif != 1){
-					isJolly = false;
-					break;
-				}
-
-			}
-
-			//Finally
-			//We need to know if the value stored is less than (n-1)
-			//this condition it's necessary to know if it's a Jolly jumper
-			if(v[v.size()-2] > (n-1))
-				isJolly = false;
-		}
-
-		//We just print if it's a Jully jumper
-		if(isJolly){
-			cout<<"Jolly"<<endl;
+		//Leemos una cadena donde el primer dígito es el número de estudiantes
+		cin>>N;
+		if(N == 1){
+			cin>>X;
+			cout<<"Case "<<i<<": "<<X<<endl;
 		} else {
-			cout<<"Not jolly"<<endl;
+			for(int j = 0; j < N; j++) {
+				cin>>X;
+				v.push_back(X);
+			}
+			sort(v.begin(), v.end());
+			cout<<"Case "<<i<<": "<<v[v.size()-1]<<endl;
 		}
-
+		v.clear();
 	}
-	return 0;	
+	return 0;
 }
