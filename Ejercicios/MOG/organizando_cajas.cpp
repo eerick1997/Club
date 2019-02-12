@@ -8,7 +8,7 @@ int main(){
     cin >> n;
     while(n--){
         cin >> w >> s;
-        cajas.insert(w);
+        cajas.insert(s);
     }
     cout << cajas.size() << endl;
     return 0;
