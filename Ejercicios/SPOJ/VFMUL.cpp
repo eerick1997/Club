@@ -5,91 +5,88 @@ using comp = complex<double>;
 using lli = long long int;
 const double PI = acos(-1.0);
 
-lli p = 7340033;
-lli root = 5;
-lli root_pw = 1 << 20;
-
-lli nearestPowerOfTwo(lli n){
-    lli ans = 1;
-    while(ans < n)
-        ans <<= 1;
-    return ans;
+int nearestPowerOfTwo(int n){
+	int ans = 1;
+	while(ans < n) ans <<= 1;
+	return ans;
 }
 
-lli inverse(lli a, lli n){
-	lli r0 = a, r1 = n, ri, s0 = 1, s1 = 0, si;
-	while(r1){
-		si = s0 - s1 * (r0 / r1), s0 = s1, s1 = si;
-		ri = r0 % r1, r0 = r1, r1 = ri;
-	}
-	if(s0 < 0) s0 += n;
-	return s0;
-}
-
-lli root_1 = inverse(root, p);
-
-void NTT(vector<lli> &X, lli inv){
-	lli n = X.size();
-	for(lli i = 1, j = 0; i < n - 1; ++i){
-		for(lli k = n >> 1; (j ^= k) < k; k >>= 1);
+void fft(vector<comp> & X, int inv){
+	int n = X.size();
+	for(int i = 1, j = 0; i < n - 1; ++i){
+		for(int k = n >> 1; (j ^= k) < k; k >>= 1);
 		if(i < j) swap(X[i], X[j]);
 	}
-	for(lli k = 1; k < n; k <<= 1){
-		lli wk = (inv == -1) ? root_1 : root;
-		for(lli i = k << 1; i < root_pw; i <<= 1)
-			wk = (lli)wk * wk % p;
-		for(lli i = 0; i < n; i += k << 1){
-			for(lli j = 0, w = 1; j < k; ++j, w = (lli)w * wk % p){
-				lli u = X[i + j], v = (lli)X[i + j + k] * w % p;
-				X[i + j] = u + v < p ? u + v : u + v - p;
-				X[i + j + k] = u - v < 0 ? u - v + p : u - v;
+	for(int k = 1; k < n; k <<= 1){
+		comp wk = polar(1.0, PI / k * inv);
+		for(int i = 0; i < n; i += k << 1){
+			comp w(1);
+			for(int j = 0; j < k; ++j, w = w * wk){
+				comp t = X[i + j + k] * w;
+				X[i + j + k] = X[i + j] - t;
+				X[i + j] += t;
 			}
 		}
 	}
-	if(inv == -1){
-		lli nrev = inverse(n, p);
-		for(lli i = 0; i < n; ++i)
-			X[i] = (lli)X[i] * nrev % p;
-	}
+	if(inv == -1)
+		for(int i = 0; i < n; ++i)
+			X[i] /= n;
 }
 
-vector<lli> convolution(vector<lli> A, vector<lli> B){
-    lli sz = A.size() + B.size() - 1;
-    lli size = nearestPowerOfTwo(sz);
-    A.resize(size);
-    B.resize(size);
-    NTT(A, 1);
-    NTT(B, 1);
-    for(lli i = 0; i < size; i++)
-        A[i] = (lli)A[i] * B[i] % p;
-    NTT(A, -1);
-    A.resize(sz);
-    return A;
+vector<comp> convolution(vector<comp> A, vector<comp> B){
+	int sz = A.size() + B.size() - 1;
+	int size = nearestPowerOfTwo(sz);
+	A.resize(size), B.resize(size);
+	fft(A, 1), fft(B, 1);
+	for(int i = 0; i < size; i++)
+		A[i] *= B[i];
+	fft(A, -1);
+	A.resize(sz);
+	return A;
+}
+
+void helper(string &str, int size){
+    while(str.size() != size)
+        str = "0" + str;
 }
 
 int main(){
-    lli T;
+    string l1, l2;
+    vector<comp> A;
+    vector<comp> B;
+    vector<comp> ans;
     lli n;
-    cin >> T;
-    while(T--){
-        vector<lli> A;
-        vector<lli> B;
-        vector<lli> ans;
-        cin >> n;
-        for(lli i = 0, v = 0; i <= n; i++){
-            cin >> v;
-            A.push_back(v);
+    cin >> n;
+    while(n--){
+        string s_ans = "";
+        cin >> l1 >> l2;
+        int size = max(l1.size(), l2.size());
+        //helper(l1, size);
+        //helper(l2, size);
+        cout << l1 << endl;
+        cout << l2 << endl;
+        A.resize(l1.size());
+        B.resize(l2.size());
+        for(int i = 0; i < l1.size(); i++)
+            A[i] = l1[i] - '0';
+        for(int i = 0; i < l2.size(); i++)
+            B[i] = l2[i] - '0';
+
+        cout << endl;
+        ans = convolution(A, B);
+        for(int i = ans.size() - 1; i >= 0; i--){
+            int real = round(ans[i].real());
+            if(real > 10 && (i) != 1){
+                ans[i - 1].real( ans[i - 1].real() + real / 10 );
+                ans[i].real( real % 10 );
+            }
+            cout << (lli)round(ans[i].real()) << endl;
         }
 
-        for(lli i = 0, v = 0; i <= n; i++){
-            cin >> v;
-            B.push_back(v);
-        }
-        ans = convolution(A, B);
-        for(lli i = 0; i < ans.size(); i++)
-            cout << ans[i] << " ";
+        A.clear();
+        B.clear();
+        ans.clear();
         cout << endl;
     }
-
     return 0;
 }
