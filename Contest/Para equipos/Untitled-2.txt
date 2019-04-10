@@ -1,0 +1,23 @@
+//Grafos
+/**
+    ->Dirigidos (unidireccionales)
+        ondegree: los que van de mi hacia otros nodos
+        indigree: Los que van hacía a mi
+    ->No dirigidos (bidireccionales)
+
+    ÁRBOLES:
+    árboles binarios
+    grafos bipartitos
+
+    Representación computacional de un grafo
+    //La puerca
+    struct Nodo{    
+        int value;
+        vector< *Nodo > F;  
+    };    
+
+    struct Nodo{
+        int x;
+        set<int> Fx;
+    }
+**/

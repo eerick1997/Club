@@ -45,47 +45,51 @@ vector<comp> convolution(vector<comp> A, vector<comp> B){
 	return A;
 }
 
-void helper(string &str, int size){
-    while(str.size() != size)
-        str = "0" + str;
-}
-
 int main(){
-    string l1, l2;
-    vector<comp> A;
-    vector<comp> B;
-    vector<comp> ans;
     lli n;
+    bool flag;
     cin >> n;
     while(n--){
-        string s_ans = "";
+        string l1, l2;
+        vector<comp> A;
+        vector<comp> B;
+        vector<comp> ans;
+        flag = false;
         cin >> l1 >> l2;
         int size = max(l1.size(), l2.size());
-        //helper(l1, size);
-        //helper(l2, size);
-        cout << l1 << endl;
-        cout << l2 << endl;
         A.resize(l1.size());
         B.resize(l2.size());
-        for(int i = 0; i < l1.size(); i++)
+        for(int i = 0; i < l1.size(); i++){
             A[i] = l1[i] - '0';
-        for(int i = 0; i < l2.size(); i++)
+        }
+        for(int i = 0; i < l2.size(); i++){
             B[i] = l2[i] - '0';
-
-        cout << endl;
+        }
+            
         ans = convolution(A, B);
-        for(int i = ans.size() - 1; i >= 0; i--){
+    
+        for(int i = ans.size() - 1; i > 0; i--){
             int real = round(ans[i].real());
-            if(real > 10 && (i) != 1){
-                ans[i - 1].real( ans[i - 1].real() + real / 10 );
+            if(real > 9){
+                ans[i - 1].real( round(ans[i - 1].real() + real / 10) );
                 ans[i].real( real % 10 );
             }
-            cout << (lli)round(ans[i].real()) << endl;
         }
 
-        A.clear();
-        B.clear();
-        ans.clear();
+        for(int i = 0; i < ans.size(); i++){
+
+            if( round( ans[i].real() ) != 0 )
+                flag = true;
+            
+            if( flag ){
+                cout << abs(round( ans[i].real() ));
+            }
+
+        }
+
+        if(!flag)
+            cout << 0;
+
         cout << endl;
     }
     return 0;
