@@ -19,7 +19,7 @@ int main () {
             double d = (double)(x - part1) / (double)part2;
             if (d - (long long)d == 0) count++;
         }
-
+    
         cout<<"case "<<j<<": "<<count<<"\n";
 
     }
