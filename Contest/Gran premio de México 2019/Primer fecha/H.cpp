@@ -6,7 +6,6 @@ int main (){
     int n, t;
     cin>>n>>t;
     int aux = t;
-    //int x;
     vector<int>num(n);
     for(int i = 0; i < n; i++){
         cin>>num[i];
@@ -20,7 +19,6 @@ int main (){
         if( t - num[i] > 0){
             cont++;
             t-=num[i];
-            //cout<<t<<endl;
         }
     }
 
@@ -31,7 +29,6 @@ int main (){
         if( aux - num[i] > 0){
             cont2++;
             aux-=num[i];
-            //cout<<t<<endl;
         }
     }
 

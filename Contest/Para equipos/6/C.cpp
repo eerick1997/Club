@@ -12,7 +12,7 @@ int main(){
         cout << "NO" << endl;
     } else {
 
-       for(int i = 0; i < s.size() * 2; i++){
+       for(int i = 0; i < s.size(); i++){
            pair<int, int> node;
            
            if(s[i % s.size()] == 'A'){
@@ -39,9 +39,10 @@ int main(){
 
        }
 
-       for(int i = 0; i < s.size(); i++){
-
-       }
+       for(int i = s.size(); i < s.size() * 2; i++)
+           V[i] = V[i - s.size()];
+       
+       for(int i = 0; i < )
 
     }
     return 0;
