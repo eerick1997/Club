@@ -2,57 +2,61 @@
 
 using namespace std;
 typedef long long int lli;
+const lli MINF = -1 * (10e10);
 typedef vector< vector <lli> > Matrix;
 typedef vector< lli > vi;
-lli ans = -1;
-lli p;
 
-inline lli suma(lli x1, lli y1, lli x2, lli y2, Matrix &m){
-    return ( m[x2][y2] - (m[x2][y1 - 1] + m[x1 - 1][y2]) + m[x1 - 1][y1 - 1]);
+int kadane(vi &row, int l, int r){
+    int sum = 0, best = -1;
+    for(int i = l; i < r; i++){
+        sum += ( ( sum + row[i] ) > 0) ? row[i] : 0;
+        best = max(best, sum);
+    }
+    return best;
 }
 
-inline lli valido(lli x1, lli y1, lli x2, lli y2){
-    return abs( (x2 - x1) * (y2 - y1) );
+void printMatrix(Matrix &m){
+    cout << endl;
+    for(int i = 0; i < m.size(); i++){
+        for(int j = 0; j < m[i].size(); j++){
+            cout << m[i][j] << "\t";
+        }
+        cout << endl;
+    }
 }
-
-inline lli perimetro(lli x1, lli y1, lli x2, lli y2){
-    return 2 * ( abs(x2 - x1) + abs(y2 - y1) + 1 );
-}
-
 
 int main(){
-    lli r, c, v;
+    lli rows, cols, v, area = 0, perimeter = -1;
     
     cin.tie(0);
-    cin >> r >> c;
-    Matrix matrix( r + 1, vi(c + 1, 0) );
-
-    for(lli i = 1; i <= r; i++){
-        for(lli j = 1; j <= c; j++){
-            cin >> v; 
-            matrix[i][j] = (v == 0) ? 1 : 0;
+    cin >> rows >> cols;
+    Matrix m( rows, vi(cols, 0) );
+    vi k_r( rows, 0 );
+    for(lli i = 0; i < rows; i++){
+        for(lli j = 0; j < cols; j++){
+            cin >> v;
+            m[i][j] = (v == 0) ? 1 : MINF;
         }
     }
 
-    for(lli j = 1; j <= c; j++){
-        for(lli i = 2; i <= r; i++){
-            matrix[i][j] += matrix[i- 1][j];
-        }
-    }
-
-    for(int i = 1; i <= r; i++){
-        for(int j = 1; j <= c; j++){
-            for(int k = i; k <= r; k++){
-                for(int l = j; l <= c; l++){
-                    lli area = suma(i, j, k, l, matrix);
-                    if(valido(i, j, k, l) == area)
-                        ans = max(ans, (perimetro(i, j, k, l)));
-                }
+    for(int l = 0, sum = 0; l < cols; l++){
+         
+        for(int r = l, sum = 0; r < cols; r++){
+            area = 0;
+            for(int row = 0; row < r; row++){
+                if(l > 0)
+                    area += m[row][r] - m[row][l - 1];
+                else 
+                    area += m[row][r];
+                if(area < 0)
+                    area = 0;
+                if(area != 0)
+                    perimeter = max(perimeter, ( 2 * ( abs( r - l ) + abs( row -  cols ) + 1 ) ) );
             }
         }
     }
 
-    cout << ans << "\n";
-    
+    cout << perimeter << endl;
+
     return 0;
 }
