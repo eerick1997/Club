@@ -12,7 +12,9 @@ int main(){
     pair<int, int> start, target;
     cin >> N >> start.first >> start.second >> target.first >> target.second;
     d = distance(start, target);
+    cout << d << endl;
     if(d == N){
+        cout << "d == N" << endl;
         cout << (d) << endl;
     } else if(d > N) {
         cout << 0 << endl;
