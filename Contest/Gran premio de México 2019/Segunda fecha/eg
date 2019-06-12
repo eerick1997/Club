@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int dp(int i, int mk){
+
+    if(i == 2^10)
+        return (mk == 0) ? 0 : MINF;
+
+    //Caso base
+    if(cub[i] == 0)
+        return dp(i + 1, mk);
+    if(cub[i] & 1)
+        return max( cub[i] + dp(i + 1, mk ~ i), cub[i] - 1 + dp(i + 1, mk));
+    else
+        return max(cub[i] + dp( (i + 1), mk), cub[i] + dp(i + 1, mk ~ i));
+}
+
+int main(){
+    
+}
