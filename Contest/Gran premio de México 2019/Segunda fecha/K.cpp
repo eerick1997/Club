@@ -6,15 +6,6 @@ const lli MINF = -1 * (10e10);
 typedef vector< vector <lli> > Matrix;
 typedef vector< lli > vi;
 
-int kadane(vi &row, int l, int r){
-    int sum = 0, best = -1;
-    for(int i = l; i < r; i++){
-        sum += ( ( sum + row[i] ) > 0) ? row[i] : 0;
-        best = max(best, sum);
-    }
-    return best;
-}
-
 void printMatrix(Matrix &m){
     cout << endl;
     for(int i = 0; i < m.size(); i++){
@@ -27,8 +18,10 @@ void printMatrix(Matrix &m){
 
 int main(){
     lli rows, cols, v, area = 0, perimeter = -1;
-    
+    ios::sync_with_stdio(0);
+    cout.tie(0);
     cin.tie(0);
+
     cin >> rows >> cols;
     Matrix m( rows, vi(cols, 0) );
     vi k_r( rows, 0 );
@@ -39,8 +32,8 @@ int main(){
         }
     }
 
+    //2D kadane's algorithm
     for(int l = 0, sum = 0; l < cols; l++){
-         
         for(int r = l, sum = 0; r < cols; r++){
             area = 0;
             for(int row = 0; row < r; row++){
