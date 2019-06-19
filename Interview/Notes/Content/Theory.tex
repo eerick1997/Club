@@ -1,1 +1,147 @@
 \chapter{Theory}
+\section{Data structures}
+\subsection{¿What is a data structure?}
+A simple form to describe this is: a data structure is a container to store data in a specific layout.
+This layout allow us to make efficient our data structure in some operations but inefficient in others.
+
+\subsection{¿Why do we need data strucures?}
+Depending of different scenarios, data needs to be stored in a specific format, to solve this we need to know the different types of data structures.
+
+\subsection{Basic data structures}
+Nowadays there are a lot of types of data structures but here we have a little list of the commonly used data structures.
+\begin{itemize}
+    \item { Arrays }
+    \item { Stacks }
+    \item { Queues }
+    \item { Linked list }
+    \item { Trees }
+    \item { Graphs }
+    \item { Tries }
+    \item { Hash tables }
+\end{itemize}
+
+\subsubsection{Arrays}
+An array is the simplest used data structure and other data structures can be made using arrays, like stacks and queues. Most of the programming languages index the first element in zero.
+
+We have two types of arrays:
+\begin{itemize}
+    \item { One-dimensional arrays }
+    \item { Multi-dimensional arrays}
+\end{itemize}   
+
+\paragraph{Basic operations on arrays}
+
+\begin{enumerate}
+    \item { Insert: Inserts an element at given index }
+    \item { Get: returns the element at given index }
+    \item { Delete: Deletes an element at given index }
+    \item { Size: Get the total number of elements in an array }
+\end{enumerate}
+
+\paragraph{Commonly asked array interview questions}
+\begin{enumerate}
+    \item { Find the second minimum element of an array }
+    \item { First non-repeating integers in the array }
+    \item { Merge two sorted arrays }
+    \item { Rearrage positive and negative values in an array }
+\end{enumerate}
+
+\subsubsection{Stacks}
+This data structure has a lot of applications, for example when we use the undo command.
+A stack works like a pile of something for example books. In this example each book are placed in a vertical order. If we have a stack of books we can not get a book placed in the middle, first ypu need to remove all the books on the top to get it.
+This behaviour is know as LIFO (Last In First Out) 
+
+\paragraph{Basic operations}
+\begin{enumerate}
+    \item { Push: inserts an element of the top }
+    \item { Pop: returns the top element, after removing from the stack }
+    \item { isEmpty: returns true if the stack is is empty }
+    \item { Top: returns the top element without removing from the stack }
+\end{enumerate}
+
+\paragraph{Commonly asked stack interview questions}
+\begin{enumerate}
+    \item { Evalue postfix expression using a stack }
+    \item { Sort values in a stack }
+    \item { Check balanced parentheses in an expression }
+\end{enumerate}
+
+\subsubsection{Queues}
+Similar to stack, queue is another data structure that stores the element in a sequential manner. The difference is that instead of use LIFO method, queue implements FIFO method (First In First Out)
+
+An example of a queue in real life is a line of people waiting to buy a ticket. If a new person comes, he or she will join the line from the end, not from the start and the person first person (start) will be the first to buy the ticket and then he or she leaves the line.
+
+\paragraph{Basic operations}
+\begin{enumerate}
+    \item { Enqueue: inserts an element at the end of the queue}
+    \item { Dequeue: removes an element from the start of the queue }
+    \item { isEmpty: returns true if the queue is empty }
+    \item { top: returns the first element of the queue }
+\end{enumerate}
+
+\paragraph{Commonly asked queue interview questions}
+\begin{enumerate}
+    \item { Implement a stack using a queue }
+    \item { Reverse first k elements of a queue }
+    \item { Generate binary numbers from 1 to n using a queue }
+\end{enumerate}
+
+\subsubsection{Linked list}
+A linked list is another important data structure that is very similar to an array but differs in memory allocation, internal structure and how basic operations of insertion and deletion are carried out.
+
+A linked list is like a chain of nodes, where each node contains information like data and a ponter to the succeding node in the chain. There's a head pointer, which points to the first element of the linked list, and if the list is empty then it simply points to null or nothing.
+
+Linked lists are used to implement file systems, hash tables, and adjacency lists.
+
+Also exists different types of linked lists:
+\begin{itemize}
+    \item { Singly linked lists }
+    \item { Doubly linked lists }
+\end{itemize}
+
+\paragraph{Basic operations}
+\begin{enumerate}
+    \item { InsertAtEnd: inserts given element at the end of the linked list }
+    \item { InsertAtHead: inserts given element at the start/head of the linked list }
+    \item { Delete: deletes given element from the linked list }
+    \item { DeleteAtHead: deletes first element of the linked list }
+    \item { Search: returns the given element from a linked list }
+    \item { isEmpty: returns true if the linked list is empty }
+\end{enumerate}
+
+\paragraph{Commonly asked linked list interview questions}
+\begin{enumerate}
+    \item Reverse a linked list
+    \item Detect loop in a linked list
+    \item Return N-th node from the end in a linked list
+    \item Remove duplicates from a linked list
+\end{enumerate}
+
+\subsubsection{Graphs}
+A graph is a set of nodes that are connected to each other in the form of a network. Nodes are also called vertices. A pair(x, y) is called an edge, which indicates that vertex x is conected to vertex y. An edge may contain weight/cost, showing how much cost is required to traverse from vertex x to y.
+
+Also we have different types of graphs:
+\begin{itemize}
+    \item { Undirected graphs $ \longrightarrow $ }
+    \item { Directed graphs $ \longleftrightarrow $ }
+\end{itemize}
+
+We can represent graphs in two forms:
+\begin{itemize}
+    \item { Adjacency matrix }
+    \item { Adjacency list }
+\end{itemize}
+
+Finally we have two common graph traversing algorithms:
+\begin{itemize}
+    \item { Breadth First Search (BFS)}
+    \item { Depth First Search (DFS) }
+\end{itemize}
+
+\paragraph{Commonly asked linked list interview questions}
+\begin{enumerate}
+    \item { Implement Breath and Depth First Search }
+    \item { Check if a graph is tree or not }
+    \item { Count number of edges in a graph }
+    \item { Find the shortest path between two vertices }
+\end{enumerate}
