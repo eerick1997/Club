@@ -1,0 +1,53 @@
+\documentclass[oneside]{book}
+
+%%%%%==================== PAQUETES ====================%%%%%
+\usepackage[utf8]{inputenc}
+
+\usepackage{chapterfolder}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{listings}
+\usepackage[table, xcdraw]{xcolor}
+\usepackage[english]{babel}
+\usepackage{lmodern}    
+\usepackage{array,booktabs}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{graphics}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{wallpaper}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{tikz,fouriernc}
+\usetikzlibrary{calc}
+
+%% ======================= COLORS ======================== %%
+\definecolor{titlepagecolor}{RGB}{0, 0, 128}
+\definecolor{frontpagecolor}{RGB}{2, 0, 142}
+
+%% ================ CHAPTER, SECTIONS, ETC =============== %%
+\usepackage{titlesec}
+\usepackage[Bjornstrup]{fncychap}
+\ChNumVar{\fontsize{76}{80}\usefont{OT1}{pzc}{m}{n}\selectfont\color{frontpagecolor}}
+\ChTitleVar{\raggedleft\Large\sffamily\bfseries\color{frontpagecolor}}
+
+\titleformat*{\section}{\normalfont\Large\bfseries\color{frontpagecolor}}
+\titleformat*{\subsection}{\normalfont\large\bfseries\color{frontpagecolor}}
+\titleformat*{\subsubsection}{\normalfont\normalsize\bfseries\color{frontpagecolor}}
+\titleformat*{\paragraph}{\normalfont\normalsize\bfseries\color{frontpagecolor}}
+\titleformat*{\subparagraph}{\normalfont\normalsize\bfseries\color{frontpagecolor}}
+
+%% ================== HEADER AND FOOTER ================== %%
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE, RO]{Erick Vargas}
+\fancyhead[RE, LO]{Interview notes}
+\fancyfoot[CE, CO]{\leftmark}
+\fancyfoot[LE, RO]{Page \thepage}
+\fancyfoot[RE, LO]{\chaptername}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
