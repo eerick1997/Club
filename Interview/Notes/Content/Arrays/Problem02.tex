@@ -1,0 +1,61 @@
+To solve this problem we can compare each element with the rest of the array looking for the same number, if we do not find another number we find the solution, but made this is $O(n^{2})$ something like this:
+
+\begin{lstlisting}
+    #include<bits/stdc++.h>
+
+    using namespace std;
+
+    int main(){
+        int n;
+
+        vector<int> numbers;
+        cin >> n;
+        numbers.resize(n, 0);
+        for(int i = 0; i < n; i++)
+            cin >> numbers[i];
+
+        for(int i = 0; i < n; i++) {
+            for(int j = i + 1; j < n; j++) {
+                if(numbers[i] == numbers[j])
+                    break;
+                if(j == n - 1){
+                    cout << numbers[j];
+                    exit(0);
+                }
+            }
+        }
+        return 0;
+    }
+\end{lstlisting}
+
+We can made the same more efficiently if we use something else for example hasing the elements inside our array. To make this easier we use a map< key, value > which is a data structure of C++, if you want to see more about this I recommend show the reference of this data structure.
+For this problem our key is an integer, this integer is the i-th value of our array called numbers, and the value is the number of appearances of this number. Finally if this value is equal to one it means that we find our answer. You can see the solution in the next code:
+
+\begin{lstlisting}
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    int main(){
+        int n;
+        vector<int> numbers;
+        map<int, int> repeated;
+        cin >> n;
+        numbers.resize(n, 0);
+        for(int i = 0; i < n; i++)
+            cin >> numbers[i];
+
+        for(int i = 0; i < n; i++)
+            repeated[ numbers[i] ]++;
+        
+        
+        for(auto e : repeated ){
+            if(e.second == 1){
+                cout << e.first << endl;
+                break;
+            }
+        }
+        
+        return 0;
+    }
+\end{lstlisting}   

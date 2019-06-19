@@ -1,0 +1,65 @@
+For this problem maybe we think that sort the elements of the array can solve this problem efficiently. The complexity of do this is nlog(n) if we sort the elements using merge sort, and the code to do this (if we do not implement the merge sort) is too short, something like this:
+\begin{lstlisting}
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    int main(){
+
+        int n, min_01, min_02 = INT_MAX;
+        vector<int> numbers;
+        cin >> n;
+        numbers.resize(n, 0);
+        for(int i = 0; i < n; i++)
+            cin >> numbers[i];
+
+        sort( numbers.begin(), numbers.end() );
+
+        min_01 = numbers[n - 1];
+        
+        for(int i = n - 2; i >= 0; i--){
+            //Searching an element bigger than the minimum (it will be different that the minimum)
+            if(min_01 != numbers[i]){
+                min_02 = numbers[i];
+                break;
+            }
+        }
+
+        cout << ( min_02 == INT_MAX ? "none" : to_string(min_02) ) << endl;
+        return 0;
+    }
+\end{lstlisting}
+
+But, can we made something more efficient? And the aswer is yes, and is very simple. We only need two variables one to know the minimum element and other to know the second minimum element (if exists). 
+The solution is move inside the array searching by the minimum element, if we find an element smaller than the actual minimum we find a new candidate to minimum and the last value of the minimum now is the second minimum element of the array.
+It works but what happen if all the elements are equal? If we do this we never find a solution for this problem so we need to compare if the i-th element is different of the minimum current element and if this element is bigger than the second minimum element.
+
+\begin{lstlisting}
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    int main(){
+
+        int n;
+        int min_01 = INT_MAX, min_02 = INT_MAX;
+        vector<int> numbers;
+        cin >> n;
+        numbers.resize(n, 0);
+        for(int i = 0; i < n; i++)
+            cin >> numbers[i];
+
+        for(int i = 0; i < n; i++){
+            if(numbers[i] < min_01){
+                min_02 = min_01;
+                min_01 = numbers[i];
+            } 
+            //If the elements are in ascending order and the i-th number is different of the minimum
+            else if (numbers[i] < min_02 && numbers[i] != min_01)
+                min_02 = numbers[i];
+        }
+
+        cout << (min_02 == INT_MAX ? "none" : to_string(min_02)) << endl;
+        return 0;
+    }
+\end{lstlisting}
