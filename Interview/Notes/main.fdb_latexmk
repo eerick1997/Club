@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1560911928 "/home/erick/Documentos/GitHub/Club/Interview/Notes/main.tex" "/home/erick/Documentos/GitHub/Club/Interview/Notes/main.pdf" "main" 1560911929
-  "/home/erick/Documentos/GitHub/Club/Interview/Notes/main.aux" 1560911929 2985 42b16e41313ce9231b8d01b0e59f9302 ""
+["pdflatex"] 1560913076 "/home/erick/Documentos/GitHub/Club/Interview/Notes/main.tex" "/home/erick/Documentos/GitHub/Club/Interview/Notes/main.pdf" "main" 1560913139
+  "/home/erick/Documentos/GitHub/Club/Interview/Notes/main.aux" 1560913079 3625 b4c811e98e2e6d125bfa548bf2d90beb ""
   "/home/erick/Documentos/GitHub/Club/Interview/Notes/main.tex" 1560900484 133 0cad882425b851b595fdbe2c77fe72ce ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1550406775 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1550406775 2375 baa924870cfb487815765f9094cf3728 ""
@@ -194,17 +194,17 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1560367899 3233842 1a92d1d21a91d82fa70913e968179e54 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1560367868 7919196 8d42420b875e0fa772ba0343f9ad44b6 ""
   "Content/FrontPage.tex" 1560898226 1107 ece15d82eb1e0df7f625497bf898a4d4 ""
-  "Content/Theory.tex" 1560911847 6452 838a55cb0d3beee4202228cbbaf3cd31 ""
+  "Content/Theory.tex" 1560913139 8878 8814d1097320df4b616043f66332b629 ""
   "Setup/general.tex" 1560911928 3348 7f09b87e605314412c6712410e2023b3 ""
-  "main.aux" 1560911929 2985 42b16e41313ce9231b8d01b0e59f9302 ""
-  "main.out" 1560911929 345 479842e182c37ce41390ffbcace3a888 ""
+  "main.aux" 1560913079 3625 b4c811e98e2e6d125bfa548bf2d90beb ""
+  "main.out" 1560913079 345 479842e182c37ce41390ffbcace3a888 ""
   "main.tex" 1560900484 133 0cad882425b851b595fdbe2c77fe72ce ""
-  "main.toc" 1560911929 1445 9796ef728dbb149e6994936a4d1c3126 ""
+  "main.toc" 1560913079 1845 03ff120cfa1c3e89084d17e830fd3d86 ""
   (generated)
   "main.log"
-  "main.toc"
   "main.aux"
   "/home/erick/Documentos/GitHub/Club/Interview/Notes/main.pdf"
-  "main.pdf"
+  "main.toc"
   "/home/erick/Documentos/GitHub/Club/Interview/Notes/main.log"
+  "main.pdf"
   "main.out"

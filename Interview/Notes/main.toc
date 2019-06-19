@@ -17,4 +17,10 @@
 \contentsline {paragraph}{Basic operations}{5}{Item.22}% 
 \contentsline {paragraph}{Commonly asked linked list interview questions}{5}{Item.28}% 
 \contentsline {subsubsection}{Graphs}{5}{Item.32}% 
-\contentsline {paragraph}{Commonly asked linked list interview questions}{5}{Item.32}% 
+\contentsline {paragraph}{Commonly asked graph interview questions}{5}{Item.32}% 
+\contentsline {subsubsection}{Trees}{6}{Item.36}% 
+\contentsline {paragraph}{Commonly asked tree interview questions}{6}{Item.36}% 
+\contentsline {subsubsection}{Trie}{6}{Item.40}% 
+\contentsline {paragraph}{Commonly asked trie interview questions}{6}{Item.40}% 
+\contentsline {subsubsection}{Hash table}{7}{Item.45}% 
+\contentsline {paragraph}{Commonly asked hash table interview questions}{7}{Item.45}% 
