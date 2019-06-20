@@ -72,7 +72,7 @@ typedef struct LinkedList{
     }
 
     void DeleteAtHead(){
-        if( size == 1)
+        if( size == 1 )
             head = tail = head -> next; 
         else
             head = head -> next;
@@ -153,4 +153,5 @@ int main(){
 
     for(int i = 0; i < linkedList -> getSize(); i++)
         cout << linkedList -> Search(i) << " \t ";
+    cout << endl;
 }
