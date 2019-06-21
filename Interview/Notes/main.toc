@@ -31,8 +31,9 @@
 \contentsline {subsubsection}{Problem 03}{11}{lstnumber.-8.26}% 
 \contentsline {subsubsection}{Problem 04}{12}{lstnumber.-9.40}% 
 \contentsline {section}{\numberline {1.3}Stacks}{12}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}Queues}{12}{section.1.4}% 
-\contentsline {section}{\numberline {1.5}Linked lists}{12}{section.1.5}% 
-\contentsline {section}{\numberline {1.6}Graphs}{12}{section.1.6}% 
-\contentsline {section}{\numberline {1.7}Trees}{12}{section.1.7}% 
-\contentsline {section}{\numberline {1.8}Tries}{12}{section.1.8}% 
+\contentsline {section}{\numberline {1.4}Queues}{13}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}Singly linked lists}{13}{section.1.5}% 
+\contentsline {section}{\numberline {1.6}Doubly linked lists}{15}{section.1.6}% 
+\contentsline {section}{\numberline {1.7}Graphs}{15}{section.1.7}% 
+\contentsline {section}{\numberline {1.8}Trees}{15}{section.1.8}% 
+\contentsline {section}{\numberline {1.9}Tries}{15}{section.1.9}% 

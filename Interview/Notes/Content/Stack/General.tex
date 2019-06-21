@@ -1,2 +1,63 @@
 We already know what is a stack, but how can we made a stack using code? First of all remember that we already defined the basic operations of a Stack, so we have some clues about what we need to code.
 
+\begin{lstlisting}
+    struct Node{
+        Node *previous;
+        int value;
+
+        Node(int _value){
+            value = _value;
+            previous = NULL;
+        }
+    };
+
+    struct Stack {
+
+        Node *top;
+        int size;
+
+        Stack(){
+            top = NULL;
+            size = 0;
+        }
+
+        void Push(int value){
+            Node *node = new Node( value );
+            if( size == 0 )
+                top = node;
+            else {
+                node -> previous = top;
+                top = node;
+            }
+            size++;
+        }
+
+        int Pop(){
+            int v_return = INT_MIN;
+            if( size > 0){
+
+                v_return = top -> value;
+                top = top -> previous;
+                size--;
+
+            } else {
+                cout << "\nStack is empty \n";
+            } 
+
+            return v_return;
+        }
+
+        bool IsEmpty(){
+            return (size == 0);
+        }
+
+        int Top(){
+            return top -> value;
+        }
+
+        int GetSize(){
+            return size;
+        }
+
+    };
+\end{lstlisting}
