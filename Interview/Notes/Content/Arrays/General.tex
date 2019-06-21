@@ -1,0 +1,73 @@
+We already known what is an array, and now we need to know how to solve some problmes using this data structure. First of all we need to know how to use arrays in a programming language, in my case I used to use C++ language because is very easy to understand and is faster than a lot of programming languages.
+
+In C++ we can declarate an array using the next piece of code.
+\begin{lstlisting}
+    data_type name_of_our_array[ size_of_our_array ]
+\end{lstlisting}
+
+Imagine that you need an array of integer numbers with length ten, we need to write the next in out C++ programm.
+
+\begin{lstlisting}
+    #include<bits/stdc++.h>
+    
+    using namespace std;
+
+    int main(){
+        //As you can see this is the form of create an array of integers with length ten
+        int array[10];
+        return 0;
+    }
+\end{lstlisting}
+
+If we need to set a value in a element of our array we just need to put the index of our element, but consider that arrays indexes starts with 0
+
+\begin{lstlisting}
+    #include <bits/stdc++.h>
+    
+    using namespace std;
+
+    int main(){
+        
+        int array[10];
+        array[0] = 1;
+        array[1] = 2;
+        array[3] = 3;
+        .
+        .
+        .
+        array[9] = 10;
+        return 0;
+    }
+
+\end{lstlisting}
+
+If we want to get the value of an element of our array we need just to indicate the index of our element, something like this:
+\begin{lstlisting}
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    int main(){
+        int array[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        cout << array[2] << endl;
+        return 0;
+    }
+
+    Output: 3
+\end{lstlisting}
+
+\subsection{Some problems}
+\subsubsection{Problem 01}
+\textsf{Find the second minimum element of an array}
+\input{Content/Arrays/Problems/Problem01.tex}
+
+\subsubsection{Problem 02}
+\textsf{First non-repeating integers in the array}
+\input{Content/Arrays/Problems/Problem02.tex}
+
+\subsubsection{Problem 03}
+\textsf{Merge two sorted arrays}
+\input{Content/Arrays/Problems/Problem03.tex}
+
+\subsubsection{Problem 04}
+\textsf{Rearrage positive and negative values in an array}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.6.12)  19 JUN 2019 17:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.6.12)  20 JUN 2019 20:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1119,7 +1119,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Theory} [1
+            {A little bit of theory} [1
 
 ]
 Chapter 1.
@@ -1152,38 +1152,38 @@ LaTeX Font Info:    Font shape `TS1/fnc/m/n' will be
 (Font)              scaled to size 9.29993pt on input line 13.
  [2
 
-] [3] [4] [5] [6]
+] [3] [4] [5] [6] (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/General.tex
 LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
-(Font)              scaled to size 7.43994pt on input line 207.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 207.
+(Font)              scaled to size 7.43994pt on input line 4.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 4.
  (/usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 218.
- [7] (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problem01.tex [8] [9]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problem02.tex [10]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problem03.tex [11])) [12]
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 15.
+ [7] (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem01.tex [8] [9]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem02.tex [10]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem03.tex [11])) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/General.tex)) [12]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 8.
  (/home/erick/Documentos/GitHub/Club/Interview/Notes/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 8.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 8.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 22336ABB7F040DD0571E7F6C90285E60;463.
+(rerunfilecheck)             Checksum: 44DE680703D6C40C8EDC7D5E814EC663;799.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 8.
  ) 
 Here is how much of TeX's memory you used:
- 21143 strings out of 492616
- 369198 string characters out of 6135177
+ 21164 strings out of 492616
+ 369887 string characters out of 6135177
  748343 words of memory out of 5000000
- 24310 multiletter control sequences out of 15000+600000
+ 24316 multiletter control sequences out of 15000+600000
  44741 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,56p,491b,1928s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb></usr/share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on /home/erick/Documentos/GitHub/Club/Interview/Notes/main.pdf (13 pages, 185509 bytes).
+Output written on /home/erick/Documentos/GitHub/Club/Interview/Notes/main.pdf (13 pages, 188444 bytes).
 PDF statistics:
- 443 PDF objects out of 1000 (max. 8388607)
- 413 compressed objects within 5 object streams
- 261 named destinations out of 1000 (max. 500000)
- 69 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 474 PDF objects out of 1000 (max. 8388607)
+ 444 compressed objects within 5 object streams
+ 267 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -344,6 +344,8 @@ INPUT /usr/share/texmf-dist/fonts/vf/public/fouriernc/fncsy.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/fourier/fourier-ms.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/fourier/fourier-mcl.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/ncntrsbk/pncr8r.tfm
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/General.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/General.tex
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/ncntrsbk/pncr8t.tfm
 INPUT /usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
@@ -351,10 +353,10 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmtt8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmtti10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmss10.tfm
-INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problem01.tex
-INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problem01.tex
-INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problem02.tex
-INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problem02.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem01.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem01.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem02.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem02.tex
 INPUT /usr/share/texmf-dist/fonts/vf/public/fouriernc/fncmii.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/fourier/fourier-mlit.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/fourier/fourier-ml.tfm
@@ -362,8 +364,10 @@ INPUT /usr/share/texmf-dist/fonts/tfm/adobe/ncntrsbk/pncr8r.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/ncntrsbk/pncri8r.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/ncntrsbk/pncr8t.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/ncntrsbk/pncr8r.tfm
-INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problem03.tex
-INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problem03.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem03.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem03.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/General.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/General.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/main.aux
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/main.out
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/main.out
