@@ -1,5 +1,21 @@
 We already know what is a stack, but how can we made a stack using code? First of all remember that we already defined the basic operations of a Stack, so we have some clues about what we need to code.
 
+For me is a little bit easier to programm a data structure if a have an idea or I imagine the "form" of it. 
+In case of Stacks I imagine something like this:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.25\textwidth]{Images/DataStructures/Stack/Stack.png}
+    \caption{Diagram of a Stack}
+    \label{fig:stack_diagram-01}
+\end{figure}
+
+As you can see our Stack have n elements, where the last element is called top. Also each element of our stack (lets call each element as node) has two things inside, the first one is value and the second is previous where previous is a pointer to the element below of the current node.
+
+To our stack we have two elements, as I mentioned before, we have a pointer called Top, this pointer has the last element of our Stack. The second element is size, it counts the number of elements inside our stack.
+
+If we code the stack with all the operations that I mentioned in the section ''Basic data strcutures'' we have the next as a result:
+
 \begin{lstlisting}
     struct Node{
         Node *previous;
@@ -61,3 +77,36 @@ We already know what is a stack, but how can we made a stack using code? First o
 
     };
 \end{lstlisting}
+
+In case of competitive programming we can not program a Stack and then use it, beacuse it takes a lot of time, so C++ has a implementation of this data structure in ''stack'' library, and we can use it using the word Stack and defining the data type of our Stack, something like stack $<$ data\_type $>$ or show the example below:
+
+\begin{lstlisting}
+    #include <stack>
+    using namespace std;
+
+    int main(){
+        //Creation of an Stack of int
+        stack<int> Stack;
+        //Adding an element to our stack
+        Stack.push(0);
+        //Gets the number of elements of our Stack
+        Stack.size();
+        //Gets the value of the top element
+        Stack.top();
+        //The same as top but also removes the top element
+        Stack.pop();
+        return 0:
+    }
+\end{lstlisting}
+
+\subsection{Some problems}
+\subsubsection{Problem 01}
+\textsf{Evalue postfix expression using a stack}
+
+\subsubsection{Problem 02}
+\textsf{Sort values in a stack}
+\input{Content/Stack/Problems/Problem02.tex}
+
+\subsubsection{Problem 03}
+\textsf{Check balanced parentheses in an expression}
+\input{Content/Stack/Problems/Problem03.tex}

@@ -60,6 +60,8 @@ INPUT /usr/share/texmf-dist/tex/latex/graphics/trig.sty
 INPUT /usr/share/texmf-dist/tex/latex/graphics/trig.sty
 INPUT /usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT /usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/share/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/share/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
@@ -80,8 +82,6 @@ INPUT /usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 INPUT /usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 INPUT /usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 INPUT /usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-INPUT /usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
-INPUT /usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/longtable.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/longtable.sty
 INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
@@ -368,6 +368,13 @@ INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem03.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/General.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/General.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Images/DataStructures/Stack/Stack.png
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Images/DataStructures/Stack/Stack.png
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Images/DataStructures/Stack/Stack.png
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/Problems/Problem02.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/Problems/Problem02.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/Problems/Problem03.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/Problems/Problem03.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/LinkedList/General.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/LinkedList/General.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/main.aux

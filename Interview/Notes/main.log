@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.6.12)  20 JUN 2019 20:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.6.12)  21 JUN 2019 01:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -182,6 +182,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen123
+\Gin@req@width=\dimen124
 ) (/usr/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count105
@@ -190,8 +194,8 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks22
 \@floatcapt=\box32
 ) (/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen123
-\WF@size=\dimen124
+\wrapoverhang=\dimen125
+\WF@size=\dimen126
 \c@WF@wrappedlines=\count106
 \WF@box=\box33
 \WF@everypar=\toks23
@@ -213,8 +217,8 @@ Package: wallpaper 2005/01/18, v1.01 easy wallpaper formatting (MHFW)
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count107
 \calc@Bcount=\count108
-\calc@Adimen=\dimen125
-\calc@Bdimen=\dimen126
+\calc@Adimen=\dimen127
+\calc@Bdimen=\dimen128
 \calc@Askip=\skip55
 \calc@Bskip=\skip56
 LaTeX Info: Redefining \setlength on input line 80.
@@ -231,11 +235,7 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
-))) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
-\Gin@req@height=\dimen127
-\Gin@req@width=\dimen128
-)
+)))
 \wpXoffset=\skip58
 \wpYoffset=\skip59
 \tileXoffset=\skip60
@@ -960,16 +960,16 @@ Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \pxx=\skip82
 )
 
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 46.
-
-
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 47.
 
 
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 48.
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 48.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 49.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 50.
 
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
@@ -1161,29 +1161,35 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 15.
- [7] (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem01.tex [8] [9]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem02.tex [10]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem03.tex [11])) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/General.tex [12]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/LinkedList/General.tex [13] [14])) [15]
+ [7] (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem01.tex [8] [9]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem02.tex [10]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem03.tex [11])) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/General.tex
+<Images/DataStructures/Stack/Stack.png, id=369, 202.7575pt x 431.6125pt>
+File: Images/DataStructures/Stack/Stack.png Graphic file (type png)
+<use Images/DataStructures/Stack/Stack.png>
+Package pdftex.def Info: Images/DataStructures/Stack/Stack.png  used on input line 8.
+(pdftex.def)             Requested size: 86.25pt x 183.6074pt.
+ [12 </home/erick/Documentos/GitHub/Club/Interview/Notes/Images/DataStructures/Stack/Stack.png>] [13] (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/Problems/Problem02.tex [14]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/Problems/Problem03.tex [15])) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/LinkedList/General.tex [16] [17])) [18]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 8.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 8.
  (/home/erick/Documentos/GitHub/Club/Interview/Notes/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 8.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 8.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7C47C006AF3AF31332D9F55413AFFC32;872.
+(rerunfilecheck)             Checksum: 3219AD7411A1C10FC063057E9F7C8416;939.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 8.
  ) 
 Here is how much of TeX's memory you used:
- 21405 strings out of 492616
- 373548 string characters out of 6135177
- 765343 words of memory out of 5000000
- 24382 multiletter control sequences out of 15000+600000
+ 21531 strings out of 492616
+ 375800 string characters out of 6135177
+ 759342 words of memory out of 5000000
+ 24412 multiletter control sequences out of 15000+600000
  44741 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,56p,491b,1930s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb></usr/share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on /home/erick/Documentos/GitHub/Club/Interview/Notes/main.pdf (16 pages, 203003 bytes).
+Output written on /home/erick/Documentos/GitHub/Club/Interview/Notes/main.pdf (19 pages, 219817 bytes).
 PDF statistics:
- 694 PDF objects out of 1000 (max. 8388607)
- 659 compressed objects within 7 object streams
- 438 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 816 PDF objects out of 1000 (max. 8388607)
+ 775 compressed objects within 8 object streams
+ 525 named destinations out of 1000 (max. 500000)
+ 138 words of extra memory for PDF output out of 10000 (max. 10000000)
 
