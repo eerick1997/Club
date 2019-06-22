@@ -42,6 +42,6 @@
 \contentsline {subsubsection}{Problem 03}{20}{lstnumber.-17.38}% 
 \contentsline {section}{\numberline {1.5}Singly linked lists}{20}{section.1.5}% 
 \contentsline {section}{\numberline {1.6}Doubly linked lists}{22}{section.1.6}% 
-\contentsline {section}{\numberline {1.7}Graphs}{22}{section.1.7}% 
-\contentsline {section}{\numberline {1.8}Trees}{23}{section.1.8}% 
-\contentsline {section}{\numberline {1.9}Tries}{23}{section.1.9}% 
+\contentsline {section}{\numberline {1.7}Graphs}{25}{section.1.7}% 
+\contentsline {section}{\numberline {1.8}Trees}{25}{section.1.8}% 
+\contentsline {section}{\numberline {1.9}Tries}{25}{section.1.9}% 
