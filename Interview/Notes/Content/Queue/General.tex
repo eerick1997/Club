@@ -1,0 +1,102 @@
+As the Stack we already know the basic operations of a Queue, so we have an idea about what we go to program, but what is the structure of a Queue? As I mentioned before maybe show a draw or schema is better to understand what we need to program so I have maked a little draw of how I imagine a Queue.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.00\textwidth]{Images/DataStructures/Queue/Queue.png}
+    \caption{Diagram of a Queue}
+    \label{fig:queue_diagram-01}
+\end{figure}
+
+As you can see a stack has a ''back'' and ''front'' element where ''back'' is the last element of the queue and ''front'' is the first element. Each element (lets call them as nodes) has a value and a pointer to the next element, if we wrote this using code we have the next result:
+
+\begin{lstlisting}
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    struct Node{
+        int value;
+        Node *next;
+
+        Node( int _value ){
+            value = _value;
+            next = NULL;
+        }
+    };
+
+    struct Queue{
+
+        Node *back;
+        Node *front;
+        int size;
+
+        Queue(){
+            back = front = NULL;
+            size = 0;
+        }
+
+        void Enqueue( int value ){
+            Node *node = new Node( value );
+            if( size == 0 )
+                back = front = node;
+            else {
+                node -> next = back;
+                back = node;
+            }
+
+            size++;
+        }
+
+        void Dequeue(){
+            Node *aux = back;
+            if( size > 1 ){
+                
+                while( aux -> next != NULL )
+                    aux = aux -> next;
+
+                aux -> next = NULL;
+                front = aux;
+
+            } else if( size == 1 )
+                front = back = NULL;
+            else 
+                return;
+            size--;
+        }
+
+        bool IsEmpty(){
+            return (size == 0);
+        }
+
+        int Top(){
+            return (front -> value);
+        }
+
+        int GetSize(){
+            return size;
+        }
+        
+        void print(){
+            cout << endl;
+            Node *aux = back;
+            while( aux != NULL ){
+                cout << aux -> value << " ";
+                aux = aux -> next;
+            }
+            cout << endl;
+        }
+    };
+\end{lstlisting}
+
+\subsection{Problems}
+\subsubsection{Problem 01}
+\textsf{Implement a stack using a queue}
+\input{Content/Queue/Problems/Problem01.tex}
+
+\subsubsection{Problem 02}
+\textsf{Reverse first k elements of a queue}
+\input{Content/Queue/Problems/Problem02.tex}
+
+\subsubsection{Problem 03}
+\textsf{Generate binary numbers from 1 to n using a queue}
+\input{Content/Queue/Problems/Problem03.tex}

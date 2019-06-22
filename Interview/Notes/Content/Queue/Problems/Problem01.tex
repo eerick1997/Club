@@ -1,0 +1,53 @@
+To solve this problem we need to know what is a stack, and I already explain this data structure, so we only need to remember this behaviour to solve this problem.\\
+First of all I have created a struct with all the basic operations of a Stack, but instead of nodes this struct contains a Queue.
+Our operation of pop does not have any problem but oir operation of push needs to be changed, so invert the elements inside our Queue is a goos solution for this problem, and we can do this using two queues.
+To solve the problem of push an element as I mentioned before we need two queues, the first one contains the elements of our stack, and the second we go to use it when we need to add a new element, the procedure is the following:
+First add the new element to our second queue then make a dequeue of our first queue until this queue be empty, finally we made the second queue as our first queue. In code we have the next as a result:
+
+\begin{lstlisting}
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    struct Stack{
+
+        int size;
+        queue<int> Queue;
+
+        Stack(){
+            size = 0;
+        }
+
+        void Push( int val ){
+            queue<int> result;
+            result.push( val );
+            while( !Queue.empty() ){
+                result.push( Queue.front() );
+                Queue.pop();
+            }
+            Queue = result;
+            size++;
+        }
+
+        void Pop(){
+            if( size > 0 ){
+                Queue.pop();
+                size--;
+            } else {
+                cout << "\nStack doesn't have elements\n";
+            }
+        }
+
+        int Top(){
+            return Queue.front();
+        }
+
+        int GetSize(){
+            return size;
+        }
+
+        bool IsEmpty(){
+            return ( size == 0 );
+        }
+    };
+\end{lstlisting}

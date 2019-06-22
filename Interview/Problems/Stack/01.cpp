@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    string s;
+    int number_01 = 0, number_02 = 0;
+    stack< int > Stack;
+    cin >> s;
+
+    for( auto c : s ){
+        if( isdigit(c) ){
+            Stack.push( c - '0' );
+        } else {
+
+            number_01 = Stack.top();
+            Stack.pop();
+            number_02 = Stack.top();
+            Stack.pop();
+
+            if ( c == '+')
+                Stack.push( number_02 + number_01 );
+            else if ( c == '-' )
+                Stack.push( number_02 - number_01 );
+            else if ( c == '*' )
+                Stack.push( number_02 * number_01 );
+            else if ( c == '/' )
+                Stack.push( number_02 / number_01 );
+        }
+        
+    }
+    cout << Stack.top() << endl;
+    return 0;
+}
