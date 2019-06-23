@@ -1,0 +1,33 @@
+To solve this problem you need to remember that in a singly linked list each node just knows information about the next element, but no more, so we need to move in the linked list using three variables, the first one to know information about the previous element, the second to know the current element and the third to know the next element of the current element (before to recobnect current -> next) so if we do this we can reconnect the current -> next with the previous element, and now the previous has a new value as the current element, the current element now is the next element and the next element now is the current -> next. I think that is easier to understand this if we code this problem, but just imagine that you need to complete a function, if you want to show if you code works you can try to solve \href{https://www.hackerrank.com/challenges/reverse-a-linked-list/problem}{\textbf{this problem}} on HackeRank 
+
+\begin{lstlisting}
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    struct Node{
+        int value;
+        Node *next;
+    };
+
+    Node *Reverse(Node *head){
+
+        if(head -> next == NULL || head == NULL)
+            return head;
+            
+        node *previous = NULL;
+        Node *current = head;
+        Node *next = current -> next;        
+        
+        while( next != NULL ){
+            current -> next = previous;
+            previous = current;
+            current = next;
+            next = current -> next;
+        }
+
+        current -> next = previous;
+
+        return current;
+    }
+\end{lstlisting}

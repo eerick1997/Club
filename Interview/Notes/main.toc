@@ -40,8 +40,13 @@
 \contentsline {subsubsection}{Problem 01}{18}{subsection.1.4.1}% 
 \contentsline {subsubsection}{Problem 02}{19}{lstnumber.-16.45}% 
 \contentsline {subsubsection}{Problem 03}{20}{lstnumber.-17.38}% 
-\contentsline {section}{\numberline {1.5}Singly linked lists}{20}{section.1.5}% 
-\contentsline {section}{\numberline {1.6}Doubly linked lists}{22}{section.1.6}% 
-\contentsline {section}{\numberline {1.7}Graphs}{25}{section.1.7}% 
-\contentsline {section}{\numberline {1.8}Trees}{25}{section.1.8}% 
-\contentsline {section}{\numberline {1.9}Tries}{25}{section.1.9}% 
+\contentsline {section}{\numberline {1.5}Singly linked lists}{21}{section.1.5}% 
+\contentsline {subsection}{\numberline {1.5.1}Problems}{23}{subsection.1.5.1}% 
+\contentsline {subsubsection}{Problem 01}{24}{subsection.1.5.1}% 
+\contentsline {subsubsection}{Problem 02}{24}{lstnumber.-20.29}% 
+\contentsline {subsubsection}{Problem 03}{25}{lstnumber.-20.29}% 
+\contentsline {subsubsection}{Problem 04}{25}{lstnumber.-20.29}% 
+\contentsline {section}{\numberline {1.6}Doubly linked lists}{25}{section.1.6}% 
+\contentsline {section}{\numberline {1.7}Graphs}{27}{section.1.7}% 
+\contentsline {section}{\numberline {1.8}Trees}{27}{section.1.8}% 
+\contentsline {section}{\numberline {1.9}Tries}{27}{section.1.9}% 
