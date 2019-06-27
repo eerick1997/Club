@@ -1,0 +1,162 @@
+A tree is a special type of graph. It is an undirected graph with no cycles.
+Equivalently, it is a connected graph with N nodes and N - 1 edges.
+
+\begin{figure}[H]
+\begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (57,-8.2) circle (3);
+    \draw [black] (43.8,-21.6) circle (3);
+    \draw [black] (68.7,-22.2) circle (3);
+    \draw [black] (34.7,-34.1) circle (3);
+    \draw [black] (51.5,-34.1) circle (3);
+    \draw [black] (61.2,-34.1) circle (3);
+    \draw [black] (76.5,-34.1) circle (3);
+    \draw [black] (12,-6.3) circle (3);
+    \draw [black] (11.9,-16.3) circle (3);
+    \draw [black] (12,-26.2) circle (3);
+    \draw [black] (12,-35.7) circle (3);
+    \draw [black] (54.89,-10.34) -- (45.91,-19.46);
+    \draw [black] (58.92,-10.5) -- (66.78,-19.9);
+    \draw [black] (42.03,-24.03) -- (36.47,-31.67);
+    \draw [black] (45.37,-24.15) -- (49.93,-31.55);
+    \draw [black] (67.1,-24.74) -- (62.8,-31.56);
+    \draw [black] (70.34,-24.71) -- (74.86,-31.59);
+    \draw [black] (11.97,-9.3) -- (11.93,-13.3);
+    \draw [black] (11.93,-19.3) -- (11.97,-23.2);
+    \draw [black] (12,-29.2) -- (12,-32.7);
+    \end{tikzpicture}
+    \caption{Basic tree diagram 01}
+    \label{fg:tree-diagram-01}
+\end{center}
+\end{figure}
+
+Or maybe something more strange but stills being a tree:
+
+\begin{figure}[H]
+\begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (9.5,-13.3) circle (3);
+    \draw [black] (9.1,-28.6) circle (3);
+    \draw [black] (19.3,-21) circle (3);
+    \draw [black] (30.3,-8.8) circle (3);
+    \draw [black] (42.4,-18.8) circle (3);
+    \draw [black] (27.3,-27.3) circle (3);
+    \draw [black] (37.4,-43) circle (3);
+    \draw [black] (47.1,-32.2) circle (3);
+    \draw [black] (58.4,-40.2) circle (3);
+    \draw [black] (61.1,-26.6) circle (3);
+    \draw [black] (50.4,-7.2) circle (3);
+    \draw [black] (66.1,-4) circle (3);
+    \draw [black] (65.5,-16) circle (3);
+    \draw [black] (11.86,-15.15) -- (16.94,-19.15);
+    \draw [black] (11.51,-26.81) -- (16.89,-22.79);
+    \draw [black] (21.31,-18.77) -- (28.29,-11.03);
+    \draw [black] (21.66,-22.86) -- (24.94,-25.44);
+    \draw [black] (32.61,-10.71) -- (40.09,-16.89);
+    \draw [black] (43.39,-21.63) -- (46.11,-29.37);
+    \draw [black] (45.1,-34.43) -- (39.4,-40.77);
+    \draw [black] (49.55,-33.93) -- (55.95,-38.47);
+    \draw [black] (45.17,-19.95) -- (58.33,-25.45);
+    \draw [black] (33.29,-8.56) -- (47.41,-7.44);
+    \draw [black] (53.34,-6.6) -- (63.16,-4.6);
+    \draw [black] (52.99,-8.71) -- (62.91,-14.49);
+    \end{tikzpicture}
+    \caption{Basic tree diagram 02}
+    \label{fg:tree-diagram-02}
+\end{center}
+\end{figure}    
+
+\subsection{Roted trees}
+A roted tree is a tree with a designated root node where every edge either points away from or towards the root node. When edges point away from the root the graph is called an arborescence (out-tree) and anti-arborescence (in-tree) otherwise.
+In the next figure you can see an anti-arborescence (in-tree) and an arborescence (out-tree)
+\begin{figure}[H]
+\begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (7.3,-10.7) circle (3);
+    \draw [black] (7.2,-24.6) circle (3);
+    \draw [black] (7.2,-24.6) circle (2.4);
+    \draw [black] (7.2,-36) circle (3);
+    \draw [black] (7.2,-47.7) circle (3);
+    \draw [black] (26.3,-41.8) circle (3);
+    \draw [black] (46.6,-41.8) circle (3);
+    \draw [black] (55.5,-41.8) circle (3);
+    \draw [black] (74.4,-41.8) circle (3);
+    \draw [black] (64.2,-24.6) circle (3);
+    \draw [black] (37.3,-25.3) circle (3);
+    \draw [black] (50.2,-9.2) circle (3);
+    \draw [black] (50.2,-9.2) circle (2.4);
+    \draw [black] (7.28,-13.7) -- (7.22,-21.6);
+    \fill [black] (7.22,-21.6) -- (7.73,-20.8) -- (6.73,-20.8);
+    \draw [black] (7.2,-33) -- (7.2,-27.6);
+    \fill [black] (7.2,-27.6) -- (6.7,-28.4) -- (7.7,-28.4);
+    \draw [black] (7.2,-44.7) -- (7.2,-39);
+    \fill [black] (7.2,-39) -- (6.7,-39.8) -- (7.7,-39.8);
+    \draw [black] (48.32,-11.54) -- (39.18,-22.96);
+    \fill [black] (39.18,-22.96) -- (40.07,-22.65) -- (39.29,-22.02);
+    \draw [black] (52.22,-11.42) -- (62.18,-22.38);
+    \fill [black] (62.18,-22.38) -- (62.01,-21.45) -- (61.27,-22.12);
+    \draw [black] (35.64,-27.8) -- (27.96,-39.3);
+    \fill [black] (27.96,-39.3) -- (28.82,-38.92) -- (27.99,-38.36);
+    \draw [black] (38.77,-27.91) -- (45.13,-39.19);
+    \fill [black] (45.13,-39.19) -- (45.17,-38.24) -- (44.3,-38.74);
+    \draw [black] (62.85,-27.28) -- (56.85,-39.12);
+    \fill [black] (56.85,-39.12) -- (57.66,-38.63) -- (56.77,-38.18);
+    \draw [black] (65.73,-27.18) -- (72.87,-39.22);
+    \fill [black] (72.87,-39.22) -- (72.89,-38.28) -- (72.03,-38.79);
+    \end{tikzpicture}
+    \caption{Rooted tree diagram 01}
+    \label{fg:rooted-diagram-01}
+\end{center}
+\end{figure}
+
+And here you are another example with a little bit strage tree (arborescence)
+\begin{figure}[H]
+\begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (9.5,-13.3) circle (3);
+    \draw [black] (9.1,-28.6) circle (3);
+    \draw [black] (19.3,-21) circle (3);
+    \draw [black] (30.3,-8.8) circle (3);
+    \draw [black] (40,-19.4) circle (3);
+    \draw [black] (40,-19.4) circle (2.4);
+    \draw [black] (27.3,-27.3) circle (3);
+    \draw [black] (37.4,-43) circle (3);
+    \draw [black] (47.1,-32.2) circle (3);
+    \draw [black] (58.4,-40.2) circle (3);
+    \draw [black] (61.1,-26.6) circle (3);
+    \draw [black] (50.4,-7.2) circle (3);
+    \draw [black] (66.1,-4) circle (3);
+    \draw [black] (65.5,-16) circle (3);
+    \draw [black] (16.94,-19.15) -- (11.86,-15.15);
+    \fill [black] (11.86,-15.15) -- (12.18,-16.04) -- (12.8,-15.25);
+    \draw [black] (21.66,-22.86) -- (24.94,-25.44);
+    \fill [black] (24.94,-25.44) -- (24.62,-24.56) -- (24.01,-25.34);
+    \draw [black] (16.89,-22.79) -- (11.51,-26.81);
+    \fill [black] (11.51,-26.81) -- (12.45,-26.73) -- (11.85,-25.93);
+    \draw [black] (28.29,-11.03) -- (21.31,-18.77);
+    \fill [black] (21.31,-18.77) -- (22.22,-18.51) -- (21.47,-17.84);
+    \draw [black] (37.97,-17.19) -- (32.33,-11.01);
+    \fill [black] (32.33,-11.01) -- (32.5,-11.94) -- (33.23,-11.27);
+    \draw [black] (41.46,-22.02) -- (45.64,-29.58);
+    \fill [black] (45.64,-29.58) -- (45.69,-28.63) -- (44.82,-29.12);
+    \draw [black] (42.84,-20.37) -- (58.26,-25.63);
+    \fill [black] (58.26,-25.63) -- (57.67,-24.9) -- (57.34,-25.85);
+    \draw [black] (45.1,-34.43) -- (39.4,-40.77);
+    \fill [black] (39.4,-40.77) -- (40.31,-40.51) -- (39.57,-39.84);
+    \draw [black] (49.55,-33.93) -- (55.95,-38.47);
+    \fill [black] (55.95,-38.47) -- (55.59,-37.6) -- (55.01,-38.41);
+    \draw [black] (33.29,-8.56) -- (47.41,-7.44);
+    \fill [black] (47.41,-7.44) -- (46.57,-7) -- (46.65,-8);
+    \draw [black] (53.34,-6.6) -- (63.16,-4.6);
+    \fill [black] (63.16,-4.6) -- (62.28,-4.27) -- (62.48,-5.25);
+    \draw [black] (52.99,-8.71) -- (62.91,-14.49);
+    \fill [black] (62.91,-14.49) -- (62.47,-13.65) -- (61.97,-14.52);
+    \end{tikzpicture}
+    \caption{Rooted tree diagram 02}
+    \label{fg:rooted-diagram-02}
+\end{center}
+\end{figure}

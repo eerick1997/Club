@@ -24,29 +24,50 @@
 \contentsline {paragraph}{Commonly asked trie interview questions}{6}{Item.40}% 
 \contentsline {subsubsection}{Hash table}{7}{Item.45}% 
 \contentsline {paragraph}{Commonly asked hash table interview questions}{7}{Item.45}% 
-\contentsline {section}{\numberline {1.2}Arrays}{7}{section.1.2}% 
-\contentsline {subsection}{\numberline {1.2.1}Some problems}{8}{subsection.1.2.1}% 
-\contentsline {subsubsection}{Problem 01}{8}{subsection.1.2.1}% 
-\contentsline {subsubsection}{Problem 02}{10}{lstnumber.-6.27}% 
-\contentsline {subsubsection}{Problem 03}{11}{lstnumber.-8.26}% 
-\contentsline {subsubsection}{Problem 04}{12}{lstnumber.-9.40}% 
-\contentsline {section}{\numberline {1.3}Stacks}{12}{section.1.3}% 
-\contentsline {subsection}{\numberline {1.3.1}Some problems}{14}{subsection.1.3.1}% 
-\contentsline {subsubsection}{Problem 01}{14}{subsection.1.3.1}% 
-\contentsline {subsubsection}{Problem 02}{15}{lstnumber.-12.34}% 
-\contentsline {subsubsection}{Problem 03}{16}{lstnumber.-13.42}% 
-\contentsline {section}{\numberline {1.4}Queues}{16}{section.1.4}% 
-\contentsline {subsection}{\numberline {1.4.1}Problems}{18}{subsection.1.4.1}% 
-\contentsline {subsubsection}{Problem 01}{18}{subsection.1.4.1}% 
-\contentsline {subsubsection}{Problem 02}{19}{lstnumber.-16.45}% 
-\contentsline {subsubsection}{Problem 03}{20}{lstnumber.-17.38}% 
-\contentsline {section}{\numberline {1.5}Singly linked lists}{21}{section.1.5}% 
-\contentsline {subsection}{\numberline {1.5.1}Problems}{23}{subsection.1.5.1}% 
-\contentsline {subsubsection}{Problem 01}{24}{subsection.1.5.1}% 
-\contentsline {subsubsection}{Problem 02}{24}{lstnumber.-20.29}% 
-\contentsline {subsubsection}{Problem 03}{25}{lstnumber.-20.29}% 
-\contentsline {subsubsection}{Problem 04}{25}{lstnumber.-20.29}% 
-\contentsline {section}{\numberline {1.6}Doubly linked lists}{25}{section.1.6}% 
-\contentsline {section}{\numberline {1.7}Graphs}{27}{section.1.7}% 
-\contentsline {section}{\numberline {1.8}Trees}{27}{section.1.8}% 
-\contentsline {section}{\numberline {1.9}Tries}{27}{section.1.9}% 
+\contentsline {chapter}{\numberline {2}Basic data structures}{8}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Arrays}{8}{section.2.1}% 
+\contentsline {subsection}{\numberline {2.1.1}Some problems}{9}{subsection.2.1.1}% 
+\contentsline {subsubsection}{Problem 01}{9}{subsection.2.1.1}% 
+\contentsline {subsubsection}{Problem 02}{11}{lstnumber.-6.27}% 
+\contentsline {subsubsection}{Problem 03}{12}{lstnumber.-8.26}% 
+\contentsline {subsubsection}{Problem 04}{13}{lstnumber.-9.40}% 
+\contentsline {section}{\numberline {2.2}Stacks}{13}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Some problems}{15}{subsection.2.2.1}% 
+\contentsline {subsubsection}{Problem 01}{15}{subsection.2.2.1}% 
+\contentsline {subsubsection}{Problem 02}{16}{lstnumber.-12.34}% 
+\contentsline {subsubsection}{Problem 03}{17}{lstnumber.-13.42}% 
+\contentsline {section}{\numberline {2.3}Queues}{17}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Problems}{19}{subsection.2.3.1}% 
+\contentsline {subsubsection}{Problem 01}{19}{subsection.2.3.1}% 
+\contentsline {subsubsection}{Problem 02}{20}{lstnumber.-16.45}% 
+\contentsline {subsubsection}{Problem 03}{21}{lstnumber.-17.38}% 
+\contentsline {section}{\numberline {2.4}Singly linked lists}{22}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}Problems}{25}{subsection.2.4.1}% 
+\contentsline {subsubsection}{Problem 01}{25}{subsection.2.4.1}% 
+\contentsline {subsubsection}{Problem 02}{26}{lstnumber.-20.29}% 
+\contentsline {subsubsection}{Problem 03}{26}{lstnumber.-20.29}% 
+\contentsline {subsubsection}{Problem 04}{27}{lstnumber.-21.58}% 
+\contentsline {section}{\numberline {2.5}Doubly linked lists}{28}{section.2.5}% 
+\contentsline {section}{\numberline {2.6}Graphs}{31}{section.2.6}% 
+\contentsline {paragraph}{Graph theory}{31}{section.2.6}% 
+\contentsline {subsection}{\numberline {2.6.1}Types of graphs}{31}{subsection.2.6.1}% 
+\contentsline {subsubsection}{Undirected graph}{31}{subsection.2.6.1}% 
+\contentsline {subsubsection}{Directed graph}{32}{figure.2.6}% 
+\contentsline {subsection}{\numberline {2.6.2}Weighted graphs}{32}{subsection.2.6.2}% 
+\contentsline {subsection}{\numberline {2.6.3}Directed acyclic graphs (DAGs)}{33}{subsection.2.6.3}% 
+\contentsline {subsection}{\numberline {2.6.4}Bipartite graph}{34}{subsection.2.6.4}% 
+\contentsline {subsection}{\numberline {2.6.5}Complete graphs}{35}{subsection.2.6.5}% 
+\contentsline {subsection}{\numberline {2.6.6}\IeC {\textquestiondown }How can we represent a graph?}{36}{subsection.2.6.6}% 
+\contentsline {subsubsection}{Adjacency Matrix}{36}{subsection.2.6.6}% 
+\contentsline {subsubsection}{Adjacency list}{38}{subsection.2.6.6}% 
+\contentsline {subsubsection}{Edge list}{39}{subsection.2.6.6}% 
+\contentsline {subsection}{\numberline {2.6.7}Common graph theory problems}{39}{subsection.2.6.7}% 
+\contentsline {subsubsection}{How can we solve graph theory problems?}{39}{subsection.2.6.7}% 
+\contentsline {subsubsection}{Shortest path problem}{39}{Item.53}% 
+\contentsline {subsubsection}{Connectivity}{40}{Item.53}% 
+\contentsline {subsubsection}{Negative cycles}{41}{Item.53}% 
+\contentsline {subsubsection}{Strongly connected components}{42}{Item.53}% 
+\contentsline {subsubsection}{Traveling salesman problem}{43}{Item.53}% 
+\contentsline {section}{\numberline {2.7}Trees}{44}{section.2.7}% 
+\contentsline {subsection}{\numberline {2.7.1}Roted trees}{46}{subsection.2.7.1}% 
+\contentsline {section}{\numberline {2.8}Tries}{48}{section.2.8}% 
