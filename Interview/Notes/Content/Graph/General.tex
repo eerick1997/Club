@@ -839,3 +839,208 @@ One possible solution is the next:
 \end{figure}
 
 \textbf{Algorithms: } Held-Karp, branch and bound and many approximation algorithms.
+
+\subsubsection{Bridges}
+A bridge / cut edge is any edge in a graph whose removal increases the number of connected components
+
+\begin{figure}[H]
+\begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (8.9,-7) circle (3);
+    \draw (8.9,-7) node {$0$};
+    \draw [black] (7.9,-20.6) circle (3);
+    \draw (7.9,-20.6) node {$1$};
+    \draw [black] (22.5,-13) circle (3);
+    \draw (22.5,-13) node {$2$};
+    \draw [black] (22.5,-39.9) circle (3);
+    \draw (22.5,-39.9) node {$3$};
+    \draw [black] (38.9,-39.9) circle (3);
+    \draw (38.9,-39.9) node {$4$};
+    \draw [black] (43.6,-11.7) circle (3);
+    \draw (43.6,-11.7) node {$5$};
+    \draw [black] (54.4,-3.9) circle (3);
+    \draw (54.4,-3.9) node {$6$};
+    \draw [black] (64.9,-12.5) circle (3);
+    \draw (64.9,-12.5) node {$7$};
+    \draw [black] (54.4,-21.6) circle (3);
+    \draw (54.4,-21.6) node {$8$};
+    \draw [black] (8.68,-9.99) -- (8.12,-17.61);
+    \draw [black] (11.64,-8.21) -- (19.76,-11.79);
+    \draw [black] (19.84,-14.39) -- (10.56,-19.21);
+    \draw [red] (22.5,-16) -- (22.5,-36.9);
+    \draw [red] (25.5,-39.9) -- (35.9,-39.9);
+    \draw [black] (46.03,-9.94) -- (51.97,-5.66);
+    \draw [black] (56.72,-5.8) -- (62.58,-10.6);
+    \draw [black] (62.63,-14.46) -- (56.67,-19.64);
+    \draw [black] (52.19,-19.57) -- (45.81,-13.73);
+    \draw [red] (40.61,-11.88) -- (25.49,-12.82);
+    \end{tikzpicture}
+\end{center}        
+\end{figure}
+
+Bridges are important in graph theory because they often hint at weak points, bottlenecks or vulnerabilities in a graph
+
+\subsubsection{Articulation points}
+
+An articulation point / cut vertex is any node in a graph whose removal increases the number of connected components
+
+
+\begin{figure}[H]
+\begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (8.9,-7) circle (3);
+    \draw (8.9,-7) node {$0$};
+    \draw [black] (7.9,-20.6) circle (3);
+    \draw (7.9,-20.6) node {$1$};
+    \draw [red] (22.5,-13) circle (3);
+    \draw (22.5,-13) node {$2$};
+    \draw [red] (22.5,-39.9) circle (3);
+    \draw (22.5,-39.9) node {$3$};
+    \draw [black] (38.9,-39.9) circle (3);
+    \draw (38.9,-39.9) node {$4$};
+    \draw [red] (43.6,-11.7) circle (3);
+    \draw (43.6,-11.7) node {$5$};
+    \draw [black] (54.4,-3.9) circle (3);
+    \draw (54.4,-3.9) node {$6$};
+    \draw [black] (64.9,-12.5) circle (3);
+    \draw (64.9,-12.5) node {$7$};
+    \draw [black] (54.4,-21.6) circle (3);
+    \draw (54.4,-21.6) node {$8$};
+    \draw [black] (8.68,-9.99) -- (8.12,-17.61);
+    \draw [black] (11.64,-8.21) -- (19.76,-11.79);
+    \draw [black] (19.84,-14.39) -- (10.56,-19.21);
+    \draw [black] (22.5,-16) -- (22.5,-36.9);
+    \draw [black] (25.5,-39.9) -- (35.9,-39.9);
+    \draw [black] (46.03,-9.94) -- (51.97,-5.66);
+    \draw [black] (56.72,-5.8) -- (62.58,-10.6);
+    \draw [black] (62.63,-14.46) -- (56.67,-19.64);
+    \draw [black] (52.19,-19.57) -- (45.81,-13.73);
+    \draw [black] (40.61,-11.88) -- (25.49,-12.82);
+    \end{tikzpicture}
+\end{center}        
+\end{figure}
+
+Articulation points are important in graph theory because they often hint at weak points, bottlenecks or vulnerabilities in a graph.
+
+\subsubsection{Minimum spaning tree (MST)}
+A minimum spaning tree (MST) is a subset of the edges connected, edge-weighted graph that connects all the vertices together, without any cycles and with the minimum possible total edge weight.
+
+
+\begin{figure}[H]
+\begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (9.9,-7.6) circle (3);
+    \draw (9.9,-7.6) node {$A$};
+    \draw [black] (33.7,-7.6) circle (3);
+    \draw (33.7,-7.6) node {$B$};
+    \draw [black] (50,-15.9) circle (3);
+    \draw (50,-15.9) node {$C$};
+    \draw [black] (25,-21.5) circle (3);
+    \draw (25,-21.5) node {$D$};
+    \draw [black] (3.6,-21.5) circle (3);
+    \draw (3.6,-21.5) node {$E$};
+    \draw [black] (5.7,-41.3) circle (3);
+    \draw (5.7,-41.3) node {$F$};
+    \draw [black] (25,-41.3) circle (3);
+    \draw (25,-41.3) node {$G$};
+    \draw [black] (39.8,-30.6) circle (3);
+    \draw (39.8,-30.6) node {$H$};
+    \draw [black] (55.4,-39.1) circle (3);
+    \draw (55.4,-39.1) node {$I$};
+    \draw [black] (67.9,-25.4) circle (3);
+    \draw (67.9,-25.4) node {$J$};
+    \draw [black] (8.66,-10.33) -- (4.84,-18.77);
+    \draw (6.03,-13.54) node [left] {$1$};
+    \draw [black] (6.6,-21.5) -- (22,-21.5);
+    \draw (14.3,-22) node [below] {$2$};
+    \draw [black] (12.11,-9.63) -- (22.79,-19.47);
+    \draw (16.43,-15.04) node [below] {$9$};
+    \draw [black] (26.59,-18.96) -- (32.11,-10.14);
+    \draw (29.98,-15.84) node [right] {$2$};
+    \draw [black] (12.9,-7.6) -- (30.7,-7.6);
+    \draw (21.8,-8.1) node [below] {$5$};
+    \draw [black] (36.37,-8.96) -- (47.33,-14.54);
+    \draw (40.86,-12.25) node [below] {$4$};
+    \draw [black] (27.56,-23.07) -- (37.24,-29.03);
+    \draw (31.4,-26.55) node [below] {$2$};
+    \draw [black] (48.29,-18.36) -- (41.51,-28.14);
+    \draw (44.3,-21.89) node [left] {$4$};
+    \draw [black] (25,-24.5) -- (25,-38.3);
+    \draw (24.5,-31.4) node [left] {$1$};
+    \draw [black] (27.43,-39.54) -- (37.37,-32.36);
+    \draw (33.4,-36.45) node [below] {$1$};
+    \draw [black] (3.92,-24.48) -- (5.38,-38.32);
+    \draw (4,-31.5) node [left] {$1$};
+    \draw [black] (8.7,-41.3) -- (22,-41.3);
+    \draw (15.35,-41.8) node [below] {$7$};
+    \draw [black] (7.79,-39.15) -- (22.91,-23.65);
+    \draw (15.88,-32.87) node [right] {$5$};
+    \draw [black] (42.43,-32.04) -- (52.77,-37.66);
+    \draw (46.6,-35.35) node [below] {$6$};
+    \draw [black] (27.99,-41.08) -- (52.41,-39.32);
+    \draw (40.3,-40.76) node [below] {$4$};
+    \draw [black] (50.68,-18.82) -- (54.72,-36.18);
+    \draw (51.95,-27.91) node [left] {$1$};
+    \draw [black] (57.42,-36.88) -- (65.88,-27.62);
+    \draw (62.19,-33.71) node [right] {$0$};
+    \draw [black] (52.65,-17.31) -- (65.25,-23.99);
+    \draw (57.96,-21.15) node [below] {$8$};
+    \end{tikzpicture}
+\end{center}       
+\end{figure}
+
+Using the example above we find the next minimum spaning tree
+
+\begin{figure}[H]
+\begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (9.9,-7.6) circle (3);
+    \draw (9.9,-7.6) node {$A$};
+    \draw [black] (33.7,-7.6) circle (3);
+    \draw (33.7,-7.6) node {$B$};
+    \draw [black] (50,-15.9) circle (3);
+    \draw (50,-15.9) node {$C$};
+    \draw [black] (25,-21.5) circle (3);
+    \draw (25,-21.5) node {$D$};
+    \draw [black] (3.6,-21.5) circle (3);
+    \draw (3.6,-21.5) node {$E$};
+    \draw [black] (5.7,-41.3) circle (3);
+    \draw (5.7,-41.3) node {$F$};
+    \draw [black] (25,-41.3) circle (3);
+    \draw (25,-41.3) node {$G$};
+    \draw [black] (39.8,-30.6) circle (3);
+    \draw (39.8,-30.6) node {$H$};
+    \draw [black] (55.4,-39.1) circle (3);
+    \draw (55.4,-39.1) node {$I$};
+    \draw [black] (67.9,-25.4) circle (3);
+    \draw (67.9,-25.4) node {$J$};
+    \draw [black] (8.66,-10.33) -- (4.84,-18.77);
+    \draw (6.03,-13.54) node [left] {$1$};
+    \draw [black] (6.6,-21.5) -- (22,-21.5);
+    \draw (14.3,-22) node [below] {$2$};
+    \draw [black] (26.59,-18.96) -- (32.11,-10.14);
+    \draw (29.98,-15.84) node [right] {$2$};
+    \draw [black] (36.37,-8.96) -- (47.33,-14.54);
+    \draw (40.86,-12.25) node [below] {$4$};
+    \draw [black] (27.56,-23.07) -- (37.24,-29.03);
+    \draw (31.4,-26.55) node [below] {$2$};
+    \draw [black] (27.43,-39.54) -- (37.37,-32.36);
+    \draw (33.4,-36.45) node [below] {$1$};
+    \draw [black] (3.92,-24.48) -- (5.38,-38.32);
+    \draw (4,-31.5) node [left] {$1$};
+    \draw [black] (50.68,-18.82) -- (54.72,-36.18);
+    \draw (51.95,-27.91) node [left] {$1$};
+    \draw [black] (57.42,-36.88) -- (65.88,-27.62);
+    \draw (62.19,-33.71) node [right] {$0$};
+    \end{tikzpicture}
+\end{center}
+\end{figure}
+
+This MST has a total weight of 14. Note that MSTs on a graph are not always unique.\\
+
+\textbf{Algorithms:} Kruskal's, Prim's and Boruvka's algorithm 
+
