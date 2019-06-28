@@ -14,13 +14,15 @@
 \BOOKMARK [2][-]{subsection.2.4.1}{Problems}{section.2.4}% 14
 \BOOKMARK [1][-]{section.2.5}{Doubly linked lists}{chapter.2}% 15
 \BOOKMARK [1][-]{section.2.6}{Graphs}{chapter.2}% 16
-\BOOKMARK [2][-]{subsection.2.6.1}{Types of graphs}{section.2.6}% 17
-\BOOKMARK [2][-]{subsection.2.6.2}{Weighted graphs}{section.2.6}% 18
-\BOOKMARK [2][-]{subsection.2.6.3}{Directed acyclic graphs \(DAGs\)}{section.2.6}% 19
-\BOOKMARK [2][-]{subsection.2.6.4}{Bipartite graph}{section.2.6}% 20
-\BOOKMARK [2][-]{subsection.2.6.5}{Complete graphs}{section.2.6}% 21
-\BOOKMARK [2][-]{subsection.2.6.6}{\277How can we represent a graph?}{section.2.6}% 22
-\BOOKMARK [2][-]{subsection.2.6.7}{Common graph theory problems}{section.2.6}% 23
-\BOOKMARK [1][-]{section.2.7}{Trees}{chapter.2}% 24
-\BOOKMARK [2][-]{subsection.2.7.1}{Roted trees}{section.2.7}% 25
-\BOOKMARK [1][-]{section.2.8}{Tries}{chapter.2}% 26
+\BOOKMARK [2][-]{subsection.2.6.1}{Graph theory}{section.2.6}% 17
+\BOOKMARK [2][-]{subsection.2.6.2}{Types of graphs}{section.2.6}% 18
+\BOOKMARK [2][-]{subsection.2.6.3}{Weighted graphs}{section.2.6}% 19
+\BOOKMARK [2][-]{subsection.2.6.4}{Directed acyclic graphs \(DAGs\)}{section.2.6}% 20
+\BOOKMARK [2][-]{subsection.2.6.5}{Bipartite graph}{section.2.6}% 21
+\BOOKMARK [2][-]{subsection.2.6.6}{Complete graphs}{section.2.6}% 22
+\BOOKMARK [2][-]{subsection.2.6.7}{\277How can we represent a graph?}{section.2.6}% 23
+\BOOKMARK [2][-]{subsection.2.6.8}{Common graph theory problems}{section.2.6}% 24
+\BOOKMARK [2][-]{subsection.2.6.9}{Depth First Search \(DFS\)}{section.2.6}% 25
+\BOOKMARK [1][-]{section.2.7}{Trees}{chapter.2}% 26
+\BOOKMARK [2][-]{subsection.2.7.1}{Roted trees}{section.2.7}% 27
+\BOOKMARK [1][-]{section.2.8}{Tries}{chapter.2}% 28

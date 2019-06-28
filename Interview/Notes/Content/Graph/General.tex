@@ -1,6 +1,6 @@
 For me it is a ''new'' topic, I know a little bit about it but I dont know as much as I want so a decided to get a deeper knowledge about graphs.
 
-\paragraph{Graph theory}
+\subsection{Graph theory}
 Is the mathematical theory of the properties and applications of graphs (networks)\\
 
 To understand a little bit more this imagine that you have a set of accesories to wear. Things to put in your head, in ypur body and in your legs. So we need to solve the next question, How many different sets of clothing can I make by choosing an article from each category? Using mathematics we can solve this problem but a graph can help us to solve this visually.
@@ -1042,5 +1042,99 @@ Using the example above we find the next minimum spaning tree
 
 This MST has a total weight of 14. Note that MSTs on a graph are not always unique.\\
 
+MSTs are seen in many applications including: designing a least cost network, circuit design, transportation networks, etc...
+
 \textbf{Algorithms:} Kruskal's, Prim's and Boruvka's algorithm 
+
+\subsubsection{Network flow: max flow}
+
+Question: with an infinite input source how much ''flow'' can we push throught the network?
+
+\begin{figure}[H]
+\begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (3.2,-28) circle (3);
+    \draw [black] (3.2,-28) circle (2.4);
+    \draw [black] (75.4,-28) circle (3);
+    \draw [black] (75.4,-28) circle (2.4);
+    \draw [black] (18.5,-14.7) circle (3);
+    \draw [black] (18.5,-28) circle (3);
+    \draw [black] (18.5,-41.7) circle (3);
+    \draw [black] (36.8,-14.7) circle (3);
+    \draw [black] (36.8,-28) circle (3);
+    \draw [black] (36.8,-42.4) circle (3);
+    \draw [black] (54.5,-14.7) circle (3);
+    \draw [black] (54.5,-28) circle (3);
+    \draw [black] (54.5,-42.4) circle (3);
+    \draw [black] (5.46,-26.03) -- (16.24,-16.67);
+    \fill [black] (16.24,-16.67) -- (15.3,-16.82) -- (15.96,-17.57);
+    \draw (11.86,-21.84) node [below] {$1$};
+    \draw [black] (6.2,-28) -- (15.5,-28);
+    \fill [black] (15.5,-28) -- (14.7,-27.5) -- (14.7,-28.5);
+    \draw (10.85,-28.5) node [below] {$2$};
+    \draw [black] (5.43,-30) -- (16.27,-39.7);
+    \fill [black] (16.27,-39.7) -- (16,-38.79) -- (15.34,-39.54);
+    \draw (9.84,-35.34) node [below] {$1$};
+    \draw [black] (21.5,-14.7) -- (33.8,-14.7);
+    \fill [black] (33.8,-14.7) -- (33,-14.2) -- (33,-15.2);
+    \draw (27.65,-15.2) node [below] {$2$};
+    \draw [black] (21.5,-28) -- (33.8,-28);
+    \fill [black] (33.8,-28) -- (33,-27.5) -- (33,-28.5);
+    \draw (27.65,-28.5) node [below] {$\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }5$};
+    \draw [black] (20.93,-16.46) -- (34.37,-26.24);
+    \fill [black] (34.37,-26.24) -- (34.02,-25.36) -- (33.43,-26.17);
+    \draw (26.65,-21.85) node [below] {$4$};
+    \draw [black] (20.86,-29.86) -- (34.44,-40.54);
+    \fill [black] (34.44,-40.54) -- (34.12,-39.66) -- (33.5,-40.44);
+    \draw (26.64,-35.7) node [below] {$6$};
+    \draw [black] (20.18,-39.22) -- (35.12,-17.18);
+    \fill [black] (35.12,-17.18) -- (34.25,-17.57) -- (35.08,-18.13);
+    \draw (28.26,-29.54) node [right] {$4$};
+    \draw [black] (39.8,-14.7) -- (51.5,-14.7);
+    \fill [black] (51.5,-14.7) -- (50.7,-14.2) -- (50.7,-15.2);
+    \draw (45.65,-15.2) node [below] {$7$};
+    \draw [black] (39.8,-42.4) -- (51.5,-42.4);
+    \fill [black] (51.5,-42.4) -- (50.7,-41.9) -- (50.7,-42.9);
+    \draw (45.65,-42.9) node [below] {$3$};
+    \draw [black] (21.3,-40.63) -- (51.7,-29.07);
+    \fill [black] (51.7,-29.07) -- (50.77,-28.88) -- (51.13,-29.82);
+    \draw (37.44,-35.37) node [below] {$8$};
+    \draw [black] (36.8,-31) -- (36.8,-39.4);
+    \fill [black] (36.8,-39.4) -- (37.3,-38.6) -- (36.3,-38.6);
+    \draw (36.3,-35.2) node [left] {$8$};
+    \draw [black] (39.2,-26.2) -- (52.1,-16.5);
+    \fill [black] (52.1,-16.5) -- (51.16,-16.58) -- (51.76,-17.38);
+    \draw (47.4,-21.85) node [below] {$\mbox{ }\mbox{ }\mbox{ }3$};
+    \draw [black] (39.13,-29.89) -- (52.17,-40.51);
+    \fill [black] (52.17,-40.51) -- (51.87,-39.61) -- (51.24,-40.39);
+    \draw (44.64,-35.69) node [below] {$3$};
+    \draw [black] (51.505,-28.038) arc (-94.56009:-159.28322:16.25);
+    \fill [black] (51.5,-28.04) -- (50.75,-27.48) -- (50.67,-28.47);
+    \draw (42.03,-25.33) node [below] {$1$};
+    \draw [black] (57.03,-16.31) -- (72.87,-26.39);
+    \fill [black] (72.87,-26.39) -- (72.46,-25.54) -- (71.93,-26.38);
+    \draw (63.95,-21.85) node [below] {$1$};
+    \draw [black] (57.5,-28) -- (72.4,-28);
+    \fill [black] (72.4,-28) -- (71.6,-27.5) -- (71.6,-28.5);
+    \draw (64.95,-28.5) node [below] {$3$};
+    \draw [black] (56.97,-40.7) -- (72.93,-29.7);
+    \fill [black] (72.93,-29.7) -- (71.99,-29.74) -- (72.55,-30.57);
+    \draw (65.95,-35.7) node [below] {$4$};
+    \draw [black] (3.2,-17.3) -- (3.2,-25);
+    \draw (3.2,-16.8) node [above] {$Source$};
+    \fill [black] (3.2,-25) -- (3.7,-24.2) -- (2.7,-24.2);
+    \draw [black] (74.4,-16.7) -- (75.14,-25.01);
+    \draw (74.05,-16.02) node [above] {$Sink$};
+    \fill [black] (75.14,-25.01) -- (75.56,-24.17) -- (74.57,-24.26);
+    \end{tikzpicture}
+\end{center}        
+\end{figure}
+
+Suppose the edges are roads with cars, pipes with water or hallways with packed with people. Flow represnets the volume of water allowed to flow through the pipes, the number of cars the roads can sustain in traffic and the maximum amount of people that can navigate through the hallways.\\
+
+\textbf{Algorithms:} Ford-Fulkerson, Edmonds-Karp and Dinic's algorithm
+
+\subsection{Depth First Search (DFS)}
+\input{Content/Graph/DFS.tex}
 
