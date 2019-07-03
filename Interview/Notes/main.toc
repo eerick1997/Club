@@ -28,54 +28,57 @@
 \contentsline {section}{\numberline {2.1}Arrays}{9}{section.2.1}% 
 \contentsline {subsection}{\numberline {2.1.1}Some problems}{10}{subsection.2.1.1}% 
 \contentsline {subsubsection}{Problem 01}{10}{subsection.2.1.1}% 
-\contentsline {subsubsection}{Problem 02}{12}{lstnumber.-6.27}% 
+\contentsline {subsubsection}{Problem 02}{11}{lstnumber.-6.27}% 
 \contentsline {subsubsection}{Problem 03}{13}{lstnumber.-8.26}% 
 \contentsline {subsubsection}{Problem 04}{14}{lstnumber.-9.40}% 
 \contentsline {section}{\numberline {2.2}Stacks}{14}{section.2.2}% 
 \contentsline {subsection}{\numberline {2.2.1}Some problems}{16}{subsection.2.2.1}% 
 \contentsline {subsubsection}{Problem 01}{16}{subsection.2.2.1}% 
 \contentsline {subsubsection}{Problem 02}{17}{lstnumber.-12.34}% 
-\contentsline {subsubsection}{Problem 03}{18}{lstnumber.-13.42}% 
+\contentsline {subsubsection}{Problem 03}{17}{lstnumber.-13.42}% 
 \contentsline {section}{\numberline {2.3}Queues}{18}{section.2.3}% 
 \contentsline {subsection}{\numberline {2.3.1}Problems}{20}{subsection.2.3.1}% 
 \contentsline {subsubsection}{Problem 01}{20}{subsection.2.3.1}% 
 \contentsline {subsubsection}{Problem 02}{21}{lstnumber.-16.45}% 
 \contentsline {subsubsection}{Problem 03}{22}{lstnumber.-17.38}% 
 \contentsline {section}{\numberline {2.4}Singly linked lists}{23}{section.2.4}% 
-\contentsline {subsection}{\numberline {2.4.1}Problems}{26}{subsection.2.4.1}% 
-\contentsline {subsubsection}{Problem 01}{26}{subsection.2.4.1}% 
-\contentsline {subsubsection}{Problem 02}{27}{lstnumber.-20.29}% 
-\contentsline {subsubsection}{Problem 03}{27}{lstnumber.-20.29}% 
+\contentsline {subsection}{\numberline {2.4.1}Problems}{25}{subsection.2.4.1}% 
+\contentsline {subsubsection}{Problem 01}{25}{subsection.2.4.1}% 
+\contentsline {subsubsection}{Problem 02}{26}{lstnumber.-20.29}% 
+\contentsline {subsubsection}{Problem 03}{26}{lstnumber.-20.29}% 
 \contentsline {subsubsection}{Problem 04}{28}{lstnumber.-21.58}% 
 \contentsline {section}{\numberline {2.5}Doubly linked lists}{29}{section.2.5}% 
-\contentsline {section}{\numberline {2.6}Graphs}{32}{section.2.6}% 
+\contentsline {section}{\numberline {2.6}Graphs}{31}{section.2.6}% 
 \contentsline {subsection}{\numberline {2.6.1}Graph theory}{32}{subsection.2.6.1}% 
 \contentsline {subsection}{\numberline {2.6.2}Types of graphs}{32}{subsection.2.6.2}% 
-\contentsline {subsubsection}{Undirected graph}{33}{subsection.2.6.2}% 
-\contentsline {subsubsection}{Directed graph}{33}{figure.2.6}% 
-\contentsline {subsection}{\numberline {2.6.3}Weighted graphs}{34}{subsection.2.6.3}% 
-\contentsline {subsection}{\numberline {2.6.4}Directed acyclic graphs (DAGs)}{34}{subsection.2.6.4}% 
-\contentsline {subsection}{\numberline {2.6.5}Bipartite graph}{35}{subsection.2.6.5}% 
-\contentsline {subsection}{\numberline {2.6.6}Complete graphs}{37}{subsection.2.6.6}% 
-\contentsline {subsection}{\numberline {2.6.7}\IeC {\textquestiondown }How can we represent a graph?}{38}{subsection.2.6.7}% 
-\contentsline {subsubsection}{Adjacency Matrix}{38}{subsection.2.6.7}% 
-\contentsline {subsubsection}{Adjacency list}{40}{subsection.2.6.7}% 
-\contentsline {subsubsection}{Edge list}{41}{subsection.2.6.7}% 
-\contentsline {subsection}{\numberline {2.6.8}Common graph theory problems}{41}{subsection.2.6.8}% 
-\contentsline {subsubsection}{How can we solve graph theory problems?}{41}{subsection.2.6.8}% 
-\contentsline {subsubsection}{Shortest path problem}{41}{Item.53}% 
-\contentsline {subsubsection}{Connectivity}{42}{Item.53}% 
-\contentsline {subsubsection}{Negative cycles}{43}{Item.53}% 
-\contentsline {subsubsection}{Strongly connected components}{44}{Item.53}% 
-\contentsline {subsubsection}{Traveling salesman problem}{45}{Item.53}% 
-\contentsline {subsubsection}{Bridges}{46}{Item.53}% 
-\contentsline {subsubsection}{Articulation points}{47}{Item.53}% 
-\contentsline {subsubsection}{Minimum spaning tree (MST)}{48}{Item.53}% 
-\contentsline {subsubsection}{Network flow: max flow}{50}{Item.53}% 
-\contentsline {subsection}{\numberline {2.6.9}Depth First Search (DFS)}{50}{subsection.2.6.9}% 
-\contentsline {subsubsection}{Overview}{50}{subsection.2.6.9}% 
-\contentsline {subsubsection}{Basic DFS}{51}{subsection.2.6.9}% 
-\contentsline {subsubsection}{Finding components}{60}{lstnumber.-24.92}% 
-\contentsline {section}{\numberline {2.7}Trees}{62}{section.2.7}% 
-\contentsline {subsection}{\numberline {2.7.1}Roted trees}{64}{subsection.2.7.1}% 
-\contentsline {section}{\numberline {2.8}Tries}{66}{section.2.8}% 
+\contentsline {subsubsection}{Undirected graph}{32}{subsection.2.6.2}% 
+\contentsline {subsubsection}{Directed graph}{32}{figure.2.6}% 
+\contentsline {subsection}{\numberline {2.6.3}Weighted graphs}{33}{subsection.2.6.3}% 
+\contentsline {subsection}{\numberline {2.6.4}Directed acyclic graphs (DAGs)}{33}{subsection.2.6.4}% 
+\contentsline {subsection}{\numberline {2.6.5}Bipartite graph}{34}{subsection.2.6.5}% 
+\contentsline {subsection}{\numberline {2.6.6}Complete graphs}{36}{subsection.2.6.6}% 
+\contentsline {subsection}{\numberline {2.6.7}\IeC {\textquestiondown }How can we represent a graph?}{37}{subsection.2.6.7}% 
+\contentsline {subsubsection}{Adjacency Matrix}{37}{subsection.2.6.7}% 
+\contentsline {subsubsection}{Adjacency list}{39}{subsection.2.6.7}% 
+\contentsline {subsubsection}{Edge list}{40}{subsection.2.6.7}% 
+\contentsline {subsection}{\numberline {2.6.8}Common graph theory problems}{40}{subsection.2.6.8}% 
+\contentsline {subsubsection}{How can we solve graph theory problems?}{40}{subsection.2.6.8}% 
+\contentsline {subsubsection}{Shortest path problem}{40}{Item.53}% 
+\contentsline {subsubsection}{Connectivity}{41}{Item.53}% 
+\contentsline {subsubsection}{Negative cycles}{42}{Item.53}% 
+\contentsline {subsubsection}{Strongly connected components}{43}{Item.53}% 
+\contentsline {subsubsection}{Traveling salesman problem}{44}{Item.53}% 
+\contentsline {subsubsection}{Bridges}{45}{Item.53}% 
+\contentsline {subsubsection}{Articulation points}{46}{Item.53}% 
+\contentsline {subsubsection}{Minimum spaning tree (MST)}{47}{Item.53}% 
+\contentsline {subsubsection}{Network flow: max flow}{49}{Item.53}% 
+\contentsline {subsection}{\numberline {2.6.9}Depth First Search (DFS)}{49}{subsection.2.6.9}% 
+\contentsline {subsubsection}{Overview}{49}{subsection.2.6.9}% 
+\contentsline {subsubsection}{Basic DFS}{50}{subsection.2.6.9}% 
+\contentsline {subsubsection}{Finding components}{59}{lstnumber.-24.92}% 
+\contentsline {subsection}{\numberline {2.6.10}Breadth First Search (BFS)}{61}{subsection.2.6.10}% 
+\contentsline {subsubsection}{Overview}{61}{subsection.2.6.10}% 
+\contentsline {subsubsection}{Using a queue}{72}{subsection.2.6.10}% 
+\contentsline {section}{\numberline {2.7}Trees}{72}{section.2.7}% 
+\contentsline {subsection}{\numberline {2.7.1}Roted trees}{74}{subsection.2.7.1}% 
+\contentsline {section}{\numberline {2.8}Tries}{76}{section.2.8}% 

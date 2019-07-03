@@ -346,11 +346,11 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/fouriernc/fncmi.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/fourier/fourier-bb.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/fourier/fourier-bb.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/fourier/fourier-bb.tfm
+INPUT /usr/share/texmf-dist/fonts/vf/adobe/ncntrsbk/pncb8t.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/adobe/ncntrsbk/pncb8r.tfm
 OUTPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/main.toc
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Theory.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Theory.tex
-INPUT /usr/share/texmf-dist/fonts/vf/adobe/ncntrsbk/pncb8t.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/adobe/ncntrsbk/pncb8r.tfm
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/ot1pzc.fd
 INPUT /usr/share/texmf-dist/tex/latex/psnfss/ot1pzc.fd
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi7t.tfm
@@ -462,6 +462,8 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/fourier/fourier-bb.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/fourier/fourier-bb.tfm
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Graph/DFS.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Graph/DFS.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Graph/BFS.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Graph/BFS.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Trees/General.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Trees/General.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/main.aux

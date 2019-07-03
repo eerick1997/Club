@@ -23,6 +23,7 @@
 \BOOKMARK [2][-]{subsection.2.6.7}{\277How can we represent a graph?}{section.2.6}% 23
 \BOOKMARK [2][-]{subsection.2.6.8}{Common graph theory problems}{section.2.6}% 24
 \BOOKMARK [2][-]{subsection.2.6.9}{Depth First Search \(DFS\)}{section.2.6}% 25
-\BOOKMARK [1][-]{section.2.7}{Trees}{chapter.2}% 26
-\BOOKMARK [2][-]{subsection.2.7.1}{Roted trees}{section.2.7}% 27
-\BOOKMARK [1][-]{section.2.8}{Tries}{chapter.2}% 28
+\BOOKMARK [2][-]{subsection.2.6.10}{Breadth First Search \(BFS\)}{section.2.6}% 26
+\BOOKMARK [1][-]{section.2.7}{Trees}{chapter.2}% 27
+\BOOKMARK [2][-]{subsection.2.7.1}{Roted trees}{section.2.7}% 28
+\BOOKMARK [1][-]{section.2.8}{Tries}{chapter.2}% 29
