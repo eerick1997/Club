@@ -30,6 +30,9 @@ struct Graph{
     }
 
     void BFS( lli from, lli to ){
+        vector< lli > predecesor( size );
+        vector< lli > distance( size );
+        
         queue< lli > Queue;
         Queue.push( from );
 
@@ -38,6 +41,7 @@ struct Graph{
             Queue.pop();
             nodes[ from ].visited = true;
             nodes[ from ].value = 1;
+
             for( int i = 0; i < nodes[ from ].adjList.size(); i++ ){
                 lli v = nodes[ from ].adjList[ i ];
                 if( !nodes[ v ].visited ){
