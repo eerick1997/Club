@@ -1,3 +1,4 @@
+//To prove this code just send it in: https://leetcode.com/problems/unique-paths-iii/
 class Solution {
 
 private:
@@ -11,8 +12,10 @@ public:
         //Find the free squares and the position of the square where we go to start
         for( int i = 0; i < grid.size(); i++ ){
             for(int j = 0; j < grid[0].size(); j++){
+                //We find a free square
                 if( grid[i][j] == 0 )
                     freeSquare++;
+                //We find the start square
                 if( grid[i][j] == 1 )
                     sx = i, sy = j;
             }
@@ -29,10 +32,10 @@ public:
         //Out of range, indexes doesn't exist
         if( x >= grid.size() || y >= grid[0].size() )
             return;
-
+        //We are in a square where we cannot walk
         if( grid[x][y] == -1 )
             return;
-
+        //We are in the destination square
         if( grid[x][y] == 2 ){
             if( freeSquares == 0 )
                 ans++;
