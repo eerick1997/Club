@@ -79,14 +79,22 @@ int main(){
 
     Queue *queue = new Queue();
     queue -> Enqueue(0);
+    cout << "\nTop: " << queue -> Top() << endl;
     queue -> Enqueue(1);
+    cout << "\nTop: " << queue -> Top() << endl;
     queue -> Enqueue(2);
+    cout << "\nTop: " << queue -> Top() << endl;
     queue -> Enqueue(3);
+    cout << "\nTop: " << queue -> Top() << endl;
     queue -> print();
     queue -> Dequeue();
+    cout << "\nTop: " << queue -> Top() << endl;
     queue -> Dequeue();
+    cout << "\nTop: " << queue -> Top() << endl;
     queue -> Dequeue();
+    cout << "\nTop: " << queue -> Top() << endl;
     queue -> Dequeue();
+    cout << "\nTop: " << queue -> Top() << endl;
     cout << "\nIsEmpty? " << queue -> IsEmpty() << endl;
     cout << "\nSize " << queue -> GetSize() << endl;
     queue -> Enqueue(3);

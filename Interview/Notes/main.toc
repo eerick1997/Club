@@ -79,6 +79,11 @@
 \contentsline {subsection}{\numberline {2.6.10}Breadth First Search (BFS)}{61}{subsection.2.6.10}% 
 \contentsline {subsubsection}{Overview}{61}{subsection.2.6.10}% 
 \contentsline {subsubsection}{Using a queue}{72}{subsection.2.6.10}% 
+\contentsline {subsubsection}{Shortest path in an unweighted graph}{72}{lstnumber.-28.17}% 
 \contentsline {section}{\numberline {2.7}Trees}{72}{section.2.7}% 
 \contentsline {subsection}{\numberline {2.7.1}Roted trees}{74}{subsection.2.7.1}% 
 \contentsline {section}{\numberline {2.8}Tries}{76}{section.2.8}% 
+\contentsline {chapter}{\numberline {3}Algorithms}{77}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Dynamic Programming (DP)}{77}{section.3.1}% 
+\contentsline {paragraph}{What is the main idea of use Dynamic programming?}{77}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Examples}{77}{subsection.3.1.1}% 

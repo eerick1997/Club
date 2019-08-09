@@ -254,6 +254,10 @@ INPUT /usr/share/texmf-dist/tex/generic/unicode-data/UnicodeData.txt
 INPUT /dev/null
 INPUT /usr/share/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 INPUT /usr/share/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+INPUT /usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT /usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 INPUT /usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
@@ -466,6 +470,8 @@ INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Graph/BFS.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Graph/BFS.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Trees/General.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Trees/General.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/DynamicProgramming/General.tex
+INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/Content/DynamicProgramming/General.tex
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/main.aux
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/main.out
 INPUT /home/erick/Documentos/GitHub/Club/Interview/Notes/main.out

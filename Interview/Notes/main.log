@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.3)  3 JUL 2019 01:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.18)  9 AUG 2019 08:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1113,40 +1113,58 @@ Package: xparse 2019-03-05 L3 Experimental document command parser
 \g__xparse_grabber_int=\count314
 \l__xparse_m_args_int=\count315
 \l__xparse_v_nesting_int=\count316
+) (/usr/share/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2018/01/08 v1.21 mathematical typesetting tools
+ (/usr/share/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count317
+\l_MT_multwidth_dim=\dimen284
+\origjot=\skip80
+\l_MT_shortvdotswithinadjustabove_dim=\dimen285
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen286
+\l_MT_above_intertext_sep=\dimen287
+\l_MT_below_intertext_sep=\dimen288
+\l_MT_above_shortintertext_sep=\dimen289
+\l_MT_below_shortintertext_sep=\dimen290
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2019/02/02 v3.1.1 (3.1.1)
 ) (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \ttl@box=\box73
-\beforetitleunit=\skip80
-\aftertitleunit=\skip81
-\ttl@plus=\dimen284
-\ttl@minus=\dimen285
+\beforetitleunit=\skip81
+\aftertitleunit=\skip82
+\ttl@plus=\dimen291
+\ttl@minus=\dimen292
 \ttl@toksa=\toks43
-\titlewidth=\dimen286
-\titlewidthlast=\dimen287
-\titlewidthfirst=\dimen288
+\titlewidth=\dimen293
+\titlewidthlast=\dimen294
+\titlewidthfirst=\dimen295
 ) (/usr/share/texmf-dist/tex/latex/fncychap/fncychap.sty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
-\RW=\skip82
-\mylen=\skip83
-\myhi=\skip84
-\px=\skip85
-\py=\skip86
-\pyy=\skip87
-\pxx=\skip88
+\RW=\skip83
+\mylen=\skip84
+\myhi=\skip85
+\px=\skip86
+\py=\skip87
+\pyy=\skip88
+\pxx=\skip89
 )
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 51.
-
 
 Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 52.
 
 
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 53.
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 53.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 54.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 55.
 
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/02/27 1.8b listings language file
@@ -1201,16 +1219,16 @@ LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
 (Font)              scaled to size 9.29993pt on input line 4.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count317
-\scratchdimen=\dimen289
+\scratchcounter=\count318
+\scratchdimen=\dimen296
 \scratchbox=\box74
-\nofMPsegments=\count318
-\nofMParguments=\count319
+\nofMPsegments=\count319
+\nofMParguments=\count320
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count320
-\MPscratchDim=\dimen290
-\MPnumerator=\count321
-\makeMPintoPDFobject=\count322
+\MPscratchCnt=\count321
+\MPscratchDim=\dimen297
+\MPnumerator=\count322
+\makeMPintoPDFobject=\count323
 \everyMPtoPDFconversion=\toks45
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1224,7 +1242,7 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@lstlisting=\count323
+\c@lstlisting=\count324
 \AtBeginShipoutBox=\box75
 Package hyperref Info: Link coloring OFF on input line 4.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1232,7 +1250,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count324
+\c@section@level=\count325
 )
 LaTeX Info: Redefining \ref on input line 4.
 LaTeX Info: Redefining \pageref on input line 4.
@@ -1291,7 +1309,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.84 ...}{\numberline {2.8}Tries}{76}{section.2.8}
+l.85 ...}{\numberline {2.8}Tries}{76}{section.2.8}
                                                   % [1
 
 ])
@@ -1348,31 +1366,31 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
  [9
 
 ] (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem01.tex [10]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem02.tex [11] [12]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Arrays/Problems/Problem03.tex) [13]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/General.tex
-<Images/DataStructures/Stack/Stack.png, id=464, 202.7575pt x 431.6125pt>
+<Images/DataStructures/Stack/Stack.png, id=479, 202.7575pt x 431.6125pt>
 File: Images/DataStructures/Stack/Stack.png Graphic file (type png)
 <use Images/DataStructures/Stack/Stack.png>
 Package pdftex.def Info: Images/DataStructures/Stack/Stack.png  used on input line 8.
 (pdftex.def)             Requested size: 86.25pt x 183.6074pt.
  [14 </home/erick/Documentos/GitHub/Club/Interview/Notes/Images/DataStructures/Stack/Stack.png>] [15] (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/Problems/Problem01.tex [16]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/Problems/Problem02.tex) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Stack/Problems/Problem03.tex [17])) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Queue/General.tex
-<Images/DataStructures/Queue/Queue.png, id=644, 533.995pt x 121.45375pt>
+<Images/DataStructures/Queue/Queue.png, id=659, 533.995pt x 121.45375pt>
 File: Images/DataStructures/Queue/Queue.png Graphic file (type png)
 <use Images/DataStructures/Queue/Queue.png>
 Package pdftex.def Info: Images/DataStructures/Queue/Queue.png  used on input line 5.
 (pdftex.def)             Requested size: 345.0pt x 78.4714pt.
  [18 </home/erick/Documentos/GitHub/Club/Interview/Notes/Images/DataStructures/Queue/Queue.png>] [19] (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Queue/Problems/Problem01.tex [20]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Queue/Problems/Problem02.tex [21]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/Queue/Problems/Problem03.tex
-<Images/DataStructures/Queue/queue_example.png, id=829, 703.62875pt x 242.9075pt>
+<Images/DataStructures/Queue/queue_example.png, id=844, 703.62875pt x 242.9075pt>
 File: Images/DataStructures/Queue/queue_example.png Graphic file (type png)
 <use Images/DataStructures/Queue/queue_example.png>
 Package pdftex.def Info: Images/DataStructures/Queue/queue_example.png  used on input line 5.
 (pdftex.def)             Requested size: 345.0pt x 119.09984pt.
  [22 </home/erick/Documentos/GitHub/Club/Interview/Notes/Images/DataStructures/Queue/queue_example.png>])) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/LinkedList/Singly/General.tex
-<Images/DataStructures/LinkedLists/SinglyLinkedList.png, id=858, 655.44875pt x 141.52875pt>
+<Images/DataStructures/LinkedLists/SinglyLinkedList.png, id=873, 655.44875pt x 141.52875pt>
 File: Images/DataStructures/LinkedLists/SinglyLinkedList.png Graphic file (type png)
 <use Images/DataStructures/LinkedLists/SinglyLinkedList.png>
 Package pdftex.def Info: Images/DataStructures/LinkedLists/SinglyLinkedList.png  used on input line 5.
 (pdftex.def)             Requested size: 345.0pt x 74.49374pt.
  [23 </home/erick/Documentos/GitHub/Club/Interview/Notes/Images/DataStructures/LinkedLists/SinglyLinkedList.png>] [24] (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/LinkedList/Singly/Problems/Problem01.tex [25]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/LinkedList/Singly/Problems/Problem02.tex) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/LinkedList/Singly/Problems/Problem03.tex [26]) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/LinkedList/Singly/Problems/Problem04.tex [27] [28])) (/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/LinkedList/Doubly/General.tex
-<Images/DataStructures/LinkedLists/DoublyLinkedList.png, id=1154, 824.07875pt x 161.60374pt>
+<Images/DataStructures/LinkedLists/DoublyLinkedList.png, id=1169, 824.07875pt x 161.60374pt>
 File: Images/DataStructures/LinkedLists/DoublyLinkedList.png Graphic file (type png)
 <use Images/DataStructures/LinkedLists/DoublyLinkedList.png>
 Package pdftex.def Info: Images/DataStructures/LinkedLists/DoublyLinkedList.png  used on input line 5.
@@ -1593,29 +1611,48 @@ Overfull \hbox (13.89908pt too wide) in paragraph at lines 158--159
  [] 
  []
 
-) [75]) [76]
+) [75] [76]
+Chapter 3.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 25--25
+[][][][][][][][][][]  
+ []
+
+(/home/erick/Documentos/GitHub/Club/Interview/Notes/Content/DynamicProgramming/General.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+
+ []
+
+[77
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
+
+ []
+
+[78] [79])) [80]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 10.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 10.
  (/home/erick/Documentos/GitHub/Club/Interview/Notes/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 10.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 10.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BEEBD38D77F0713D67DA4B04711B9410;1945.
+(rerunfilecheck)             Checksum: 11F7A0376776A02B5316D27853D1946F;2126.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 10.
  ) 
 Here is how much of TeX's memory you used:
- 33259 strings out of 492623
- 603937 string characters out of 6135670
- 927578 words of memory out of 5000000
- 35330 multiletter control sequences out of 15000+600000
+ 33899 strings out of 492623
+ 615751 string characters out of 6135669
+ 939014 words of memory out of 5000000
+ 35905 multiletter control sequences out of 15000+600000
  581180 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,19n,68p,1154b,1930s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb></usr/share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on /home/erick/Documentos/GitHub/Club/Interview/Notes/main.pdf (77 pages, 441611 bytes).
+Output written on /home/erick/Documentos/GitHub/Club/Interview/Notes/main.pdf (81 pages, 455696 bytes).
 PDF statistics:
- 1954 PDF objects out of 2073 (max. 8388607)
- 1835 compressed objects within 19 object streams
- 1251 named destinations out of 1440 (max. 500000)
- 270 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2048 PDF objects out of 2073 (max. 8388607)
+ 1924 compressed objects within 20 object streams
+ 1305 named destinations out of 1440 (max. 500000)
+ 294 words of extra memory for PDF output out of 10000 (max. 10000000)
 
