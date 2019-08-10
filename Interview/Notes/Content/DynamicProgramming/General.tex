@@ -22,8 +22,8 @@ If we know this we can notice that we can get a formula to simplify this:
 \[
     factorial( n ) = 
     \begin{cases*}
-        1 & if $0 \leq n \leq 1$ \\
-        n * factorial(n - 1) & if $n \geq 2$
+        n * factorial(n - 1) & if $n > 1$ \\
+        1 & otherwise
     \end{cases*}
 \]
 
@@ -35,7 +35,9 @@ Now we can solve this problem using a recursive program, it is very simple becau
     typedef long long int lli;
     
     lli factorial( int n ){
-        return n * factorial(n);
+        if( n > 1 )
+            return n * factorial(n);
+        return 1;
     }
 
     int main(){
@@ -127,15 +129,13 @@ As we can see we the small problem contains information of the base case has inf
     vector< lli > factorial_number( 1000 + 1, -1 )
     lli factorial( int n ){
 
-        if( n == 0 || n == 1 ){
-            factorial_number[ n ] = 1;
-            return factorial_number[ n ]; 
-        }
-        if( factorial_number[ n ] != -1 )
+        if( factorial_number[ n ] != -1)
             return factorial_number[ n ];
-        
-        factorial_number[ n ] = n * factorial( n - 1 );
-        return factorial_number[ n ];
+
+        if( n > 1 )
+            return ( factorial_number[ n ] = (n * factorial( n - 1 ) );
+
+        return factorial_number[ n ] = 1;
     }
 
     int main(){
@@ -149,4 +149,35 @@ As we can see we the small problem contains information of the base case has inf
     }
 \end{lstlisting}
 
-As you can see we have a little bit of code but we make more efficient get a factorial number, from $O(n!)$ complexity to $O(1)$ in the case of we already calculated the number, but we are using more memory in this case $O(n)$ in other words we are using a container which size is the biggest factorial that we already calculated.
+As you can see we have a little bit of code but we make more efficient get a factorial number, from $O(n!)$ complexity to $O(1)$ in the case of we already calculated the number, but we are using more memory in this case $O(n)$ in other words we are using a container which size is the biggest factorial that we already calculated.\\\\
+
+Other example is calculate Fibonacci numbers, but first of all we need to know what is a factorial number. A factorial number is defined using the next function.
+
+\[
+    fibonacci(n) = 
+    \begin{cases*}
+        0 & if $n \leq 0$ \\    
+        n * ( n - 1 ) + ( n - 2 ) & otherwise 
+    \end{cases*}    
+\]
+
+As the las example we first of all can sole this problem using a recursive algorithm, we just need to program the previous definition of a fibonacci number.
+
+\begin{lstlisting}
+    #include<bits/stdc++.h>
+
+    using namespace std;
+    typedef long long int lli;
+
+    lli fibonacci( int n ){
+        if( n <= 0 )
+            return 0;
+        return ( n + fibonacci( n - 1 ) + fibonacci( n - 2 ) );
+    }
+
+    int main(){
+        int n;
+        return 0;
+    }
+\end{lstlisting}
+

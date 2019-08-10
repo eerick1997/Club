@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.18)  9 AUG 2019 08:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.18)  9 AUG 2019 20:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1626,11 +1626,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--2
 [77
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
 
  []
 
-[78] [79])) [80]
+[78] [79]
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+)) [80]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 10.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 10.
  (/home/erick/Documentos/GitHub/Club/Interview/Notes/main.aux)
@@ -1641,18 +1651,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 10.
  ) 
 Here is how much of TeX's memory you used:
- 33899 strings out of 492623
- 615751 string characters out of 6135669
+ 33917 strings out of 492623
+ 616026 string characters out of 6135669
  939014 words of memory out of 5000000
- 35905 multiletter control sequences out of 15000+600000
+ 35907 multiletter control sequences out of 15000+600000
  581180 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,19n,68p,1154b,1930s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb></usr/share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on /home/erick/Documentos/GitHub/Club/Interview/Notes/main.pdf (81 pages, 455696 bytes).
+Output written on /home/erick/Documentos/GitHub/Club/Interview/Notes/main.pdf (81 pages, 457121 bytes).
 PDF statistics:
- 2048 PDF objects out of 2073 (max. 8388607)
- 1924 compressed objects within 20 object streams
- 1305 named destinations out of 1440 (max. 500000)
+ 2067 PDF objects out of 2073 (max. 8388607)
+ 1943 compressed objects within 20 object streams
+ 1321 named destinations out of 1440 (max. 500000)
  294 words of extra memory for PDF output out of 10000 (max. 10000000)
 
