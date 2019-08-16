@@ -10,7 +10,7 @@ int main(){
     ios::sync_with_stdio( 0 );
     cout.tie( 0 );
     cin.tie( 0 );
-    string ans = "YES";
+    string ans;
     int t, n, m, k;
     cin >> t;
     while( t-- ){
@@ -25,15 +25,11 @@ int main(){
             int next_column = columns[ i + 1 ];
             int difference = abs( current_column - next_column );
 
-            //We get the same size of both columns
-            if( current_column > next_column ){
-                m += difference;
-            } else {
-                if( difference <= k ){
-                    continue;
-                } else if( m >= ( difference - k ) ){
-                    m -= (difference - k);
-                } else {
+            m += current_column;
+            if( next_column - k >= 0 ){
+                if( m - ( next_column - k ) >= 0 )
+                    m -= next_column - k;
+                else {
                     ans = "NO";
                     break;
                 }
