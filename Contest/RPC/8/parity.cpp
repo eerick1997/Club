@@ -6,18 +6,23 @@ unordered_map< char, bool > bucket;
 
 int main(){
     string s;
-    char c;
-    while( (c = getchar()) != '\n' ){
-        bucket[ c - 'a'] = !bucket[ c - 'a' ];
-    }
+    cin >> s;
+    for( char c : s )
+        bucket[ c - 'a' ] = ! bucket[ c - 'a' ];
 
     int ans = 0;
-    bool a = all_of( bucket.begin(), bucket.end(), []( auto i ){ return i.second; } );
-    bool b = all_of( bucket.begin(), bucket.end(), []( auto i ){ return !i.second; } );
+    bool first = true;
+    bool second = true;
+    //All are true?
+    for( auto e : bucket )
+        first &= e.second;
+    for( auto e : bucket )
+        second &= !e.second;
+
     
-    if( a )
+    if( first )
         cout << 1 << endl;
-    else if( b )
+    else if( second )
         cout << 0 << endl;
     else 
         cout << 2 << endl;
