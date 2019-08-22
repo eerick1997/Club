@@ -4,8 +4,9 @@ using namespace std;
 
 set< int > broken;
 int main(){
-    int n, v, channel;
-    string s1, s2;
+    int n, v, channel, ans = 0, Min = INT_MAX;
+    bool flag;
+    string s;
     cin >> n;
     while( n-- ){
         cin >> v;
@@ -14,16 +15,18 @@ int main(){
 
     cin >> channel;
 
-    int offset = 0;
-    while( true ){
-        s1 = to_string( channel + offset );
-        s2 = to_string( channel - offset );
-        cout << "s1 " << s1 << endl;
-        cout << "s2 " << s2 << endl;
-        if( 
-            all_of( s1.begin(), s1.end(), []( char c ){ return (broken.count( c -'0' ) == 0); }  ) or 
-            all_of( s2.begin(), s2.end(), []( char c ){ return (broken.count( c -'0' ) == 0); }  )) break;
-        offset++;
+    for( int i = 0; i <= 999; i++ ){
+        flag = true;
+        s = to_string( i );
+
+        for( char c : s ){ 
+            if( broken.count( c - '0' ) > 0)
+                flag = false;
+        }
+
+        if( abs( i - channel ) <= Min && flag )
+                Min = abs(i - channel), ans = i;
+
     }
-    cout << offset << endl;
+    cout << Min << endl;
 }
