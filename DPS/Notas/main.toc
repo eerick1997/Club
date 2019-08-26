@@ -2,3 +2,4 @@
 \contentsline {chapter}{\numberline {1}Programaci\IeC {\'o}n din\IeC {\'a}mica}{2}{chapter.1}% 
 \contentsline {section}{\numberline {1.1}Fibonacci}{2}{section.1.1}% 
 \contentsline {section}{\numberline {1.2}Coeficiente binomial}{4}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Problma}{4}{section.1.3}% 

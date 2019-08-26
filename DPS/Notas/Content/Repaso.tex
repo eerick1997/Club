@@ -131,6 +131,9 @@ Si programamos esta función tenemos lo siguiente:
 Si aplicamos DP
 \begin{lstlisting}
     memoria[ 1000 ][ 1000 ];
+    .
+    .
+    .
     int coef_bin( int n, int k ){
         if( n == k || k == 0 )
             return 1;
@@ -140,3 +143,34 @@ Si aplicamos DP
     }
 \end{lstlisting}
 En complejidad tenemos $O(n * k)$ y sin la función de memorización tenemos $O(2^{n})$
+
+\section{Problma}
+\textbf{Dado un grid de $n x m$, cada casilla tiene un número. Obtener un camino de la fila 1 a la fila n con suma máxima, ejemplo: }
+
+\begin{longtable}[c]{|l|l|l|}
+    \hline
+    \rowcolor[HTML]{FFFFFF} 
+    3                         & {\color[HTML]{333333} 5}                         & \cellcolor[HTML]{C0C0C0}{\color[HTML]{333333} 10} \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    \rowcolor[HTML]{FFFFFF} 
+    6                         & \cellcolor[HTML]{C0C0C0}{\color[HTML]{333333} 4} & {\color[HTML]{333333} 3}                          \\ \hline
+    \cellcolor[HTML]{C0C0C0}2 & 1                                                & 0                                                 \\ \hline
+\end{longtable}
+
+Como restricciones tenemos que $n, m \leq 10^{3}$ y además $A_{i,j} \leq 10^{6}$ Además solo nos podemos mover de la siguiente manera 
+
+\begin{longtable}[c]{|l|l|l|}
+    \hline
+    \rowcolor[HTML]{FFFFFF} 
+     & \cellcolor[HTML]{656565}{\color[HTML]{333333} } & {\color[HTML]{333333} } \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    \rowcolor[HTML]{C0C0C0} 
+     & {\color[HTML]{333333} }                         & {\color[HTML]{333333} } \\ \hline
+\end{longtable}
+
