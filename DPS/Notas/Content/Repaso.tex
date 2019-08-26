@@ -144,7 +144,7 @@ Si aplicamos DP
 \end{lstlisting}
 En complejidad tenemos $O(n * k)$ y sin la función de memorización tenemos $O(2^{n})$
 
-\section{Problma}
+\section{Problema}
 \textbf{Dado un grid de $n x m$, cada casilla tiene un número. Obtener un camino de la fila 1 a la fila n con suma máxima, ejemplo: }
 
 \begin{longtable}[c]{|l|l|l|}
@@ -174,3 +174,42 @@ Como restricciones tenemos que $n, m \leq 10^{3}$ y además $A_{i,j} \leq 10^{6}
      & {\color[HTML]{333333} }                         & {\color[HTML]{333333} } \\ \hline
 \end{longtable}
 
+\subsection{Solución}
+\begin{lstlisting}
+    int max_sum( int f, int c ){
+        //Primero comprobamos si es un caso válido
+        if( c < 0 || c >= m )
+            return MIN_INT //MIN_INT es como un menos infinito
+        //Caso base
+        if( f == n )
+            return grid[ f ][ c ];
+        int A = max_sum( f + 1, c - 1);
+        int B = max_sum( f + 1, c );
+        int C = max_sum( f + 1, c + 1 );
+        //No exite una función max para 3 elementos, en dado caso podemos usar vector es decir ponemos max({A, B, C})
+        return max( A, max(B, C) ) + grid[ f ][ c ];
+    }
+\end{lstlisting}
+
+Ahora bien ¿Cómo reducimos la complejidad de el código anterior? Debemos aplicar programación dinámica, primeramente ¿Cuál es el tamaño máximo de nuestra función de memoria? en nuestro caso es 1005 * 1005
+
+\begin{lstlisting}
+    int memoria[ 1005 ][ 1005 ];
+    int max_sum( int f, int c ){
+        //Primero comprobamos si es un caso válido (que no esté fuera de rango)
+        if( c < 0 || c >= m )
+            return MIN_INT //MIN_INT es como un menos infinito
+        //Caso base
+        if( f == n )
+            return grid[ f ][ c ];
+
+        if( memoria[ f ][ c ] != MIN_INT )
+            return memoria[ f ][ c ]
+
+        int A = max_sum( f + 1, c - 1);
+        int B = max_sum( f + 1, c );
+        int C = max_sum( f + 1, c + 1 );
+        //No exite una función max para 3 elementos, en dado caso podemos usar vector es decir ponemos max({A, B, C})
+        return memoria[ f ][ c ] = max( A, max(B, C) ) + grid[ f ][ c ];
+    }
+\end{lstlisting}
