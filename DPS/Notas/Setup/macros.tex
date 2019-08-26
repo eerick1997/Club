@@ -1,0 +1,14 @@
+%%%%%%%%%%% MATRIX MACROS %%%%%%%%%%%%%%
+\newcommand\topstrut[1][1.2ex]{\setlength\bigstrutjot{#1}{\bigstrut[t]}}
+\newcommand\botstrut[1][0.9ex]{\setlength\bigstrutjot{#1}{\bigstrut[b]}}
+
+\DeclareDocumentEnvironment{bheadmatrix}{O{}O{*{10}{c}}}{%
+\begin{blockarray}{#2}
+#1 \\[-0.8ex]
+\begin{block}{[#2]}
+\topstrut}%
+{%
+\botstrut\\
+\end{block}
+\end{blockarray}
+}%
