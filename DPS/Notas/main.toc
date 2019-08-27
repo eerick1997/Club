@@ -7,3 +7,5 @@
 \contentsline {section}{\numberline {1.4}Problema}{6}{section.1.4}% 
 \contentsline {chapter}{\numberline {2}Problemas cl\IeC {\'a}sicos de DP}{7}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Mochilas}{7}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Mochila cl\IeC {\'a}sica}{9}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Problema}{10}{section.2.3}% 

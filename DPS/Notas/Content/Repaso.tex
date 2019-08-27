@@ -231,7 +231,17 @@ Del ejercicio anterior que sucede si podemos añadir ¿números negativos? Podem
 \end{itemize}
 Ejemplo:\\
 N = 3, M = 8, y tenemos los productos A = {3, 4, 6} nuestro solución es comprar {3, 4} el precio es 7 y nos llevamos 4 productos.\\\\
-Para poder solucionar este problema debemos de calcular el caso de probar y no probar el i-ésimo elemento. 
+Para poder solucionar este problema debemos de calcular el caso de probar y no probar el i-ésimo elemento. Es decir generamos todos los posibles subconjuntos del arreglo:
+\begin{itemize}
+    \item ()
+    \item (3)
+    \item (3, 4)
+    \item (3, 6)
+    \item (4)
+    \item (4, 6)
+    \item (6)
+    \item (3, 4, 6)
+\end{itemize}
 \begin{lstlisting}
     int max_sum( int indice, int pesos_restantes ){
         //Validación, n es el número de elementos del arreglo A
@@ -279,3 +289,282 @@ Esta solución es la más bruta si queremos aplicar programación dinámica ¿Cu
 \end{lstlisting}
 
 Con esta solución tenemos una complejidad de $O(n^{2})$ mientras que la solución bruta tiene una complejidad de $O(2^{n})$
+
+\section{Mochila clásica}
+\textbf{Queremos meter N piedras a una mochila cuya capacidad es de M y cada piedra tiene un valor V, queremos meter la mayor cantidad de piedras respetando que el peso límite soportado por la mochila no se exceda y se maximice el valor de las piedras dentro de la mochila\\}
+\textbf{Restricciones:}
+\begin{itemize}
+    \item N piedras $N \leq 1000$
+    \item M capacidad de la mochila $M \leq 1000$
+    \item $V_{i}$ valor de la piedra $ V_{i} \leq 10^{9}$
+    \item $W_{i}$ peso de la piedra $W_{i} \leq 1000$
+\end{itemize}
+Ejemplo:\\
+N = 3, M = 50;\\
+V = [ 60, 100, 120 ]\\
+W = [ 10, 20, 30 ]\\
+Para este caso tenemos como solución tomar la segunda y tercer piedra teniendo un valor de 220 y un peso de 50, el cual puede soportar perfectamente nuestra mochila.\\
+
+Podemos encontrar una solución siguiendo más o menos lo mismo que el ejercico anterior, vamos a tratar de maximizar el valor tomando o no tomando el i-ésimo peso 
+
+\begin{lstlisting}
+    int sum_max( int indice, int capacidad ){
+        if( indice >= n )
+            return 0;
+        if( capacidad < 0 )
+            return MIN_INT;
+        //Si lo tomo cuál es el valor máximo que podemos tener con la respuesta actual?
+        int tomar = sum_max( indice + 1, capacidad - W[ indice ] ) + V[ indice ];
+        int no_tomar = sum_max( indice + 1, capacidad );
+        return max(tomar, no_tomar);
+    }
+\end{lstlisting}
+
+Si aplicamos programación dinámica
+\begin{lstlisting}
+    .
+    .
+    .
+    int memoria[ 1005 ][ 1005 ];
+    .
+    .
+    .
+    int sum_max( int indice, int capacidad ){
+        if( indice >= n )
+            return 0;
+        if( capacidad < 0 )
+            return MIN_INT;
+        if( memoria[ indice ][ capacidad ] != MIN_INT )
+            return memoria[ indice ][ capacidad ];
+        //Si lo tomo cuál es el valor máximo que podemos tener con la respuesta actual?
+        int tomar = sum_max( indice + 1, capacidad - W[ indice ] ) + V[ indice ];
+        int no_tomar = sum_max( indice + 1, capacidad );
+        return memoria[ indice ][ capacidad ] = max(tomar, no_tomar);
+    }
+\end{lstlisting}
+
+Ahora bien debemos responder ¿dónde está la respuesta a nuestro problema?
+
+\begin{lstlisting}
+    .
+    .
+    .
+    int main(){
+        .
+        .
+        .
+        //Si indexamos desde cero aquí estará la solución
+        cout << sum_max( 0, M );
+        .
+        .
+        .
+        return 0;
+    }
+\end{lstlisting}
+
+\section{Problema}
+\textbf{Imagina que compraste algo en algúna tienda, supermercado, etc, tienes que pagar con N monedas, pero quieres saber ¿De cuantas formas utilizando cualquiera de esas N monedas puedo dar el cambio (M)?\\}
+\textbf{Restricciones: }
+\begin{itemize}
+    \item N monedas $N \leq 1000$
+    \item M cambio $N \leq 1000$
+    \item $C_{i}$ Monedas $1 leq C_{i} \leq 1000$
+\end{itemize}
+Ejemplo:
+N = 4, M = 5\\
+C = [ 1, 2, 3, 4 ] //Indexado desde cero \\
+\begin{itemize}
+    \item { (0, 3) = 1 + 4 = 5 }
+    \item { (1, 2) = 2 + 3 = 5 }
+\end{itemize}
+
+Es decir nuevamente debemos de considerar el problema como tomar o no tomar
+
+\begin{figure}[H]
+    
+\begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (38.5,-6.8) circle (3);
+    \draw (38.5,-6.8) node {$f(0,5)$};
+    \draw [black] (21.3,-15.1) circle (3);
+    \draw (21.3,-15.1) node {$f(1,\mbox{ }4)$};
+    \draw [black] (58.8,-15.1) circle (3);
+    \draw (58.8,-15.1) node {$f(1,\mbox{ }5)$};
+    \draw [black] (12.8,-23.4) circle (3);
+    \draw (12.8,-23.4) node {$f(2,2)$};
+    \draw [black] (29.7,-23.4) circle (3);
+    \draw (29.7,-23.4) node {$f(2,4)$};
+    \draw [black] (5.1,-32.3) circle (3);
+    \draw (5.1,-32.3) node {$f(3,-1)$};
+    \draw [black] (51.8,-23.4) circle (3);
+    \draw (51.8,-23.4) node {$f(2,3)$};
+    \draw [black] (65.9,-23.4) circle (3);
+    \draw (65.9,-23.4) node {$f(2,5)$};
+    \draw [black] (23,-31.3) circle (3);
+    \draw (23,-31.3) node {$f(3,1)$};
+    \draw [black] (31.9,-37.5) circle (3);
+    \draw (31.9,-37.5) node {$f(3,4)$};
+    \draw [black] (25.6,-46.5) circle (3);
+    \draw (25.6,-46.5) node {$f(4,0)$};
+    \draw [black] (36.4,-46.5) circle (3);
+    \draw (36.4,-46.5) node {$f(4,4)$};
+    \draw [black] (46,-32.3) circle (3);
+    \draw (46,-32.3) node {$f(3,0)$};
+    \draw [black] (64,-35.5) circle (3);
+    \draw (64,-35.5) node {$f(3,3)$};
+    \draw [black] (58.8,-45.2) circle (3);
+    \draw (58.8,-45.2) node {$f(4,-1)$};
+    \draw [black] (71.4,-45.2) circle (3);
+    \draw (71.4,-45.2) node {$f(4,3)$};
+    \draw [black] (42.5,-41.8) circle (3);
+    \draw (42.5,-41.8) node {$f(4,\mbox{ }-1)$};
+    \draw [black] (51.8,-41.8) circle (3);
+    \draw (51.8,-41.8) node {$f(4,0)$};
+    \draw [black] (35.8,-8.1) -- (24,-13.8);
+    \fill [black] (24,-13.8) -- (24.94,-13.9) -- (24.51,-13);
+    \draw [black] (41.28,-7.94) -- (56.02,-13.96);
+    \fill [black] (56.02,-13.96) -- (55.47,-13.2) -- (55.09,-14.12);
+    \draw [black] (19.15,-17.2) -- (14.95,-21.3);
+    \fill [black] (14.95,-21.3) -- (15.87,-21.1) -- (15.17,-20.39);
+    \draw [black] (23.43,-17.21) -- (27.57,-21.29);
+    \fill [black] (27.57,-21.29) -- (27.35,-20.37) -- (26.65,-21.08);
+    \draw [black] (10.84,-25.67) -- (7.06,-30.03);
+    \fill [black] (7.06,-30.03) -- (7.96,-29.75) -- (7.21,-29.1);
+    \draw [black] (56.87,-17.39) -- (53.73,-21.11);
+    \fill [black] (53.73,-21.11) -- (54.63,-20.82) -- (53.87,-20.17);
+    \draw [black] (60.75,-17.38) -- (63.95,-21.12);
+    \fill [black] (63.95,-21.12) -- (63.81,-20.19) -- (63.05,-20.84);
+    \draw [black] (27.76,-25.69) -- (24.94,-29.01);
+    \fill [black] (24.94,-29.01) -- (25.84,-28.73) -- (25.08,-28.08);
+    \draw [black] (30.16,-26.36) -- (31.44,-34.54);
+    \fill [black] (31.44,-34.54) -- (31.81,-33.67) -- (30.82,-33.82);
+    \draw [black] (30.18,-39.96) -- (27.32,-44.04);
+    \fill [black] (27.32,-44.04) -- (28.19,-43.67) -- (27.37,-43.1);
+    \draw [black] (33.24,-40.18) -- (35.06,-43.82);
+    \fill [black] (35.06,-43.82) -- (35.15,-42.88) -- (34.25,-43.32);
+    \draw [black] (50.16,-25.91) -- (47.64,-29.79);
+    \fill [black] (47.64,-29.79) -- (48.49,-29.39) -- (47.66,-28.84);
+    \draw [black] (53.93,-25.51) -- (61.87,-33.39);
+    \fill [black] (61.87,-33.39) -- (61.65,-32.47) -- (60.95,-33.18);
+    \draw [black] (62.58,-38.14) -- (60.22,-42.56);
+    \fill [black] (60.22,-42.56) -- (61.04,-42.09) -- (60.15,-41.61);
+    \draw [black] (65.82,-37.89) -- (69.58,-42.81);
+    \fill [black] (69.58,-42.81) -- (69.49,-41.88) -- (68.7,-42.48);
+    \draw [black] (23.154,-12.745) arc (137.20989:94.31013:18.749);
+    \fill [black] (35.5,-6.79) -- (34.67,-6.35) -- (34.74,-7.34);
+    \draw (27.78,-8.09) node [above] {$1$};
+    \draw [black] (13.355,-20.468) arc (159.00785:109.62803:8.366);
+    \fill [black] (18.36,-15.59) -- (17.43,-15.38) -- (17.77,-16.32);
+    \draw (14.3,-17) node [above] {$0$};
+    \draw [black] (5.585,-29.354) arc (-198.95042:-242.78023:8.946);
+    \fill [black] (9.95,-24.3) -- (9.01,-24.22) -- (9.47,-25.11);
+    \draw (6.74,-24.96) node [left] {$0$};
+    \draw [black] (24.111,-16.121) arc (62.21244:28.47373:10.983);
+    \fill [black] (24.11,-16.12) -- (24.59,-16.94) -- (25.05,-16.05);
+    \draw (27.73,-17.55) node [above] {$1$};
+    \draw [black] (23.611,-28.38) arc (157.76368:121.63368:8.246);
+    \fill [black] (26.92,-24.48) -- (25.98,-24.47) -- (26.5,-25.32);
+    \draw (24.41,-24.72) node [left] {$0$};
+    \draw [black] (31.377,-25.88) arc (27.76697:-10.03044:13.665);
+    \fill [black] (31.38,-25.88) -- (31.31,-26.82) -- (32.19,-26.36);
+    \draw (33.49,-29.94) node [right] {$1$};
+    \draw [black] (25.601,-43.519) arc (-191.3248:-238.65924:7.6);
+    \fill [black] (29.1,-38.52) -- (28.16,-38.51) -- (28.68,-39.36);
+    \draw (26.23,-39.29) node [left] {$1$};
+    \draw [black] (34.359,-39.186) arc (44.59265:8.53745:7.831);
+    \fill [black] (34.36,-39.19) -- (34.56,-40.11) -- (35.28,-39.4);
+    \draw (36.48,-40.07) node [right] {$0$};
+    \draw [black] (46.194,-29.323) arc (-194.05678:-232.12662:8.313);
+    \fill [black] (49.15,-24.78) -- (48.22,-24.88) -- (48.83,-25.67);
+    \draw (46.68,-25.48) node [left] {$1$};
+    \draw [black] (52.21,-20.446) arc (-198.71388:-241.57291:7.955);
+    \fill [black] (55.96,-16) -- (55.02,-15.94) -- (55.49,-16.82);
+    \draw (53.11,-16.43) node [left] {$1$};
+    \draw [black] (61.613,-16.096) arc (60.36187:20.72692:8.481);
+    \fill [black] (61.61,-16.1) -- (62.06,-16.93) -- (62.56,-16.06);
+    \draw (64.41,-16.51) node [right] {$0$};
+    \draw [black] (54.497,-24.708) arc (60.25935:30.21222:22.202);
+    \fill [black] (54.5,-24.71) -- (54.94,-25.54) -- (55.44,-24.67);
+    \draw (60.14,-27.74) node [above] {$0$};
+    \draw [black] (58.883,-42.214) arc (-190.71414:-225.67582:9.427);
+    \fill [black] (61.56,-37.22) -- (60.64,-37.42) -- (61.34,-38.14);
+    \draw (59.16,-38.34) node [left] {$0$};
+    \draw [black] (66.643,-36.902) arc (54.54567:20.13338:11.436);
+    \fill [black] (66.64,-36.9) -- (67,-37.77) -- (67.58,-36.96);
+    \draw (69.67,-37.88) node [right] {$0$};
+    \draw [black] (41.492,-6.999) arc (83.35606:52.16787:30.209);
+    \fill [black] (41.49,-7) -- (42.23,-7.59) -- (42.34,-6.59);
+    \draw (50.39,-8.53) node [above] {$1$};
+    \draw [black] (44.96,-35.12) -- (43.54,-38.98);
+    \fill [black] (43.54,-38.98) -- (44.28,-38.41) -- (43.34,-38.06);
+    \draw [black] (47.56,-34.86) -- (50.24,-39.24);
+    \fill [black] (50.24,-39.24) -- (50.25,-38.3) -- (49.39,-38.82);
+    \draw [black] (42.239,-38.826) arc (-184.72078:-215.72893:8.834);
+    \fill [black] (43.87,-34.39) -- (43,-34.75) -- (43.81,-35.34);
+    \draw (42,-35.7) node [left] {$1$};
+    \draw [black] (48.368,-34.129) arc (45.01101:17.79931:11.777);
+    \fill [black] (48.37,-34.13) -- (48.58,-35.05) -- (49.29,-34.34);
+    \draw (50.73,-35.05) node [right] {$0$};
+    \draw [black] (38.5,-1.9) -- (38.5,-3.8);
+    \draw (38.5,-1.4) node [above] {$2$};
+    \fill [black] (38.5,-3.8) -- (39,-3) -- (38,-3);
+    \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+\begin{lstlisting}
+    int cuenta( int indice, int cambio ){
+        //Verificamos que no nos salgamos del rango
+        if( indice == n ){
+            //Si llegamos al límite verificamos si lo que tenemos es una solución válida
+            if( cambio == 0 )
+                //Como encontramos una solución la contamos
+                return 1;
+            //Como no hay solución retornamos cero
+            return 0;
+        }
+        //Si el cambio es negativo no es una combinación válida
+        if( cambio < 0 )
+            return 0;
+        //Intentamos tomando el elemento actual
+        int tomar = cuenta( indice + 1, cambio - C[ indice ] );
+        int no_tomar = cuenta( indice + 1, cambio );
+        return tomar + no_tomar;
+    }
+\end{lstlisting}
+
+Si añadimos programación dinámica tenemos lo siguiente
+
+\begin{lstlisting}
+    .
+    .
+    .
+    int memoria[ 1005 ][ 1005 ];
+    bool visitado[ 1005 ][ 1005 ];
+    .
+    .
+    .
+    int cuenta( int indice, int cambio ){
+        //Verificamos que no nos salgamos del rango
+        if( indice == n ){
+            //Si llegamos al límite verificamos si lo que tenemos es una solución válida
+            if( cambio == 0 )
+                //Como encontramos una solución la contamos
+                return 1;
+            //Como no hay solución retornamos cero
+            return 0;
+        }
+        //Si el cambio es negativo no es una combinación válida
+        if( cambio < 0 )
+            return 0;
+    
+        if( visitado[ indice ][ cambio ] )
+            return memoria[ indice ][ cambio ];
+        //Intentamos tomando el elemento actual
+        int tomar = cuenta( indice + 1, cambio - C[ indice ] );
+        int no_tomar = cuenta( indice + 1, cambio );
+        visitado[ indice ][ cambio ] = true;
+        return memoria[ indice ][ cambio ] = (tomar + no_tomar);
+    }
+\end{lstlisting}
