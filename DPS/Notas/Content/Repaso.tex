@@ -201,12 +201,12 @@ Ahora bien ¿Cómo reducimos la complejidad de el código anterior? Debemos apli
     int max_sum( int f, int c ){
         //Primero comprobamos si es un caso válido (que no esté fuera de rango)
         if( c < 0 || c >= m )
-            return MIN_INT //MIN_INT es como un menos infinito
+            return -1 //-1 es un valor bandera que identifica si ya visitamos o no la casilla
         //Caso base
         if( f == n )
             return grid[ f ][ c ];
 
-        if( memoria[ f ][ c ] != MIN_INT )
+        if( memoria[ f ][ c ] != -1 )
             return memoria[ f ][ c ]
 
         int A = max_sum( f + 1, c - 1);
@@ -216,3 +216,66 @@ Ahora bien ¿Cómo reducimos la complejidad de el código anterior? Debemos apli
         return memoria[ f ][ c ] = max( A, max(B, C) ) + grid[ f ][ c ];
     }
 \end{lstlisting}
+
+\section{Problema}
+Del ejercicio anterior que sucede si podemos añadir ¿números negativos? Podemos hacer uso de otro arreglo auxiliar de booleanos, en el que marcamos si ya visitamos o no una casilla
+
+\chapter{Problemas clásicos de DP}
+\section{Mochilas}
+\textbf{Vas a una tienda y quieres comprar algunos productos, digamos que hay n productos y cada producto tiene un precio y tenemos M pesos para gastar. Queremos comprar la mayor cantidad de productos gastando lo más posible.\\}
+\textbf{Restricciones:}
+\begin{itemize}
+    \item N productos $N \leq 1000$
+    \item M Pesos $M \leq 1000$
+    \item $A_{i} \leq 1000$
+\end{itemize}
+Ejemplo:\\
+N = 3, M = 8, y tenemos los productos A = {3, 4, 6} nuestro solución es comprar {3, 4} el precio es 7 y nos llevamos 4 productos.\\\\
+Para poder solucionar este problema debemos de calcular el caso de probar y no probar el i-ésimo elemento. 
+\begin{lstlisting}
+    int max_sum( int indice, int pesos_restantes ){
+        //Validación, n es el número de elementos del arreglo A
+        if( indice >= n )
+            return 0;
+        //Como no es una respuesta válida para descartarla regresamos un menos infinito
+        if( pesos_restantes < 0)
+            return MIN_INT;
+        //Recursivamente puedo tomar o no tomar un elemento
+        int tomar = max_sum( indice + 1, pesos - A[ indice ]) + A[ indice ];
+        int no_tomar = max_sum( indice + 1, pesos);
+        return max( tomar, no_tomar );
+    }
+\end{lstlisting}
+
+Esta solución es la más bruta si queremos aplicar programación dinámica ¿Cuáles son los estados que tenemos? En este caso tendremos los índices y la cantidad de pesos restantes. Es decir:
+\begin{lstlisting}
+    .
+    .
+    .
+    int memoria[ 1005 ][ 1005 ];
+    bool visitado[ 1005 ][ 1005 ];
+    .
+    .
+    .
+    int max_sum( int indice, int pesos_restantes ){
+        //Validación, n es el número de elementos del arreglo A
+        if( indice >= n )
+            return 0;
+        //Como no es una respuesta válida para descartarla regresamos un menos infinito
+        if( pesos_restantes < 0)
+            return MIN_INT;
+
+        if( visitado[ indice ][ pesos_restantes ] )
+            return memoria[ indice ][ pesos_restantes ];
+        
+        //Recursivamente puedo tomar o no tomar un elemento
+        int tomar = max_sum( indice + 1, pesos - A[ indice ]) + A[ indice ];
+        int no_tomar = max_sum( indice + 1, pesos);
+        //Como no se ha visitado el cálculo actual lo marcamos como visitado
+        visitado[ indice ][ pesos_restantes ] = true;
+        //Almacenamos el valor calculado en nuestra memoria
+        return memoria[ indice ][ pesos_restantes ] = max( tomar, no_tomar );
+    }
+\end{lstlisting}
+
+Con esta solución tenemos una complejidad de $O(n^{2})$ mientras que la solución bruta tiene una complejidad de $O(2^{n})$
