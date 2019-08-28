@@ -23,24 +23,28 @@ int main(){
     } else {
         map< int, int > numbers;
         for( int i = 1; i <= n; i++ )
-            numbers[ i ]++;
+            numbers[ i ] = 1;
         
         numbers[ 4 ]--;
         numbers[ 6 ]--;
-        int i = n, j = n - 1;
-        for( ; i >= 0 && j >= 0; i--, j--){
-            
-            while( numbers[ j ] == 0 && j != 0 && j != i ){
-                j--;
-            }   
 
-            while( numbers[ i ] == 0 && i != 0 && j != (i - 1) ){
+        cout << "6 * 4 = 24" << endl;
+        int i = n, j = n - 1;
+        for( ; i >= 0 && j >= 0; ){
+            
+            while( numbers[ i ] != 0 && i >= 0 && j != (i - 1) ){
                 i--;
             }
-            numbers[ abs(numbers[ i ] - numbers[j]) ]++;
+            j = i - 1;
+
+            while( numbers[ j ] != 0 && j >= 0 && j != i ){
+                j--;
+            }
+        
+            numbers[ abs(i - j) ]++;
             numbers[ i ]--;
             numbers[ j ]--;
-            cout << i << " - " << j << " = " << numbers[ j ] - numbers[ i ] << endl;
+            cout << i << " - " << j << " = " << i - j << endl;
         }
         for( int i = 0; i < numbers[ 1 ]; i++)
             cout << "24 * 1 = 24" << endl;
