@@ -3,33 +3,27 @@
 using namespace std;
 typedef long long int lli;
 
-lli f( vector<lli> &numbers, lli begin, lli end, lli middle ){
-    for( int i = 0; i < numbers.size(); i++ ){
+bool f( vector< int > &N, int begin, int end, int middle ) {
 
-    }
-
-}
-
-lli binarySearch( vector<lli> &numbers, lli k){
-    lli begin = (numbers.size() / 2), end = numbers.size(), middle = 0;
-    while( begin < end ){
-        
-        if( f( numbers, begin, end, middle ) ){
-            
-        } else {
-
-        }
-    } 
+    for( int i = begin + 1; end)
 }
 
 int main(){
-    lli n, k;
-    vector<lli> numbers:
-    cin >> n >> k;
-    numbers.resize( n, 0 );
+    int n;
+    cin >> n;
+    lli begin, end, middle;
+    vector< int > N( n );
     for( int i = 0; i < n; i++ )
-        cin >> numbers[ i ];
-    sort( numbers.begin(), numbers.end() );
-    cout << binarySearch( numbers, k ) << endl;
-    return 0;
+        cin >> N[ i ];
+    
+    begin = n / 2;
+    end = n;
+    while( begin <= end ){
+        middle = ( begin + end ) / 2;
+        if( f( N, begin, end, middle ) ){
+
+        } else {
+            
+        }
+    }
 }

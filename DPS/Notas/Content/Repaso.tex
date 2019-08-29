@@ -572,3 +572,45 @@ Si añadimos programación dinámica tenemos lo siguiente
         return memoria[ indice ][ cambio ] = (tomar + no_tomar);
     }
 \end{lstlisting}
+
+
+\section{Boredrom}
+\textbf{Vamos a tomar el $a_{k}$ elemento, vamos remover de nuestro arrego el $a_{k} + 1$ y $a_{k} - 1$ }\\
+\textbf{Restricciones: }
+1 1 2 2 2 2 2 3 3 \\
+En este caso elegimos el 2 y removemos los unos y los tres nos queda \\
+2 2 2 2 2 \\ 
+Como no tenemos más elementos para elegir nuestra respuesta es la suma de los elementos restantes es decir 5 \\
+¿Cómo podemos programar eso?
+\begin{lstlisting}
+    #inclue <bits/stdc++.h>
+    int bucket[ 100005 ];
+    int numbers[ 100005 ];
+    int DP[ 100005 ];
+
+    int max_sum( int index, int current ){
+
+        if( index >= n || index <= 0 )
+            return INT_MIN;
+        
+        int take = max_sum( index + 2, current ) + (index * current);
+        int not_take = max_sum( index + 1, current );
+
+        return max( take, not_take );
+    }
+
+    int main(){
+        int n;
+        cin >> n;
+        for( int i = 0, v; i < n; i++){
+            cin >> v;
+            buecket[ v ]++;
+        }
+        
+        int MAX = -1;
+        for( int i = 0; i < n; i++ ){
+            MAX = max( MAX, max_sum( i, bucket[ i ] ) );
+        }
+        return 0;
+    }
+\end{lstlisting}
