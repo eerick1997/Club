@@ -583,34 +583,39 @@ En este caso elegimos el 2 y removemos los unos y los tres nos queda \\
 Como no tenemos más elementos para elegir nuestra respuesta es la suma de los elementos restantes es decir 5 \\
 ¿Cómo podemos programar eso?
 \begin{lstlisting}
-    #inclue <bits/stdc++.h>
-    int bucket[ 100005 ];
-    int numbers[ 100005 ];
-    int DP[ 100005 ];
+    #include <bits/stdc++.h>
 
-    int max_sum( int index, int current ){
-
-        if( index >= n || index <= 0 )
-            return INT_MIN;
+    using namespace std;
+    typedef long long int lli;
+    lli bucket[ 100005 ];
+    lli DP[ 100005 ];
+    bool visited[ 100005 ];
+    lli n;
+    int MAX = -1;
+    
+    lli max_sum( int index ){
+    
+        if( index >= MAX + 1)
+            return 0;
         
-        int take = max_sum( index + 2, current ) + (index * current);
-        int not_take = max_sum( index + 1, current );
-
-        return max( take, not_take );
+        if( visited[ index ] )
+            return DP[ index ];
+        visited[ index ] = true;
+        lli take = max_sum( index + 2 ) + ( bucket[ index ] * index );
+        lli not_take = max_sum( index + 1 );
+    
+        return DP[ index ] = max( take, not_take );
     }
-
+    
     int main(){
-        int n;
         cin >> n;
         for( int i = 0, v; i < n; i++){
             cin >> v;
-            buecket[ v ]++;
+            MAX = max( MAX, v );
+            bucket[ v ]++;
         }
         
-        int MAX = -1;
-        for( int i = 0; i < n; i++ ){
-            MAX = max( MAX, max_sum( i, bucket[ i ] ) );
-        }
+        cout << max_sum( 1 ) << endl;
         return 0;
     }
 \end{lstlisting}
