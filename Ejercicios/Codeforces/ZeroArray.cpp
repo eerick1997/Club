@@ -4,49 +4,30 @@ using namespace std;
 typedef long long int lli;
 
 int main(){
-    lli n, v, ans = 0;
-    vector< lli > numbers;
-    cin >> n;
-    for(int i = 0, v; i < n; i++){
-        cin >> v;
-        if( v != 0 )
-            numbers.push_back( v );
-    }
-    
-    sort( numbers.begin(), numbers.end() );
+    int t, n;
+    string str;
+    cin >> t;
+    while( t-- ){
+        vector< string > ans;
+        string aux = "0";
+        cin >> n >> str;
+        for( int i = 0; i < n - 1; i++){
+            if( str[ i ] - '0' > str[ i + 1 ] - '0' ){
+                ans.push_back( string( str[ i ] + "") );
+                aux = "0";
+            } else {
+                if( stoi( str ) == 0 )
+                    str = string( str[ i ] + "");
+                else 
+                    str += string( str[ i ] + "");
+                if( stoi( str ) < str[ i ] - '0' ){
+                    ans.push_back( str );
+                    aux = "0";
+                }
+            }
 
-    for( auto v : numbers ){
-        cout << v << " ";
-    }
-    cout << endl;
-    for( int i = n - 1; i >= 1; i -= 2 ){
-        lli a = numbers[ i ];
-        lli b = numbers[ i - 1 ];
-        numbers[ i ] = abs(a - b);
-        numbers[ i - 1 ] = abs(a - b);
-    }
-
-    sort( numbers.begin(), numbers.end() );
-
-    for( auto v : numbers ){
-        cout << v << " ";
-    }
-    cout << endl;
-
-    for( int i = n - 1; i >= 1; i -= 2 ){
-        if( numbers[ i ] != 0 ){
-            lli a = numbers[ i ];
-            lli b = numbers[ i - 1 ];
-            numbers[ i ] -= b;
-            numbers[ i - 1 ] -= a;
         }
     }
 
-    for( auto v : numbers ){
-        cout << v << " ";
-    }
-    cout << endl;
-    
-    cout << "YES" << endl;
     return 0;
 }
