@@ -15,8 +15,10 @@ lli max_sum( int index ){
     
     if( visited[ index ] )
         return DP[ index ];
-    visited[ index ] = true;
+    visited[ index ] = true;    
+    //Tomamos el elemento actual
     lli take = max_sum( index + 2 ) + ( bucket[ index ] * index );
+    //Nos saltamos el elemento actual
     lli not_take = max_sum( index + 1 );
 
     return DP[ index ] = max( take, not_take );
@@ -27,6 +29,7 @@ int main(){
     for( int i = 0, v; i < n; i++){
         cin >> v;
         MAX = max( MAX, v );
+        //Generamos nuestra cubeta
         bucket[ v ]++;
     }
     
