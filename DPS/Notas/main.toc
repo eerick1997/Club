@@ -12,3 +12,4 @@
 \contentsline {section}{\numberline {3.2}Mochila cl\IeC {\'a}sica}{12}{section.3.2}% 
 \contentsline {section}{\numberline {3.3}Problema}{13}{section.3.3}% 
 \contentsline {section}{\numberline {3.4}Boredrom}{15}{section.3.4}% 
+\contentsline {section}{\numberline {3.5}LIS - Longest Increasing Subsequence}{16}{section.3.5}% 

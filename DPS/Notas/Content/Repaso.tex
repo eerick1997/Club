@@ -750,3 +750,165 @@ Como no tenemos más elementos para elegir nuestra respuesta es la suma de los e
         return 0;
     }
 \end{lstlisting}
+
+\section{LIS - Longest Increasing Subsequence}
+Nos sirve para encontrar la subsecuencia más larga que sea creciente. Por ejemplo:\\\\
+
+[1, 5, 3, 7, 8, 4]\\\\
+
+Tenemos algunas posibilidades\\\\
+
+5, 7, 4 consideremos que el conjunto vacío también es válido. Pero esta subsecuencia no es creciente.\\\\ 
+
+Pero si las siguientes 1, 5, 7, 8 y 1, 3, 7, 8. dónde la resuesta es 4.\\\\
+
+¿Cómo podemos solucionar esto? Podemos calcular todos los pusibles subconjuntos haciendo algo similar al problema de la mochila, es decir, tomar o no tomar. También requerimos conocer el número anterior ya que este nos ayudará a decidir si el número actual podemos tomarlo o no.
+\textbf{Restricciones: }
+\begin{itemize}
+    \item $0 < n \leq 1000$
+    \item $0 < A_{i} \leq 1000$
+\end{itemize}
+\begin{lstlisting}
+    int LIS( int index, int last ){
+        //Caso base 
+        if( indice == n )
+            return 0;
+        
+        //Vamos a tomar como válido el valor si y solo si si el i-ésimo elemento es mayor que el i-ésimo - 1
+        if( A[ index ] > last ){
+            int take = LIS( index + 1, A[ index ] ) + 1;
+            int not_take = LIS( index + 1, last );
+            return max( take, not_take );
+        }
+        return LIS( index + 1, last );
+    }
+    .
+    .
+    .
+    int main(){
+        .
+        .
+        .
+            cout << LIS( 0, INT_MIN ) << endl;
+        .
+        .
+        .
+    }
+\end{lstlisting}
+
+Esta solución obtiene todos los subconjuntos pero la complejidad es de $O(2^{n})$. Si queremos optimizar usando memoria debemos ver los estados de nuestra DP, en este caso tenemos dos, el primero el índice y el segundo el valor más grande que puede valer last, es decir, 1000 y 1000 respectivamente. Por tanto obtenemos cono resultado
+
+\begin{lstlisting}
+    .
+    .
+    .
+    int DP[ 1005 ][ 1005 ] = { -1 };
+    .
+    .
+    .
+    int LIS( int index, int last ){
+        //Caso base 
+        if( indice == n )
+            return 0;
+        if( DP[ index ][ last ] != -1 )
+            return DP[ index ][ last ];
+        //Vamos a tomar como válido el valor si y solo si si el i-ésimo elemento es mayor que el i-ésimo - 1
+        if( A[ index ] > last ){
+            int take = LIS( index + 1, A[ index ] ) + 1;
+            int not_take = LIS( index + 1, last );
+            return DP[ index ][ last ] = max( take, not_take );
+        }
+        return DP[ index ][ last ] = LIS( index + 1, last );
+    }
+    .
+    .
+    .
+    int main(){
+        .
+        .
+        .
+            cout << LIS( 0, INT_MIN ) << endl;
+        .
+        .
+        .
+    }
+\end{lstlisting}
+
+Con esta solución la complejidad que obtenemos es de $O(n * max(A_{i}))$
+
+Gráficamente tenemos algo como esto.
+
+\begin{figure}[H]
+    \begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (18.7,-29.2) circle (3);
+    \draw (18.7,-29.2) node {$0,0$};
+    \draw [black] (34.1,-18.1) circle (3);
+    \draw (34.1,-18.1) node {$1,2$};
+    \draw [black] (34.1,-39.9) circle (3);
+    \draw (34.1,-39.9) node {$1,0$};
+    \draw [black] (54.3,-10.5) circle (3);
+    \draw (54.3,-10.5) node {$2,5$};
+    \draw [black] (54.3,-24.3) circle (3);
+    \draw (54.3,-24.3) node {$2,2$};
+    \draw [black] (54.3,-35.1) circle (3);
+    \draw (54.3,-35.1) node {$2,1$};
+    \draw [black] (54.3,-49.3) circle (3);
+    \draw (54.3,-49.3) node {$2,0$};
+    \draw [black] (21.13,-27.45) -- (31.67,-19.85);
+    \fill [black] (31.67,-19.85) -- (30.72,-19.92) -- (31.31,-20.73);
+    \draw (27.57,-24.15) node [below] {$si$};
+    \draw [black] (21.16,-30.91) -- (31.64,-38.19);
+    \fill [black] (31.64,-38.19) -- (31.26,-37.32) -- (30.69,-38.14);
+    \draw (24.9,-35.05) node [below] {$no$};
+    \draw [black] (36.91,-17.04) -- (51.49,-11.56);
+    \fill [black] (51.49,-11.56) -- (50.57,-11.37) -- (50.92,-12.31);
+    \draw (45.29,-14.83) node [below] {$si$};
+    \draw [black] (36.97,-18.98) -- (51.43,-23.42);
+    \fill [black] (51.43,-23.42) -- (50.81,-22.71) -- (50.52,-23.66);
+    \draw (42.93,-21.77) node [below] {$no$};
+    \draw [black] (37.02,-39.21) -- (51.38,-35.79);
+    \fill [black] (51.38,-35.79) -- (50.49,-35.49) -- (50.72,-36.46);
+    \draw (45,-38.09) node [below] {$si$};
+    \draw [black] (36.82,-41.17) -- (51.58,-48.03);
+    \fill [black] (51.58,-48.03) -- (51.07,-47.24) -- (50.64,-48.15);
+    \draw (42.72,-45.11) node [below] {$no$};
+    \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+Si queremos imprimir la secuencia que tenemos ¿Que podemos hacer? Podríamos usar un string o vector o también recorrer la memoria ¿Hay alguna otra solución?
+
+Podemos reutilizar nuestra función LIS, para reconstruir la solución. Dónde vamos a añadir el valor que nos convino más como solución a nuestra respuesta. Es decir podemos tener un vector de enteros que obtenga la reconstrucción.
+
+\begin{lstlisting}
+    .
+    .
+    .
+    vector< int > reaconstruct;
+    void reconstructLIS( int index, int last ){
+
+        if( index >= n )
+            return;
+        
+        if( A[index] > last ){
+            //Como ya se han memorizado los valores de todos los subconjuntos válidos obtendremos en constante cual camino me es más conveniente tomar
+            int take = LIS( index + 1, A[ index ]) + 1;
+            int not_take = LIS( index + 1, last );
+            //Aquí podemos decidir que camino nos conviene más si el de tomar o no tomar
+            if( take > not_take ) {
+                //Añadimos a nuestra respuesta
+                reconstruct.push_back( A[ index ] );
+                reconstructLIS( index + 1, A[ index ] );
+            } else 
+                reconstructLIS( index + 1, last );
+        }
+        reconstructLIS( index + 1, last );
+    }
+    .
+    .
+    .
+\end{lstlisting}
+
+¿Qué complejidad tiene reconstruir la respuesta? $O( n )$ ya que solamente vamos ha realizar una sola llamada recursiva
