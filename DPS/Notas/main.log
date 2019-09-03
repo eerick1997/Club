@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.18)  2 SEP 2019 13:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.7.18)  2 SEP 2019 14:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1314,7 +1314,7 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 <to be read again> 
                    \relax 
 l.1 \chapter
-            {Programaci√≥n din√°mica} [1
+            {B√∫squeda binaria} [1
 
 ]
 Chapter 1.
@@ -1333,81 +1333,100 @@ LaTeX Font Info:    Font shape `T1/fnc/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/fnc/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `T1/fnc/b/n' will be
 (Font)              scaled to size 13.39188pt on input line 3.
-LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
-(Font)              scaled to size 7.43994pt on input line 14.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 14.
-(/usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 15.
- [2
-
-] [3] [4]
-LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
-(Font)              scaled to size 11.15991pt on input line 177.
-LaTeX Font Info:    Font shape `T1/fnc/bx/n' in size <12> not available
-(Font)              Font shape `T1/fnc/b/n' tried instead on input line 177.
-LaTeX Font Info:    Font shape `T1/fnc/b/n' will be
-(Font)              scaled to size 11.15991pt on input line 177.
- [5] [6]
-Chapter 2.
-
-Overfull \hbox (10.0pt too wide) in paragraph at lines 223--223
-[][][][][][][][][][]  
- []
-
-LaTeX Font Info:    Try loading font information for TS1+fnc on input line 228.
+LaTeX Font Info:    Try loading font information for TS1+fnc on input line 7.
 (/usr/share/texmf-dist/tex/latex/fouriernc/ts1fnc.fd
 File: ts1fnc.fd 2005/12/13 font definitions for TS1/fnc.
 )
 LaTeX Font Info:    Font shape `TS1/fnc/m/n' will be
-(Font)              scaled to size 9.29993pt on input line 228.
+(Font)              scaled to size 9.29993pt on input line 7.
+ [2
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--235
-
- []
-
-[7
-
-] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 302--307
-
- []
-
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 373--376
-
- []
-
-
-Overfull \hbox (66.82031pt too wide) in paragraph at lines 512--513
+]
+Overfull \hbox (105.51547pt too wide) in paragraph at lines 73--74
  [] 
  []
 
-[10] [11] [12]) [13]
+
+Overfull \hbox (2.54333pt too wide) in paragraph at lines 76--77
+[]\T1/fnc/m/n/10 Recordemos que el me-te-orito est· en una posi-ciÛn v·l-ida la suma de las fuerzas
+ []
+
+LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
+(Font)              scaled to size 7.43994pt on input line 84.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 84.
+(/usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 88.
+ [3] [4]
+Chapter 2.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 129--129
+[][][][][][][][][][]  
+ []
+
+[5
+
+] [6] [7]
+LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
+(Font)              scaled to size 11.15991pt on input line 305.
+LaTeX Font Info:    Font shape `T1/fnc/bx/n' in size <12> not available
+(Font)              Font shape `T1/fnc/b/n' tried instead on input line 305.
+LaTeX Font Info:    Font shape `T1/fnc/b/n' will be
+(Font)              scaled to size 11.15991pt on input line 305.
+ [8] [9]
+Chapter 3.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 351--351
+[][][][][][][][][][]  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--363
+
+ []
+
+[10
+
+] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 430--435
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 501--504
+
+ []
+
+
+Overfull \hbox (66.82031pt too wide) in paragraph at lines 640--641
+ [] 
+ []
+
+[13] [14] [15]) [16]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 9.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 9.
  (/home/erick/Documentos/GitHub/Club/DPS/Notas/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 9.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 9.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7D649BD93AA71BE3604DD74E80DBBF9A;645.
+(rerunfilecheck)             Checksum: 25662AF31B260D415CE8EA8BA4F0906D;755.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 9.
  ) 
 Here is how much of TeX's memory you used:
- 31698 strings out of 492623
- 575032 string characters out of 6135669
- 965066 words of memory out of 5000000
- 34810 multiletter control sequences out of 15000+600000
+ 31788 strings out of 492623
+ 576240 string characters out of 6135669
+ 966066 words of memory out of 5000000
+ 34851 multiletter control sequences out of 15000+600000
  573129 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,68p,485b,1928s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,12n,68p,485b,1987s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb></usr/share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on /home/erick/Documentos/GitHub/Club/DPS/Notas/main.pdf (14 pages, 197331 bytes).
+Output written on /home/erick/Documentos/GitHub/Club/DPS/Notas/main.pdf (17 pages, 210245 bytes).
 PDF statistics:
- 496 PDF objects out of 1000 (max. 8388607)
- 465 compressed objects within 5 object streams
- 289 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 572 PDF objects out of 1000 (max. 8388607)
+ 537 compressed objects within 6 object streams
+ 338 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 
