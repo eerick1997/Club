@@ -1,47 +1,42 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-
 typedef long long int lli;
-vector< lli > Xi;
 
-lli proof(lli M){
-    lli current = 0;
+vector< lli > X;
+lli C, N, t;
+
+lli check( lli middle ){
+    lli last = 0;
     lli count = 1;
-    for(int i = 1; i < Xi.size(); i++){
-        lli difference = Xi[i] - Xi[current];
-        if(difference >= M){
-            current = i;
-            count++;
-        }
+    for( lli i = 1; i < N; i++ ){
+        if( ( X[ i ] - X[ last ] ) >= middle )
+            count++, last = i;
     }
     return count;
 }
 
 int main(){
-    lli T;
-    cin >> T;
-    while(T--){
-        lli N, C;
-        Xi.clear();
+    ios::sync_with_stdio( false );
+    cout.tie( nullptr );
+    cin.tie( nullptr );
+    lli begin, end, ans;
+    cin >> t;
+    while( t-- ){
         cin >> N >> C;
-        for(lli i = 0, V = 0; i < N; i++){
-            cin >> V;
-            Xi.push_back(V);
-        }
-        sort(Xi.begin(), Xi.end());
+        X.resize( N );
+        for( lli i = 0; i < N; i++ )
+            cin >> X[ i ];
 
-        lli begin = 1;
-        lli end = 1 << 30;
-        lli ans = 0;
-        while(begin <= end){
-            lli middle = (begin + end) >> 1;
-            if(proof(middle) < C){
+        sort( X.begin(), X.end() );
+
+        begin = 1, end = INT64_MAX, ans = 0; 
+        while( begin <= end ){
+            lli middle = ( begin + end ) >> 1;
+            if( check( middle ) >= C )
+                begin = middle + 1, ans = middle;
+            else 
                 end = middle - 1;
-            } else {
-                begin = middle + 1;
-                ans = middle;
-            }
         }
         cout << ans << endl;
     }
