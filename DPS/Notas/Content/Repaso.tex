@@ -912,3 +912,125 @@ Podemos reutilizar nuestra función LIS, para reconstruir la solución. Dónde v
 \end{lstlisting}
 
 ¿Qué complejidad tiene reconstruir la respuesta? $O( n )$ ya que solamente vamos ha realizar una sola llamada recursiva
+
+\section{Longest Common Subsequence}
+Dadas dos cadenas, hallar la subsecuencia común más larga. \\\\
+\textbf{Restricciones:\\}
+
+\textbf{Ejemplo:\\}
+\begin{itemize}
+    \item {S = AGPGTAB}
+    \item {T = GXTXAYB}
+\end{itemize}
+
+\begin{longtable}[c]{|
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{EFEFEF}}l |
+    >{\columncolor[HTML]{EFEFEF}}l |
+    >{\columncolor[HTML]{EFEFEF}}l |
+    >{\columncolor[HTML]{EFEFEF}}l |}
+    \hline
+    {\color[HTML]{333333} A}                         & {\color[HTML]{333333} G} & {\color[HTML]{333333} P}                         & G                         & T                        & A                         & B                        \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    \cellcolor[HTML]{EFEFEF}{\color[HTML]{333333} G} & X                        & \cellcolor[HTML]{EFEFEF}{\color[HTML]{333333} T} & \cellcolor[HTML]{FFFFFF}X & {\color[HTML]{333333} A} & \cellcolor[HTML]{FFFFFF}Y & {\color[HTML]{333333} B} \\ \hline
+\end{longtable}
+
+¿Podemos atacar este problema utilizando la misma lógica que en knapsack? Si intentamos hacer esto tendremos varios problemas. Podemos remover un caracter de alguna de las dos cadenas en algún punto en el que la cadena no coincida. Si ámbos caracteres coinciden ambos los ''quitamos'' y aumentamos en 1 la respuesta actual.
+
+\begin{lstlisting}
+    int LCS( string S, string T ){
+
+        if( S.empty() || T.empty() )
+            return 0;
+
+        string S2 = S;
+        string T2 = T;
+        //erase elimina el caracter (es un iterador) en nuestro caso el primero de la cadena S2
+        S2.erase( S2.begin() );
+        T2.erase( T2.begin() );
+
+        //Si ámbos coinciden aumentamos en uno la respuesta
+        if( S[ 0 ] == T[ 0 ] )
+            //Como el caracter es el mismo en ámbos la respuesta aumenta en uno
+            return LCA( S2, T2 ) + 1;
+
+        int delete_first = LCS( S2, T );
+        int delete_second = LCS( S, T2 );
+
+        return max( delete_first, delete_second );
+    }
+\end{lstlisting}
+
+¿Como podemos asegurar que nos conviene realizar lo anterior? o bien ¿Hay algún caso que no se ha cubierto? y ¿Cuál es la complejidad de este algoritmo? \\ \\
+
+Supongamos que tenemos una cadena donde un caracter de la respuesta aparece más de una vez, si consideramos el segundo y no el primero es posible que nuestra respuesta o no mejore o empeore. \\\\
+
+La complejidad de realizar esto es $O(2^{n} * n)$ (El n esta ahí por la función erase). ¿Cómo podemos mejorar esta solución?\\\\
+
+Nótese que solo estamos utilizando lo caracteres del final, es decir solo utilizamos el sufijo (caracteres del final), así pues en lugar de utilizar una subcadena podemos utilizar un apuntador.
+
+\begin{lstlisting}
+    int LCS( int index_s, int index_t ){
+        //Si ya no hay caracteres que analizar terminamos las recursiones
+        if( index_s == S.size() || index_t == S.size() )
+            return 0;
+        
+        if( S[index_s] == T[index_t] )
+            return LCA( index_s + 1, index_t + 1) + 1;
+        
+        int move_S = LCS( index_s + 1, index_t );
+        int move_T = LCS( index_s, index_t + 1 );
+
+        return max( move_S, move_T );
+    }
+\end{lstlisting}
+
+¿Ahora que complejidad obtenemos? $O(2^{n})$ ya que hemos eliminado el uso de la función erase. Finalmente ¿Como implementamos programación dinámica? En este caso tenemos dos estados index\_s e index\_t.
+
+\begin{lstlisting}
+    .
+    .
+    .
+    int DP[ 1005 ][ 1005 ];
+    .
+    .
+    .
+    int LCS( int index_s, int index_t ){
+        //Si ya no hay caracteres que analizar terminamos las recursiones
+        if( index_s == S.size() || index_t == S.size() )
+            return 0;
+        //Nuestra ''bandera'' es el valor de -1 ya que nunca nos devolverá ese valor la función
+        if( DP[ index_s ][ index_t ] != -1 )
+            return DP[ index_s ][ index_t ]
+        
+        if( S[index_s] == T[index_t] )
+            return DP[ index_s ][ index_t ] = LCA( index_s + 1, index_t + 1) + 1;
+        
+        int move_S = LCS( index_s + 1, index_t );
+        int move_T = LCS( index_s, index_t + 1 );
+
+        return DP[ index_s ][ index_t ] = max( move_S, move_T );
+    }
+    .
+    .
+    .
+    int main(){
+        .
+        .
+        .
+        cout << LCS( 0, 0 ) << endl;
+        .
+        .
+        .
+        return 0;
+    }
+\end{lstlisting}
+
+Y finalmente hemos optimizado sustancialmente ese problema, hemos pasado de tener una complejidad de $O(2^{n} * n)$ a $O(2^{n})$ a finalmente $O(|S|*|T|)$ o bien en $O(n^{2})$
+
+
