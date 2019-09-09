@@ -1034,3 +1034,131 @@ Nótese que solo estamos utilizando lo caracteres del final, es decir solo utili
 Y finalmente hemos optimizado sustancialmente ese problema, hemos pasado de tener una complejidad de $O(2^{n} * n)$ a $O(2^{n})$ a finalmente $O(|S|*|T|)$ o bien en $O(n^{2})$
 
 
+\chapter{Upsolving RPC}
+
+\section{I. Überwatch}
+Podemos utilizar DP 
+
+\section{D. Pants on Fire}
+Se quiere verificar si lo que dice un períodico es verdadero, falso o me falta información para que sea verdad. 
+En el siguiente ejemplo es evidente que los Rusos son Peóres que los Mexicanos pero podemos ver que los Mexicanos son peóres que los Americanos lo podemos representar así: \break 
+Rusos > Mexicanos > Americanos por tanto los Rusos son peores que los americanos (transitividad)
+
+\begin{longtable}[c]{|
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |}
+    \hline
+    \multicolumn{5}{|l|}{\cellcolor[HTML]{FFFFFF}Periódico dice:}                                                     \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    {\color[HTML]{333333} Mexicans} & {\color[HTML]{333333} are} & {\color[HTML]{333333} worst} & than & Americans    \\ \hline
+    {\color[HTML]{333333} Russians} & are                        & {\color[HTML]{333333} worst} & than & Mexicans     \\ \hline
+    NorthKoreans                    & are                        & worst                        & than & Germans      \\ \hline
+    Canadians                       & are                        & worst                        & than & Americans    \\ \hline
+    \multicolumn{5}{|l|}{\cellcolor[HTML]{FFFFFF}Donald Trump dice:}                                                  \\ \hline
+    Russians                        & are                        & worst                        & than & Americans    \\ \hline
+    Germans                         & are                        & worst                        & than & NorthKoreans \\ \hline
+    NorthKoreans                    & are                        & worst                        & than & Mexicans     \\ \hline
+    NorthKoreans                    & are                        & worst                        & than & French       \\ \hline
+    Mexicans                        & are                        & worst                        & than & Canadians    \\ \hline
+\end{longtable}
+
+Ahora sabemos que los Norcoreanos son peóres que los Alemanes según el periódico pero Trump dijo que los Alemanes son peores peores que los Norcoreanos. Es decir tenemos: \break
+Norcoreanos > Alemanes y Alemanes peores que Norcoreanos por tanto tenemos un alternative fact. \break
+Si no es verdad lo que se dice aún que se invierta el órden entonces imprimimos Pants of fire. \break
+
+\subsubsection{Solución: }
+Supongamos que: 
+\begin{itemize}
+    \item Mexicanos = 1
+    \item Americanos = 2 
+    \item Rusos = 3 
+    \item Norcoreanos = 4 
+    \item ALemanes  = 5
+    \item Canadiences = 6
+\end{itemize}
+
+Si modelamos esto con un grafo tenemos lo siguiente 
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (36.4,-11.9) circle (3);
+        \draw (36.4,-11.9) node {$1$};
+        \draw [black] (52.9,-11.9) circle (3);
+        \draw (52.9,-11.9) node {$2$};
+        \draw [black] (18.3,-11.9) circle (3);
+        \draw (18.3,-11.9) node {$3$};
+        \draw [black] (41.6,-23.8) circle (3);
+        \draw (41.6,-23.8) node {$6$};
+        \draw [black] (21.5,-37.9) circle (3);
+        \draw (21.5,-37.9) node {$4$};
+        \draw [black] (40.8,-37.9) circle (3);
+        \draw (40.8,-37.9) node {$5$};
+        \draw [black] (39.4,-11.9) -- (49.9,-11.9);
+        \fill [black] (49.9,-11.9) -- (49.1,-11.4) -- (49.1,-12.4);
+        \draw (44.65,-12.4) node [below] {$peor$};
+        \draw [black] (21.3,-11.9) -- (33.4,-11.9);
+        \fill [black] (33.4,-11.9) -- (32.6,-11.4) -- (32.6,-12.4);
+        \draw (27.35,-12.4) node [below] {$peor$};
+        \draw [black] (43.67,-21.62) -- (50.83,-14.08);
+        \fill [black] (50.83,-14.08) -- (49.92,-14.31) -- (50.65,-15);
+        \draw (47.78,-19.32) node [right] {$peor$};
+        \draw [black] (24.5,-37.9) -- (37.8,-37.9);
+        \fill [black] (37.8,-37.9) -- (37,-37.4) -- (37,-38.4);
+        \draw (31.15,-38.4) node [below] {$peor$};
+        \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+Si quiero saber si X es peor que Y pero no lo tengo directo ¿Que puedo hacer? podemos pararnos en la arista X y ver si puedo llegar a la arista Y. \break 
+Se de una arista no puedo llegar a otra quiere decir que no es una verdad, pero debemos ver si es un alternative Fact, esto lo logramos inviertiendo nuestra búsqueda si buscamos desde Y a X y se cumple tenemos un alternative fact.\break 
+Finalmente si ninguno de los dos se cumple imprimimos Pants on fire. \break 
+¿Que pasa si no conocemos una nacionalidad? Si no esta en nuestro diccionaro es una mentira por tanto mandamos Pants on fire, es decir ni existe. \break 
+
+Para implementar que ¿podemos hacer?
+
+\begin{lstlisting}
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    map<string, int> dictionary;
+    .
+    .
+    .
+    int main(){
+        int count = 0;
+        int m, n, u, v, a, b;
+        cin >> m >> n;
+        for( int i = 0; i < m; i++ ){
+            cin >> a >> b;
+            if( dictionary.find( a ) != dictionary.end() )
+                u = dictionary[ a ];
+            else 
+                u = dictionary[ a ] = count++;
+            if( dictionary.find( b ) != dictionary.end() )
+                v = dictionary[ b ];
+            else 
+                v = dictionary[ b ] = count++;
+            adj[ u ].push_back( v );
+        }
+
+        for( int i = 0; i < n; i++ ){
+            if( dfs(u, v) )
+                cout << "Fact\n";
+            else if( dfs(v, u) )
+                cout << "Alternative fact\n";
+            else 
+                cout << "Paths on fire\n";
+        }
+
+        return 0;
+    }
+\end{lstlisting}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.5)  5 SEP 2019 14:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.5)  9 SEP 2019 14:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1499,29 +1499,78 @@ Underfull \hbox (badness 10000) in paragraph at lines 973--974
 
  []
 
-[20]) [21]
+[20] [21]
+Chapter 4.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 1037--1037
+[][][][][][][][][][]  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1043--1046
+\T1/fnc/m/n/10 los Amer-i-canos lo pode-mos rep-re-sen-tar así: 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1071--1074
+\T1/fnc/m/n/10 Es de-cir ten-emos: 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1071--1074
+\T1/fnc/m/n/10 un al-ter-na-tive fact. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1071--1074
+\T1/fnc/m/n/10 Pants of fire. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1071--1074
+
+ []
+
+[22
+
+]
+Underfull \hbox (badness 1478) in paragraph at lines 1120--1124
+\T1/fnc/m/n/10 pode-mos pararnos en la arista X y ver si puedo lle-gar a la arista Y. 
+ []
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 1120--1124
+\T1/fnc/m/n/10 una men-tira por tanto man-damos Pants on fire, es de-cir ni ex-iste. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1120--1124
+
+ []
+
+[23]) [24]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 9.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 9.
  (/home/erick/Documentos/GitHub/Club/DPS/Notas/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 9.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 9.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3146068DCACAD548514A46290CCCFD91;911.
+(rerunfilecheck)             Checksum: 38E36BAF3B0F29459BB3B6D266F3A1D6;1085.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 9.
  ) 
 Here is how much of TeX's memory you used:
- 32039 strings out of 492623
- 579990 string characters out of 6135670
+ 32119 strings out of 492623
+ 581088 string characters out of 6135670
  965066 words of memory out of 5000000
- 34934 multiletter control sequences out of 15000+600000
+ 34970 multiletter control sequences out of 15000+600000
  573129 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,68p,485b,1987s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb></usr/share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on /home/erick/Documentos/GitHub/Club/DPS/Notas/main.pdf (22 pages, 233508 bytes).
+Output written on /home/erick/Documentos/GitHub/Club/DPS/Notas/main.pdf (25 pages, 244249 bytes).
 PDF statistics:
- 800 PDF objects out of 1000 (max. 8388607)
- 758 compressed objects within 8 object streams
- 506 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 875 PDF objects out of 1000 (max. 8388607)
+ 829 compressed objects within 9 object streams
+ 550 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
