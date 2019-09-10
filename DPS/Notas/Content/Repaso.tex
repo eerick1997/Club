@@ -1033,11 +1033,229 @@ Nótese que solo estamos utilizando lo caracteres del final, es decir solo utili
 
 Y finalmente hemos optimizado sustancialmente ese problema, hemos pasado de tener una complejidad de $O(2^{n} * n)$ a $O(2^{n})$ a finalmente $O(|S|*|T|)$ o bien en $O(n^{2})$
 
+\chapter{DP con máscaras de bits}
+\section{Manipulación de bits}
+
+Para estar en sintonía en un número binario debemos mencionar lo siguiente 
+\begin{longtable}[c]{
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l }
+    \hline
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}31}                       & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}30}                       & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}...}                        & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}1} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}0}        \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}{\color[HTML]{333333} 0}} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}{\color[HTML]{333333} 0}} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}{\color[HTML]{333333} ...}} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}0} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}0\_\{2\}} \\ \hline
+    MSB                                                                    &                                                                       &                                                                         &                                                & LSB                                                  
+\end{longtable}
+
+También tenemos varias operaciones en binario por ejemplo el AND
+\begin{longtable}[c]{lllll}
+    \rowcolor[HTML]{FFFFFF} 
+                              & 1                        & 1                        & 0 & 0 \\
+    \endfirsthead
+    %
+    \endhead
+    %
+    \rowcolor[HTML]{FFFFFF} 
+    {\color[HTML]{333333} \&} & {\color[HTML]{333333} 1} & {\color[HTML]{333333} 0} & 1 & 0 \\
+    \rowcolor[HTML]{C0C0C0} 
+                              & 1                        & 0                        & 0 & 0
+\end{longtable}
+
+Otra operación es OR 
+
+\begin{longtable}[c]{lllll}
+    \rowcolor[HTML]{FFFFFF} 
+                             & 1                        & 1                        & 0 & 0 \\
+    \endfirsthead
+    %
+    \endhead
+    %
+    \rowcolor[HTML]{FFFFFF} 
+    {\color[HTML]{333333} |} & {\color[HTML]{333333} 1} & {\color[HTML]{333333} 0} & 1 & 0 \\
+    \rowcolor[HTML]{C0C0C0} 
+                             & 1                        & 1                        & 1 & 0
+\end{longtable}
+
+Otra operación es la XOR 
+\begin{longtable}[c]{lllll}
+    \rowcolor[HTML]{FFFFFF} 
+                                              & 1                        & 1                        & 0 & 0 \\
+    \endfirsthead
+    %
+    \endhead
+    %
+    \rowcolor[HTML]{FFFFFF} 
+    {\color[HTML]{333333} \textasciicircum{}} & {\color[HTML]{333333} 1} & {\color[HTML]{333333} 0} & 1 & 0 \\
+    \rowcolor[HTML]{C0C0C0} 
+                                              & 0                        & 1                        & 1 & 0
+\end{longtable}
+
+Negación 
+
+\begin{longtable}[c]{lllll}
+    \rowcolor[HTML]{FFFFFF} 
+    $\sim$                  & 1                        & 1                        & 0 & 0 \\
+    \endfirsthead
+    %
+    \endhead
+    %
+    \rowcolor[HTML]{C0C0C0} 
+    {\color[HTML]{333333} } & {\color[HTML]{333333} 0} & {\color[HTML]{333333} 0} & 1 & 1
+\end{longtable}
+
+Y también tenemos optras operaciones útiles como los corrimientos de bits a la derecha o a la izquierda por ejemplo
+
+\begin{longtable}[c]{lllll}
+    \rowcolor[HTML]{FFFFFF} 
+    5                        & \textless{}\textless{}                              & 2                        & = & 00...010100                    \\
+    \endfirsthead
+    %
+    \endhead
+    %
+    \rowcolor[HTML]{FFFFFF} 
+    {\color[HTML]{333333} 5} & {\color[HTML]{333333} \textgreater{}\textgreater{}} & {\color[HTML]{333333} 2} & = & 00...0001                      \\
+    5                        & \textgreater{}\textgreater{}                        & 3+2                      & = & 5\textgreater{}\textgreater{}5
+\end{longtable}
+
+Algunas operaciones que podemos hacer por ejemplo: \break 
+
+Saber si el k-ésimo bit está encendido 
+\begin{lstlisting}
+    isSet( n, k ) bool ( n & ( 1 << k ) );
+\end{lstlisting}
+
+Colocar un uno en la k-ésima posición
+\begin{lstlisting}
+    setBit( n, k ) bool ( n | ( 1 << k ) );
+\end{lstlisting}
+
+Apagar el k-ésimo bit
+\begin{lstlisting}
+    clearBit( n, k ) bool ( n &~ ( 1 << k ) );
+\end{lstlisting}
+
+Cambiar el valor del k-ésimo bit (si es cero se vuelve uno y viceversa)
+
+Saber si el k-ésimo bit está encendido 
+\begin{lstlisting}
+    isSet( n, k ) bool ( n ^ ( 1 << k ) );
+\end{lstlisting}
+
+Si queremos saber en constante el bit menos significativo de un número 
+
+\begin{longtable}[c]{llllllll}
+    \cellcolor[HTML]{FFFFFF}8                              & \cellcolor[HTML]{FFFFFF}=                        & \cellcolor[HTML]{FFFFFF}0                        & \cellcolor[HTML]{FFFFFF}... & \cellcolor[HTML]{FFFFFF}1 & 0 & 0 & 0 \\
+    \endfirsthead
+    %
+    \endhead
+    %
+    \cellcolor[HTML]{FFFFFF}{\color[HTML]{333333} $\sim$8} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{333333} =} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{333333} 1} & \cellcolor[HTML]{FFFFFF}... & \cellcolor[HTML]{FFFFFF}0 & 1 & 1 & 1 \\
+    -8                                                     & =                                                & 1                                                & ...                         & 1                         & 0 & 0 & 0 \\
+    8\&-8                                                  & =                                                & 0                                                & ...                         & 1                         & 0 & 0 & 0
+\end{longtable}
+
+Por tanto obtenemos en código 
+\begin{lstlisting}
+    lowestBit( n, k ) (b &- n)
+\end{lstlisting}
+
+
+Si queremos encender los primeros K-bits pordemos hacer $2^{k} - 1$ pero ¿Podemos hacerlo más rápido? \break 
+
+\begin{lstlisting}
+    setFirstK( k ) ( ( 1 << k ) - 1);
+\end{lstlisting}
+
+¿Cómo contar el número de bits encendidos rápido? Podemos utilizar un ciclo y contar los bits ¿Pero hay una forma más fácil? \break 
+en C++ tenemos una función llamada \textsf{\_\_builtin\_popcount( n )} si queremos trabajar con \textsf{long long int} podemos utilizar \textsf{\_\_builtin\_popcountll( n )}
+
+\section{Máscaras de bits}
+Tenemos lo siguiente
+
+Los elementos que tienen un bit encendido pertenecen a un conjunto.
+
+Si el conjunto es el vacío es pues es el que cuyo valor es cero, es decir: \break 
+$\emptyset = 0$ \\ 
+
+k elementos \break 
+$U=2^{k} - 1$ \\ 
+
+Como estamos trabajando con conjuntos ¿Que operación es la unión de dos conjuntos A y B? \break 
+$A | B$ \\ 
+
+¿La intersección de A y B? 
+$A \& B$ \\ 
+
+El complemento \break 
+~A $\&$ U, A $\wedge$ U\\
+
+Insertar K en A \break
+setBit(A, k); \break 
+
+Eliminar K de A: \break 
+clearBit( A, k ); \break 
+
+\begin{itemize}
+    \item { $\{\emptyset$\} }
+    \item { $\{0\}$ }
+    \item { $\{0, 1\}$ }
+    \item { $\{0, 1, 2\}$ }
+    \item { $\{0, 2\}$ }
+    \item { $\{1\}$ }
+    \item { $\{1, 2\}$ }
+    \item { $\{2\}$ }
+\end{itemize}
+
+¿Como itero sobre todos los subconjuntos?
+\begin{lstlisting}
+    for( i = 0 ... i << k - 1 )
+        for( j = 0 ... k - 1 )
+            if( isSet(i, j) )
+\end{lstlisting}
+
+¿Cuál es la complejidad de lo anterior? $O(2^{k} * k)$
+
+\section{Ejercicio}
+Nos dan máscaras de bits, llamémosle A queremos todos los subconjuntos que hay en A por ejemplo:
+
+\begin{longtable}[c]{|
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |}
+    \hline
+    31                       &                          &                            &   &   &   &   & 0 \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    {\color[HTML]{333333} 0} & {\color[HTML]{333333} 0} & {\color[HTML]{333333} ...} & 1 & 1 & 0 & 1 & 0 \\ \hline
+                             &                          &                            & 1 & 1 & 0 & 1 & 0 \\ \hline
+                             &                          &                            & 0 & 1 & 0 & 1 & 0 \\ \hline
+                             &                          &                            & 0 & 0 & 0 & 1 & 0 \\ \hline
+                             &                          &                            & 1 & 0 & 0 & 0 & 0 \\ \hline
+                             &                          &                            & 1 & 0 & 0 & 1 & 0 \\ \hline
+                             &                          &                            & 0 & 0 & 0 & 0 & 0 \\ \hline
+                             &                          &                            & 1 & 1 & 0 & 0 & 0 \\ \hline
+                             &                          &                            & 0 & 1 & 0 & 0 & 0 \\ \hline
+\end{longtable}
+
+
 
 \chapter{Upsolving RPC}
 
 \section{I. Überwatch}
-Podemos utilizar DP 
+Podemos utilizar DP el problema se resume en tomar y no tomar como el problema de la mochila.
 
 \section{D. Pants on Fire}
 Se quiere verificar si lo que dice un períodico es verdadero, falso o me falta información para que sea verdad. 
@@ -1079,7 +1297,7 @@ Supongamos que:
     \item Americanos = 2 
     \item Rusos = 3 
     \item Norcoreanos = 4 
-    \item ALemanes  = 5
+    \item Alemanes  = 5
     \item Canadiences = 6
 \end{itemize}
 
@@ -1130,9 +1348,26 @@ Para implementar que ¿podemos hacer?
     using namespace std;
 
     map<string, int> dictionary;
-    .
-    .
-    .
+    vector< vector<int> > adjList;
+    vector< bool > visited;
+    
+    bool DFS( int u, int v ){
+        bool ans = false;
+        if( u == v )
+            return true;
+        visited[ u ] = true;
+        for( int i = 0; i < adjList[ u ].size(); i++ ){
+            int w = adjList[ u ][ i ];
+            if( !visited[ w ] ){
+                if( DFS( w, v ) ){
+                    ans = true;
+                    break;
+                }
+            }
+        }
+        return ans;
+    }
+
     int main(){
         int count = 0;
         int m, n, u, v, a, b;
@@ -1147,18 +1382,31 @@ Para implementar que ¿podemos hacer?
                 v = dictionary[ b ];
             else 
                 v = dictionary[ b ] = count++;
+            //Enlazamos los nodos (creamos el grafo)
             adj[ u ].push_back( v );
         }
-
+        //Procesamos las queries
         for( int i = 0; i < n; i++ ){
-            if( dfs(u, v) )
+
+            //Extraemos los IDs 
+            cin >> a >> b;
+            //Buscamos el ID de la primer nacionalidad
+            if( dictionary.find( a ) != dictionary.end() )
+                u = dictionary[ a ];
+            //Buscamos el ID de la segunda nacionalidad
+            if( dictionary.find( b ) != dictionary.end() )
+                v = dictionary[ b ];
+
+            //Se cumplió totalmente lo que se ha dicho
+            if( DFS(u, v) )
                 cout << "Fact\n";
-            else if( dfs(v, u) )
+            //Si invertimos se cumple
+            else if( DFS(v, u) )
                 cout << "Alternative fact\n";
+            //No es verdad
             else 
                 cout << "Paths on fire\n";
         }
-
         return 0;
     }
 \end{lstlisting}

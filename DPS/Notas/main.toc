@@ -14,7 +14,11 @@
 \contentsline {section}{\numberline {3.4}Boredrom}{15}{section.3.4}% 
 \contentsline {section}{\numberline {3.5}LIS - Longest Increasing Subsequence}{16}{section.3.5}% 
 \contentsline {section}{\numberline {3.6}Longest Common Subsequence}{19}{section.3.6}% 
-\contentsline {chapter}{\numberline {4}Upsolving RPC}{22}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}I. \IeC {\"U}berwatch}{22}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}D. Pants on Fire}{22}{section.4.2}% 
-\contentsline {subsubsection}{Soluci\IeC {\'o}n: }{23}{table.4.1}% 
+\contentsline {chapter}{\numberline {4}DP con m\IeC {\'a}scaras de bits}{22}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Manipulaci\IeC {\'o}n de bits}{22}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}M\IeC {\'a}scaras de bits}{23}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Ejercicio}{24}{section.4.3}% 
+\contentsline {chapter}{\numberline {5}Upsolving RPC}{26}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}I. \IeC {\"U}berwatch}{26}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}D. Pants on Fire}{26}{section.5.2}% 
+\contentsline {subsubsection}{Soluci\IeC {\'o}n: }{27}{table.5.1}% 
