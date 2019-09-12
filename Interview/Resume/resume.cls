@@ -9,6 +9,7 @@
 \RequirePackage{fontawesome}
 \RequirePackage{multicol}
 \RequirePackage{hyperref}
+\RequirePackage{longtable}
 \usetikzlibrary{fit, positioning, calc}
 
 %%%%%%%%%%%%%%%%%% SOME COLORS %%%%%%%%%%%%%%%%%%
@@ -26,11 +27,11 @@
     {}
 
 \newcommand{\resumesection}[2]{
-    \section[]{#1 #2}
+    \section[]{\textbf{#1 #2}}
 }
 
 \newcommand{\divider}{
-    {\color{deepblue}\titlerule[2pt]}
+    {\color{deepblue}\titlerule[2pt]}\break
 }
 
 \newcommand{\link}[2]{
@@ -42,21 +43,21 @@
 %Date 
 %Score
 \newcommand{\school}[4]{
-    \textbf{#1} \hfill #3
-    \textbf{#2} \hfill #4
+    \raggedright\textbf{#1} \hfill \raggedright{#3} \break
+    \raggedright\textbf{#2} \hfill \raggedright#4
 }
 
 %Title
 %Description
 \newcommand{\project}[ 2 ]{
-    \subsection[#1]{\textbf{#1}} #2
+    \subsection[#1]{\textbf{\color{deepblue}#1}} \raggedright#2
 }
 
 %name
 %description
 %date
 \newcommand{\award}[3]{
-    \subsection[#1]{\textbf{#1}} #2 \hfill #3
+    \subsection[#1]{\textbf{\color{deepblue}#1}} #2 \hfill #3
 }
 
 \newcommand{\programminglanguage}[2]{
@@ -84,13 +85,22 @@
 }
 
 \newcommand{\name}[1]{
-    \centerline{\Huge{#1}}
+    \centerline{\color{deepblue}\textbf{\Huge{#1}}}
 }
 
-\newcommand\contact[5]{
-    \centerline{
-        \makebox[0pt][c]{
-            {\large\textperiodcentered} #2 {\large\textperiodcentered} #3 \ #4 \ \ #5
-        }
-    }
+\newcommand{\partitle}[1]{
+    \textbf{\Large{\color{deepblue} #1 }}\break
+}
+
+%1.Email
+%2.Github
+%3.Linkedin
+%4.Mobile phone
+\newcommand\contact[4]{
+    \begin{longtable}[c]{ll}
+        \raggedright{\faGoogle: }{#1} & {\faGithub: }{#2} \\
+        \raggedright{\faLinkedin: }{#3} & {\faMobilePhone: }{#4}
+        \endfirsthead
+        \endhead
+    \end{longtable}
 }

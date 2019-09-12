@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.5)  5 SEP 2019 09:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.5)  11 SEP 2019 18:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -415,6 +415,23 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
 \Hy@SectionHShift=\skip50
+) (/usr/share/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
+\LTleft=\skip51
+\LTright=\skip52
+\LTpre=\skip53
+\LTpost=\skip54
+\LTchunksize=\count130
+\LTcapwidth=\dimen177
+\LT@head=\box65
+\LT@firsthead=\box66
+\LT@foot=\box67
+\LT@lastfoot=\box68
+\LT@cols=\count131
+\LT@rows=\count132
+\c@LT@tables=\count133
+\c@LT@chunks=\count134
+\LT@p@ftn=\toks29
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex
 File: tikzlibraryfit.code.tex 2019/02/02 v3.1.1 (3.1.1)
 ) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
@@ -475,17 +492,17 @@ LaTeX Font Info:    ... okay on input line 2.
 
 ABD: EveryShipout initializing macros (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count130
-\scratchdimen=\dimen177
-\scratchbox=\box65
-\nofMPsegments=\count131
-\nofMParguments=\count132
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count133
-\MPscratchDim=\dimen178
-\MPnumerator=\count134
-\makeMPintoPDFobject=\count135
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count135
+\scratchdimen=\dimen178
+\scratchbox=\box69
+\nofMPsegments=\count136
+\nofMParguments=\count137
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count138
+\MPscratchDim=\dimen179
+\MPnumerator=\count139
+\makeMPintoPDFobject=\count140
+\everyMPtoPDFconversion=\toks31
 ) (/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  (/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -498,14 +515,14 @@ Package grfext Info: Graphics extension search list:
  (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\AtBeginShipoutBox=\box66
+\AtBeginShipoutBox=\box70
 Package hyperref Info: Link coloring OFF on input line 2.
  (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count136
+\c@section@level=\count141
 )
 LaTeX Info: Redefining \ref on input line 2.
 LaTeX Info: Redefining \pageref on input line 2.
@@ -514,48 +531,33 @@ LaTeX Info: Redefining \nameref on input line 2.
 \@outlinefile=\write4
 \openout4 = `Resume.out'.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 4.
- (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+LaTeX Font Info:    Try loading font information for U+fontawesomethree on input line 7.
+ (/usr/share/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 4.
-LaTeX Font Info:    Try loading font information for U+fontawesomeone on input line 6.
- (/usr/share/texmf-dist/tex/latex/fontawesome/ufontawesomeone.fd
-File: ufontawesomeone.fd 2016/05/22 Font definitions for U/fontawesomeone.
-)
-
-LaTeX Font Warning: Font shape `U/fontawesomeone/m/sc' undefined
-(Font)              using `U/fontawesomeone/m/n' instead on input line 6.
-
-LaTeX Font Info:    Try loading font information for U+fontawesometwo on input line 9.
-(/usr/share/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
+LaTeX Font Info:    Try loading font information for U+fontawesometwo on input line 7.
+ (/usr/share/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
 
-LaTeX Font Warning: Font shape `U/fontawesometwo/bx/n' undefined
-(Font)              using `U/fontawesometwo/m/n' instead on input line 9.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-
- []
-
-
-LaTeX Font Warning: Font shape `U/fontawesometwo/m/sc' undefined
-(Font)              using `U/fontawesometwo/m/n' instead on input line 16.
-
-
 LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 18.
+(Font)              using `OT1/cmr/bx/n' instead on input line 9.
+
+LaTeX Font Info:    Try loading font information for U+fontawesomeone on input line 9.
+(/usr/share/texmf-dist/tex/latex/fontawesome/ufontawesomeone.fd
+File: ufontawesomeone.fd 2016/05/22 Font definitions for U/fontawesomeone.
+)
+
+LaTeX Font Warning: Font shape `U/fontawesomeone/bx/sc' undefined
+(Font)              using `U/fontawesomeone/m/n' instead on input line 9.
+
+
+LaTeX Font Warning: Font shape `U/fontawesometwo/bx/n' undefined
+(Font)              using `U/fontawesometwo/m/n' instead on input line 12.
 
 
 LaTeX Font Warning: Font shape `U/fontawesometwo/bx/sc' undefined
-(Font)              using `U/fontawesometwo/bx/n' instead on input line 18.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\char' on input line 18.
+(Font)              using `U/fontawesometwo/bx/n' instead on input line 19.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -565,77 +567,54 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\char' on input line 24.
 
-LaTeX Font Info:    Try loading font information for U+fontawesomethree on input line 26.
-(/usr/share/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
-File: ufontawesomethree.fd 2016/05/22 Font definitions for U/fontawesomethree.
-)
-
-LaTeX Font Warning: Font shape `U/fontawesomethree/m/sc' undefined
-(Font)              using `U/fontawesomethree/m/n' instead on input line 26.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\char' on input line 29.
+(hyperref)                removing `\char' on input line 27.
+
+
+LaTeX Font Warning: Font shape `U/fontawesomethree/bx/sc' undefined
+(Font)              using `U/fontawesomethree/m/n' instead on input line 29.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\char' on input line 32.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--46
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--51
-\OT1/cmss/m/n/10 Windows-10(user) 
- []
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\char' on input line 35.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--51
-\OT1/cmr/m/n/10 Linux (Man-jaro user) 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 52--54
-
- []
-
-
-Overfull \vbox (6.67268pt too high) has occurred while \output is active []
-
-
-Overfull \vbox (3.54076pt too high) has occurred while \output is active []
+Overfull \vbox (1.07996pt too high) has occurred while \output is active []
 
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 57.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 57.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
  (/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 57.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 57.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
 Package rerunfilecheck Info: File `Resume.out' has not changed.
-(rerunfilecheck)             Checksum: FE153BE93A1144ED7B022236940A207E;769.
+(rerunfilecheck)             Checksum: A14420FF5D70B342A218F6B31578E73C;515.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 57.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
  ) 
 Here is how much of TeX's memory you used:
- 17595 strings out of 492623
- 325013 string characters out of 6135670
- 404361 words of memory out of 5000000
- 21212 multiletter control sequences out of 15000+600000
- 7756 words of font info for 28 fonts, out of 8000000 for 9000
+ 17655 strings out of 492623
+ 325593 string characters out of 6135670
+ 405245 words of memory out of 5000000
+ 21276 multiletter control sequences out of 15000+600000
+ 7992 words of font info for 29 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,5n,51p,664b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomeone.enc}</usr/share/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on /home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.pdf (1 page, 108152 bytes).
+ 62i,5n,51p,664b,347s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomeone.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}</usr/share/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb>
+Output written on /home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.pdf (1 page, 82309 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
- 15 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 95 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
+ 85 words of extra memory for PDF output out of 10000 (max. 10000000)
 
