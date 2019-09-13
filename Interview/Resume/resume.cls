@@ -98,8 +98,8 @@
 %4.Mobile phone
 \newcommand\contact[4]{
     \begin{longtable}[c]{ll}
-        \raggedright{\faGoogle: }{#1} & {\faGithub: }{#2} \\
-        \raggedright{\faLinkedin: }{#3} & {\faMobilePhone: }{#4}
+        \color{deepblue}\raggedright{\faGoogle: }{#1} & \color{deepblue}{\faGithub: }{#2} \\
+        \color{deepblue}\raggedright{\faLinkedin: }{#3} & \color{deepblue}{\faMobilePhone: }{#4}
         \endfirsthead
         \endhead
     \end{longtable}
