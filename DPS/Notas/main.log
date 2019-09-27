@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.5)  10 SEP 2019 18:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.5)  26 SEP 2019 14:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1306,17 +1306,17 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.99199pt on input line 3.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 5.51999pt on input line 3.
-)
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.27 ...a divisi\IeC {\'o}n}{31}{subsection.6.1.1}
+                                                  % [1
+
+])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
- (/home/erick/Documentos/GitHub/Club/DPS/Notas/Content/Repaso.texpdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1 \chapter
-            {B√∫squeda binaria} [1
-
-]
+ (/home/erick/Documentos/GitHub/Club/DPS/Notas/Content/Repaso.tex [2]
 Chapter 1.
 LaTeX Font Info:    Try loading font information for OT1+pzc on input line 1.
 (/usr/share/texmf-dist/tex/latex/psnfss/ot1pzc.fd
@@ -1339,7 +1339,7 @@ File: ts1fnc.fd 2005/12/13 font definitions for TS1/fnc.
 )
 LaTeX Font Info:    Font shape `TS1/fnc/m/n' will be
 (Font)              scaled to size 9.29993pt on input line 7.
- [2
+ [3
 
 ]
 Overfull \hbox (105.51547pt too wide) in paragraph at lines 73--74
@@ -1359,23 +1359,23 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 88.
- [3] [4]
+ [4] [5]
 Chapter 2.
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 129--129
 [][][][][][][][][][]  
  []
 
-[5
+[6
 
-] [6] [7]
+] [7] [8]
 LaTeX Font Info:    Font shape `T1/fnc/m/n' will be
 (Font)              scaled to size 11.15991pt on input line 305.
 LaTeX Font Info:    Font shape `T1/fnc/bx/n' in size <12> not available
 (Font)              Font shape `T1/fnc/b/n' tried instead on input line 305.
 LaTeX Font Info:    Font shape `T1/fnc/b/n' will be
 (Font)              scaled to size 11.15991pt on input line 305.
- [8] [9]
+ [9] [10]
 Chapter 3.
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 351--351
@@ -1387,14 +1387,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 360--363
 
  []
 
-[10
+[11
 
-] [11]
+] [12]
 Underfull \hbox (badness 10000) in paragraph at lines 430--435
 
  []
 
-[12]
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 501--504
 
  []
@@ -1404,7 +1404,7 @@ Overfull \hbox (66.82031pt too wide) in paragraph at lines 640--641
  [] 
  []
 
-[13] [14] [15]
+[14] [15] [16]
 Underfull \hbox (badness 10000) in paragraph at lines 755--756
 
  []
@@ -1454,7 +1454,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 763--764
 
  []
 
-[16] [17] [18]
+[17] [18] [19]
 Underfull \hbox (badness 10000) in paragraph at lines 917--919
 
  []
@@ -1469,7 +1469,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 920--921
 
  []
 
-[19]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 969--970
 
  []
@@ -1499,7 +1499,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 973--974
 
  []
 
-[20] [21]
+[21] [22]
 Chapter 4.
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 1036--1036
@@ -1509,7 +1509,7 @@ Overfull \hbox (10.0pt too wide) in paragraph at lines 1036--1036
 
 Overfull \vbox (0.9134pt too high) has occurred while \output is active []
 
- [22
+ [23
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 1126--1127
@@ -1541,7 +1541,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1183--1185
 
  []
 
-[23]
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 1186--1188
 []\T1/fnc/m/n/10 k el-e-men-tos 
  []
@@ -1606,7 +1606,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1201--1203
 
  []
 
-[24] [25]
+[25] [26]
 Chapter 5.
 
 Overfull \hbox (10.0pt too wide) in paragraph at lines 1255--1255
@@ -1638,7 +1638,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1289--1292
 
  []
 
-[26
+[27
 
 ]
 Underfull \hbox (badness 1478) in paragraph at lines 1338--1342
@@ -1655,29 +1655,160 @@ Underfull \hbox (badness 10000) in paragraph at lines 1338--1342
 
  []
 
-[27] [28]) [29]
+[28] [29] [30]
+Chapter 6.
+
+Overfull \hbox (10.0pt too wide) in paragraph at lines 1414--1414
+[][][][][][][][][][]  
+ []
+
+LaTeX Font Info:    Font shape `T1/fnc/m/it' will be
+(Font)              scaled to size 9.29993pt on input line 1423.
+
+Underfull \hbox (badness 1917) in paragraph at lines 1422--1424
+\T1/fnc/b/n/10 d \T1/fnc/m/n/10 di-vide a \T1/fnc/b/n/10 a \T1/fnc/m/n/10 si ex-iste un en-tero \T1/fnc/b/n/10 q \T1/fnc/m/n/10 tal que $\FML/fncmi/m/it/10 a \FMS/fncm/m/n/10 Å \FML/fncmi/m/it/10 dq$\T1/fnc/m/n/10 , y se es-cribe $\FML/fncmi/m/it/10 d\FMS/fncm/m/n/10 j\FML/fncmi/m/it/10 a$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1422--1424
+\T1/fnc/m/it/10 Ejemplos:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1422--1424
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1430--1431
+\T1/fnc/m/n/10 Sean $\FML/fncmi/m/it/10 a; b\FMS/fncm/m/n/10 9\FML/fncmi/m/it/10 Z$\T1/fnc/m/n/10 . EN-tonces ex-is-ten $\FML/fncmi/m/it/10 q; e\FMS/fncm/m/n/10 9\FML/fncmi/m/it/10 Z$ \T1/fnc/m/n/10 tal que:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1430--1431
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1431--1433
+
+ []
+
+[31
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1463--1464
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1465--1466
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1473--1474
+
+ []
+
+[32]
+Underfull \hbox (badness 10000) in paragraph at lines 1497--1498
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1536--1538
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 1550--1551
+
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1573--1576
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1576--1578
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1578--1581
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1605--1608
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1608--1610
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1610--1613
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1637--1640
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1640--1642
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1642--1645
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1650--1654
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1654--1656
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (46.12088pt too wide) in alignment at lines 1656--1660
+ [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
+ []
+
+[34]) [35]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 9.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 9.
  (/home/erick/Documentos/GitHub/Club/DPS/Notas/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 9.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 9.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6C631BB9D477D345D9EA93DE807DDE36;1339.
+(rerunfilecheck)             Checksum: 661B170DD4C5964409F5DD5704F97F53;1745.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 9.
  ) 
 Here is how much of TeX's memory you used:
- 32219 strings out of 492623
- 582323 string characters out of 6135670
+ 32362 strings out of 492623
+ 584262 string characters out of 6135670
  965066 words of memory out of 5000000
- 35006 multiletter control sequences out of 15000+600000
- 575899 words of font info for 83 fonts, out of 8000000 for 9000
+ 35035 multiletter control sequences out of 15000+600000
+ 579753 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,68p,485b,1987s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,12n,68p,578b,1987s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb></usr/share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on /home/erick/Documentos/GitHub/Club/DPS/Notas/main.pdf (30 pages, 276562 bytes).
+Output written on /home/erick/Documentos/GitHub/Club/DPS/Notas/main.pdf (36 pages, 299684 bytes).
 PDF statistics:
- 987 PDF objects out of 1000 (max. 8388607)
- 934 compressed objects within 10 object streams
- 613 named destinations out of 1000 (max. 500000)
- 189 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1164 PDF objects out of 1200 (max. 8388607)
+ 1103 compressed objects within 12 object streams
+ 723 named destinations out of 1000 (max. 500000)
+ 237 words of extra memory for PDF output out of 10000 (max. 10000000)
 

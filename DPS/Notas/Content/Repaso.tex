@@ -1410,3 +1410,316 @@ Para implementar que ¿podemos hacer?
         return 0;
     }
 \end{lstlisting}
+
+\chapter{Teoría de números}
+Recordemos los conjuntos de números 
+\begin{itemize}
+    \item Números enteros: $Z = {..., -3, -2, -1, 0, 1, 2, 3, ... }$
+    \item Números naturales/Números positivos $N = {1, 2, 3, ..., }$
+\end{itemize}
+
+\section{Divisibilidad}
+\textbf{d} divide a \textbf{a} si existe un entero \textbf{q} tal que $a = dq$, y se escribe $d|a$\break
+\textit{Ejemplos:}\break 
+\begin{itemize}
+    \item {$2|6 \rightarrow 6 = 2(3)$}
+    \item {$5|6 \rightarrow 6 = 5(q), q = 1.2$}
+\end{itemize}
+
+\subsection{Algoritmo de la división}
+Sean \textbf{$a,b \exists Z$}. ENtonces existen \textbf{$q, e \exists Z$} tal que:\break
+\[ a = bq + r \]
+donde: $0 \leq r < |b|$ \newline
+
+\textit{Ejemplo} \newline
+a = 15, b = 6 \newline 
+15 = 6(2) + 3 \newline 
+dónde: 
+\begin{itemize}
+    \item {El cociente = 2}
+    \item {El residuo = 3}
+\end{itemize}
+
+De forma general 
+\[
+    q = piso \left ( \frac{a}{b} \right )
+\]
+
+Y también 
+\[
+    r = a \% b    
+\]
+
+\subsubsection{¿Cómo hallar los divisores de un número?}
+\begin{lstlisting}
+    vector< int > divisores( int n ){
+        vector< int > div;
+        for( int d = 1; d <= n; d++)
+            if( n % d == 0 )
+                div.push_back( d );
+        return div;
+    }
+\end{lstlisting}
+La complejidad del algoritmo anterior es $O(n)$ siendo así vamos a tratar de optimizar esta función\newline
+
+Que pasa si queremos los divisores de un n = 24, los divisores de este número son $\{1, 2, 3, 4, 6, 8, 12, 24\}$ podemos observar que siempre los divisores van en ''parejas'' es decir siempre tenemos lo siguiente: \newline
+\begin{itemize}
+    \item {d = 1, q = 24}
+    \item {d = 2, q = 12}
+    \item {d = 3, q = 8}
+    \item {d = 4, q = 6}
+\end{itemize}
+
+Además sabemos que n = dq por tanto \newline
+\[ d \leq q \]
+\[ d^{2} \leq dq \]
+\[ \sqrt{d^{2}} \leq \sqrt{n} \]
+\[ d \leq \sqrt{n} \]
+
+¿En código que obtenemos?
+
+\begin{lstlisting}
+    vector< int > divisores( int n ){
+        vector< int > div;
+        for( int d = 1; d *d <= n; d++){
+            if( n % d == 0 ){
+                int q = n / d;
+                div.push_back( d );
+                //Para evitar números repqtidos, analizar el caso del 25
+                if( q != d)
+                    div.push_back( q );
+            }
+        }
+        return div;
+    }
+\end{lstlisting}
+
+La complejidad de este algoritmo es de $O(\sqrt{n})$ \newline
+
+Que pasa si hacemos uso de números negativos ¿Qué sucede?
+
+\[ int a = -13, b = 4\]
+\[ int q = \frac{a}{b} \]
+\[ int r = a \% b \]
+\[ a = bq + r\]
+\[ -13 = 4(-3) + (-1)\]
+\[ -13 = -12 - 1\]
+Lo cual no es del todo correcto ya que nuestro residuo debería ser 3
+\[ -13 = 4(-4) + 3\]
+\[ -13 = -16 + 3\]
+¿Como reparamos esto?
+\begin{lstlisting}
+    if( r < 0 )
+        r += b
+\end{lstlisting}
+
+\section{Números primos}
+
+Sea $p \exists N$ con $p \geq 2$ p es primo si: sus unicos divisores son 1 y p.
+
+\subsection{Test de primalidad}
+¿Cómo puedo saber si un n es primo?
+\begin{lstlisting}
+    bool esPrimo( int n ){
+        if( n < 2 )
+            return false;
+
+        for( int d = 2; d*d <= n; d++ )
+            if( n % q == 0 )
+                return false;
+        return true;
+    }
+\end{lstlisting}
+La complejidad de este algoritmo es $O(\sqrt{n})$
+
+\subsubsection{Problema}
+\textbf{Hallar todos los primos menores o iguales a n \newline Ejemplo: }
+$ n = 10 \rightarrow \{ 2, 3, 5, 7 \}$ \newline
+
+\begin{lstlisting}
+    vector< int > primos;
+    for( int d = 2; d <= n; d++ ){
+        if( esPrimo( d ) )
+            primos.push_back( d );
+    }
+\end{lstlisting}
+
+La complejidad de este algoritmo es $O(n \sqrt{n})$ en este caso a lo mucho podríamos procesar en un segundo si $n \leq 5 * 10^{5}$
+
+\section{Criba de eratóstenes}
+En este caso nos ''paramos'' en un número y ''marcamos'' todos sus múltiplos. \newline
+
+Empezamos con el 2
+\begin{figure}[H]
+\begin{longtable}[c]{|
+    >{\columncolor[HTML]{EFEFEF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |}
+    \hline
+    {\color[HTML]{333333} 2} & {\color[HTML]{333333} 3} & {\color[HTML]{333333} 4} & {\color[HTML]{333333} 5} & {\color[HTML]{333333} 6} & {\color[HTML]{333333} 7} & {\color[HTML]{333333} 8} & {\color[HTML]{333333} 9} & {\color[HTML]{333333} 10} & {\color[HTML]{333333} 11} & {\color[HTML]{333333} 12} & {\color[HTML]{333333} 13} & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    \cellcolor[HTML]{FFFFFF} & {\color[HTML]{C0C0C0} } & x &  & x &  & x &  & x &  & x &  & x &  & x &  & x &  & x \\ \hline
+    \end{longtable}
+\end{figure}
+
+Nos paramos en el 3
+\begin{figure}[H]
+\begin{longtable}[c]{|
+    >{\columncolor[HTML]{EFEFEF}}l |
+    >{\columncolor[HTML]{EFEFEF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |}
+    \hline
+    {\color[HTML]{333333} 2} & {\color[HTML]{333333} 3} & {\color[HTML]{333333} 4} & {\color[HTML]{333333} 5} & {\color[HTML]{333333} 6} & {\color[HTML]{333333} 7} & {\color[HTML]{333333} 8} & {\color[HTML]{333333} 9} & {\color[HTML]{333333} 10} & {\color[HTML]{333333} 11} & {\color[HTML]{333333} 12} & {\color[HTML]{333333} 13} & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    \cellcolor[HTML]{FFFFFF} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{C0C0C0} } & x &  & x &  & x & x & x &  & x &  & x & x & x &  & x &  & x \\ \hline
+    \end{longtable}
+\end{figure}
+
+Nos paramos en el 4
+\begin{figure}[H]
+\begin{longtable}[c]{|
+    >{\columncolor[HTML]{EFEFEF}}l |
+    >{\columncolor[HTML]{EFEFEF}}l |
+    >{\columncolor[HTML]{EFEFEF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |}
+    \hline
+    {\color[HTML]{333333} 2} & {\color[HTML]{333333} 3} & {\color[HTML]{333333} 4} & {\color[HTML]{333333} 5} & {\color[HTML]{333333} 6} & {\color[HTML]{333333} 7} & {\color[HTML]{333333} 8} & {\color[HTML]{333333} 9} & {\color[HTML]{333333} 10} & {\color[HTML]{333333} 11} & {\color[HTML]{333333} 12} & {\color[HTML]{333333} 13} & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    \cellcolor[HTML]{FFFFFF} & \cellcolor[HTML]{FFFFFF}{\color[HTML]{C0C0C0} } & \cellcolor[HTML]{FFFFFF}x &  & x &  & x & x & x &  & x &  & x & x & x &  & x &  & x \\ \hline
+    \end{longtable}
+\end{figure}
+
+Ya hemos hecho lo mismo con los 20 números
+\begin{figure}[H]
+\begin{longtable}[c]{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+    \hline
+    \rowcolor[HTML]{EFEFEF} 
+    {\color[HTML]{333333} 2} & {\color[HTML]{333333} 3} & {\color[HTML]{333333} 4} & {\color[HTML]{333333} 5} & {\color[HTML]{333333} 6} & {\color[HTML]{333333} 7} & {\color[HTML]{333333} 8} & {\color[HTML]{333333} 9} & {\color[HTML]{333333} 10} & {\color[HTML]{333333} 11} & {\color[HTML]{333333} 12} & {\color[HTML]{333333} 13} & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    \rowcolor[HTML]{FFFFFF} 
+     & {\color[HTML]{C0C0C0} } & x &  & x &  & x & x & x &  & x &  & x & x & x &  & x &  & x \\ \hline
+    \end{longtable}
+\end{figure}
+
+¿En código como sería esto?
+
+\begin{lstlisting}
+    vector< int > criba( int n ){
+        vector< bool > esPrimo( n + 1, true );
+        vector< int > factoresPrimos;
+        factoresPrimos.push_back( 2 );
+        for( int i = 4; i <= n; i += 2 )
+            esPrimo[ i ] = false;
+        
+        for( int i = 3; i <= n; i++ ){
+            if( esPrimo[ i ] ){
+                factoresPrimos.push_back( i );
+                for( int j = i * 2; j <= n; j += i ){
+                    esPrimo[ j ] = false;
+                }
+            }
+        }
+    }
+\end{lstlisting}
+
+La complejidad de este algoritmo ¿cual es? $O\left ( n + \frac{n}{2} + \frac{n}{3} + ... + \frac{n}{n} \right )$ lo que es igual a $O\left ( \sum_{i = 1}^{n}( \frac{ n }{ i }) \right )$ si opeamos $O\left ( n \sum_{ i = 2 }^{ n } \frac{ 1 }{ i } \right )$ asintóticamente esta suma es igual a $log(n)$ es decir la complejidad de este algoritmo es $O(nlog(n))$ la complejidad espacial (en memoria) es $O(n)$ lo cual es muy bueno si $n \leq 10^{ 7 } $ Podemos optimizar un poco máscaras
+\begin{lstlisting}
+    vector< int > criba( int n ){
+        vector< bool > esPrimo( n + 1, true );
+        vector< int > factoresPrimos;
+        factoresPrimos.push_back( 2 );
+        for( int i = 4; i <= n; i += 2 )
+            esPrimo[ i ] = false;
+        
+        for( int i = 3; i <= n; i++ ){
+            if( esPrimo[ i ] ){
+                factoresPrimos.push_back( i );
+                //Iniciamos en i * i no en i * 2
+                for( int j = i * i; j <= n; j += i ){
+                    esPrimo[ j ] = false;
+                }
+            }
+        }
+    }
+\end{lstlisting}
+
+La complejidad de esta $O( nlog(log(n)))$ podemos mejorarla un poco más 
+
+\begin{lstlisting}
+    vector< int > criba( int n ){
+        vector< bool > esPrimo( n + 1, true );
+        vector< int > factoresPrimos;
+        factoresPrimos.push_back( 2 );
+        for( int i = 4; i <= n; i += 2 )
+            esPrimo[ i ] = false;
+        
+        for( int i = 3; i <= n; i++ ){
+            if( esPrimo[ i ] ){
+                factoresPrimos.push_back( i );
+                //Incrementamos en j += 2*i
+                for( int j = i * i; j <= n; j += 2 * i ){
+                    esPrimo[ j ] = false;
+                }
+            }
+        }
+    }
+\end{lstlisting}

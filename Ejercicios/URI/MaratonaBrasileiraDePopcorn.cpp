@@ -4,25 +4,22 @@ using namespace std;
 typedef long long int lli;
 
 vector< lli > bags;
-lli popCornBags, competitors, maxPopcornToEat;
+lli popCornBags = 0LL, competitors = 0LL, maxPopcornToEat = 0LL;
 
-bool check( lli middle ){
-    cout << endl << middle << endl;
-    int count_competitors = 0;
-    int popCornSum = 0;
-    int neededPopcorn = middle * maxPopcornToEat;
+bool check( lli time ){
+    lli count_competitors = 1;
+    lli popCornSum = 0LL;
+    lli neededPopcorn = (time * maxPopcornToEat);
+    for( lli i = 0LL; i <= popCornBags; i++ ){
+        if( bags[ i ] > neededPopcorn )
+            return true;
 
-    for( int i = 0; i < popCornBags; i++ ){
-        cout << popCornSum << " ";
-        if( popCornSum + bags[ i ] <= neededPopcorn )
+        if( ( popCornSum + bags[ i ] ) <= neededPopcorn )
             popCornSum += bags[ i ];
         else 
-            popCornSum = bags[ i ], count_competitors++;
-         
+            popCornSum = bags[ i ], count_competitors++;    
     }
-    cout << endl;
-    cout << count_competitors << endl;
-    return (count_competitors <= competitors );
+    return !(count_competitors <= competitors);
 }
 
 int main(){
@@ -30,20 +27,26 @@ int main(){
     cout.tie( nullptr );
     cin.tie( nullptr );
 
-    lli  begin, end, middle, ans = -1;
+    lli begin, end, middle, ans = 1, MAX = -1;
     cin >> popCornBags >> competitors >> maxPopcornToEat;
-    bags.resize( popCornBags );
-    for( int i = 0; i < popCornBags; i++ )
-        cin >> bags[ i ];
+    bags.resize( popCornBags + 1, 0LL );
+    for( lli i = 0LL; i < popCornBags; i++ )
+        cin >> bags[ i ], MAX = max( MAX, bags[ i ] );
+
     //Binary search
-    begin = 0, end = 10;
+    begin = 0, end = 1 << 30;
     while( begin <= end ){
-        middle = ( begin + end ) >> 1;
-        if( !check( middle ) )
-            begin = middle + 1, ans = middle;
+        middle = ( begin + end ) / 2;
+        if( check( middle ) )
+            begin = middle + 1;
         else 
-            end = middle - 1;
-    }    
-    cout << ans << endl;
+            end = middle - 1, ans = middle;
+    }
+
+    if( competitors >= popCornBags )
+        ans = ceil((double)MAX / (double)maxPopcornToEat);
+        
+    cout << (ans == 0 ? 1 : ans) << endl;
+    
     return 0;
 }
