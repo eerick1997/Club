@@ -411,6 +411,7 @@ INPUT /home/erick/Documentos/GitHub/Club/DPS/Notas/main.out
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb
+INPUT /usr/share/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmss10.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb

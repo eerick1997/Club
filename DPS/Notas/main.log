@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.5)  27 SEP 2019 15:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Arch Linux) (preloaded format=pdflatex 2019.9.5)  27 SEP 2019 15:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1729,11 +1729,11 @@ Here is how much of TeX's memory you used:
  579753 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,12n,68p,578b,1930s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb></usr/share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on /home/erick/Documentos/GitHub/Club/DPS/Notas/main.pdf (29 pages, 295191 bytes).
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/share/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/share/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/ncntrsbk/uncri8a.pfb></usr/share/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
+Output written on /home/erick/Documentos/GitHub/Club/DPS/Notas/main.pdf (29 pages, 298194 bytes).
 PDF statistics:
- 1132 PDF objects out of 1200 (max. 8388607)
- 1079 compressed objects within 11 object streams
+ 1136 PDF objects out of 1200 (max. 8388607)
+ 1082 compressed objects within 11 object streams
  716 named destinations out of 1000 (max. 500000)
  237 words of extra memory for PDF output out of 10000 (max. 10000000)
 
