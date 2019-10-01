@@ -1723,3 +1723,139 @@ La complejidad de esta $O( nlog(log(n)))$ podemos mejorarla un poco más
         }
     }
 \end{lstlisting}
+
+\section{Obtención de factores primos}
+Ya conocemos la criba, con la misma podemos obtener otra información. En esta ocasión vamos a obtener el factor primo más pequeño de un número. En este caso utilizaremos un arreglo de booleanos. \newline
+
+Un factor primo recordemos que se puede definir de la siguiente forma
+\[
+    N = P_{1}^{\alpha_{1}} P_{2}^{\alpha_{2}} ... P_{k}^{\alpha_{k}}
+\]
+Por ejemplo, ¿Cuál es la factorización prima del 36? \newline
+
+\[ 36 = 2^{2}3^{2} \]
+
+Esto también es comocido como el teorema fundamental de la aritmética. También es importante saber que esta factorización es \textbf{única}. \newline
+También consideremos que el factor primo de un número primo es si mismo. Por ejemplo los factores primos del 3 es el 3 mismo. \newline
+Tenemos varios algoritmos para obtener el factor primo más pequeño, nosotros usaremos el siguiente:
+\begin{lstlisting}
+    vector< int > lowestPrime( n + 1 );
+    //Marcamos todos los pares 
+    for( int i = 2; i <= n; i += 2 )
+        lowestPrime[ i ] = 2;
+    //Recorremos todos los impares 
+    for( int i = 3; i <= n; i += 2 ){
+        //No se ha marcado aún
+        if( lowestPrime[ i ] == 0 ){
+            lowestPrime[ i ] = i;
+            for( int j = i * i; j <= n; j+= 2 ){
+                //Quizá alguien ya lo marcó, por tanto preguntamos si esta disponible para usar
+                if( lowestPrime[ j ] == 0 )
+                    lowestPrime[ j ] = i;
+            }
+        }
+    }
+\end{lstlisting}
+
+Este algoritmo tiene una complejidad de $O(nln(n))$
+
+Ahora vamos a obtener la descomposición prima de un número n, si lo hacemos en papel, podemos construir una tabla, nuevamente tomemos de ejemplo al 36
+\begin{figure}[H]
+    \begin{longtable}[c]{|l|l|}
+    \hline
+    \rowcolor[HTML]{C0C0C0} 
+    {\color[HTML]{333333} 36} & {\color[HTML]{333333} 2} \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    \rowcolor[HTML]{FFFFFF} 
+    18 & {\color[HTML]{333333} 2} \\ \hline
+    \rowcolor[HTML]{FFFFFF} 
+    9 & 3 \\ \hline
+    \rowcolor[HTML]{FFFFFF} 
+    3 & 3 \\ \hline
+    \rowcolor[HTML]{FFFFFF} 
+    1 &  \\ \hline
+    \end{longtable}
+\end{figure}
+
+\begin{lstlisting}
+    vector< int > factorizar( int n ){
+        vector< int > factor;
+        while( n > 1 ){
+            int p = lowestPrime[ n ];
+            factor.push_back( p );
+            n /= p;
+        }
+        return factor;
+    }
+\end{lstlisting}
+
+La complejidad de obtener los factores primos es aproximadamente $O( n_{}primos )$ esto es aproximadamente $O(log_{2}(n))$ \newline
+
+¿Cómo podemos obtener los primos cuya potencia es par?
+
+\begin{lstlisting}
+    #define vector<int, int> pii;
+    vector< pii > factorizar( int n ){
+        vector< pii > factor;
+        while( n > 1 ){
+            int p = lowestPrime[ n ];
+            int pow = 0;
+            while( n % p == 0 )
+                n /= p, pow++;
+            //emplace_back llama al constructor de pair
+            factor.emplace_back( p, pow );
+            
+        }
+        return factor;
+    }
+\end{lstlisting}
+
+Otra característica de los números enteros es que los divisores de un n tienen los mismos divisores primos pero con potencias diferentes. Por ejemplo, nuevamente para el 36:
+\begin{figure}[H]
+    \begin{longtable}[c]{|
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |}
+    \hline
+    {\color[HTML]{333333} 1} & {\color[HTML]{333333} } \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    2 & {\color[HTML]{333333} } \\ \hline
+    3 &  \\ \hline
+    4 & $2^{2}3^{0}$\\ \hline
+    6 &  \\ \hline
+    9 &  \\ \hline
+    12 & $2^{2}3^{3}$ \\ \hline
+    18 &  \\ \hline
+    36 &  \\ \hline
+    \end{longtable}
+\end{figure}
+
+Más formalmente 
+
+\[
+    N = P_{1}^{\alpha_{1}} P_{2}^{\alpha_{2}} ... P_{k}^{\alpha_{k}}   
+\]
+
+x divide a N 
+
+\[
+    x = P_{1}^{\beta_{1}} P_{2}^{\beta_{2}} ... P_{k}^{\beta_{k}}
+\]
+
+\[
+  \beta_{1} \leq \alpha_{1}, \beta_{2} \leq \alpha_{2},..., \beta_{k} \leq \alpha_{k}
+\]
+
+\section{Ejercicio}
+\textbf{Dados factores primos y sus potencias, hallar todos los divisores de N $N \leq 10^{18}$ } \newline 
+\textbf{Ejemplo:}\newline
+N = 36 \newline
+2, 2 \newline 
+3, 2 \newline
+El Output sería \newline
+Res = 1, 2, 3, 4, 6,... , 36 

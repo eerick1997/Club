@@ -30,3 +30,5 @@
 \contentsline {subsection}{\numberline {6.2.1}Test de primalidad}{26}{subsection.6.2.1}% 
 \contentsline {subsubsection}{Problema}{26}{lstnumber.-33.9}% 
 \contentsline {section}{\numberline {6.3}Criba de erat\IeC {\'o}stenes}{26}{section.6.3}% 
+\contentsline {section}{\numberline {6.4}Obtenci\IeC {\'o}n de factores primos}{28}{section.6.4}% 
+\contentsline {section}{\numberline {6.5}Ejercicio}{30}{section.6.5}% 
