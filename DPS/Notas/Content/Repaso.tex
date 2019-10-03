@@ -1858,4 +1858,242 @@ N = 36 \newline
 2, 2 \newline 
 3, 2 \newline
 El Output sería \newline
-Res = 1, 2, 3, 4, 6,... , 36 
+Res = 1, 2, 3, 4, 6,... , 36 \newline
+\textsf{Solución:}\newline
+Sabemos del teorema fundamental del cálculo que las potencias a las que estan elevados los números primos (factores de nuestro número N). Haciendo uso de ese hecho podemos iterar sobre todas las potencias que nos dan, desde cero hasta la k potencia. En código podemos probar todas las combinaciones de forma recursiva.
+
+\begin{lstlisting}
+    #define pair< int, int > pii
+    .
+    .
+    .
+    vector< int > divisors;
+    //Aquí vamos a guardar los números y sus potencias
+    vector< pii > factors;
+
+    void findDivisors( int index, int current_product ){
+
+        //Guardamos el divisor
+        if( index == factors.size() )
+            divisors.push_back( current_product );
+
+        for( int i = 0; i <= factors[ index ].second; i++ ){
+            findDivisors( index + 1, current_product * pow( factors[ index ].first, i ) );
+        }
+            
+    }
+    .
+    .
+    .
+    int main(){
+        pii factor;
+        for( int i = 0; i < k; i++ ){
+            //first = número primo 
+            //second = la potencia
+            cin >> factor.first >> factor.second;
+            factors.push_back( factor );
+        }
+    }
+\end{lstlisting}
+
+Si dibujamos las llamadas recursivas tendríamos algo como esto
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (14.5,-10) circle (3);
+        \draw (14.5,-10) node {$2^{0}$};
+        \draw [black] (14.5,-31.6) circle (3);
+        \draw (14.5,-31.6) node {$2^{1}$};
+        \draw [black] (30.3,-45.7) circle (3);
+        \draw (30.3,-45.7) node {$3^{0}$};
+        \draw [black] (30.3,-3.1) circle (3);
+        \draw (30.3,-3.1) node {$3^{0}$};
+        \draw [black] (30.3,-10) circle (3);
+        \draw (30.3,-10) node {$3^{1}$};
+        \draw [black] (30.3,-17) circle (3);
+        \draw (30.3,-17) node {$3^{2}$};
+        \draw [black] (30.3,-24.6) circle (3);
+        \draw (30.3,-24.6) node {$3^{0}$};
+        \draw [black] (30.3,-31.6) circle (3);
+        \draw (30.3,-31.6) node {$3^{1}$};
+        \draw [black] (30.3,-38.6) circle (3);
+        \draw (30.3,-38.6) node {$3^{2}$};
+        \draw [black] (30.3,-52.5) circle (3);
+        \draw (30.3,-52.5) node {$3^{1}$};
+        \draw [black] (30.3,-58.7) circle (3);
+        \draw (30.3,-58.7) node {$3^{2}$};
+        \draw [black] (14.5,-52.5) circle (3);
+        \draw (14.5,-52.5) node {$2^{2}$};
+        \draw [black] (44.9,-3.1) circle (3);
+        \draw (44.9,-3.1) node {$1$};
+        \draw [black] (44.9,-10) circle (3);
+        \draw (44.9,-10) node {$3$};
+        \draw [black] (44.9,-17) circle (3);
+        \draw (44.9,-17) node {$9$};
+        \draw [black] (44.9,-24.6) circle (3);
+        \draw (44.9,-24.6) node {$2$};
+        \draw [black] (44.9,-31.6) circle (3);
+        \draw (44.9,-31.6) node {$6$};
+        \draw [black] (44.9,-38.6) circle (3);
+        \draw (44.9,-38.6) node {$18$};
+        \draw [black] (44.9,-45.7) circle (3);
+        \draw (44.9,-45.7) node {$4$};
+        \draw [black] (44.9,-52.5) circle (3);
+        \draw (44.9,-52.5) node {$12$};
+        \draw [black] (44.9,-58.7) circle (3);
+        \draw (44.9,-58.7) node {$36$};
+        \draw [black] (17.25,-8.8) -- (27.55,-4.3);
+        \fill [black] (27.55,-4.3) -- (26.62,-4.16) -- (27.02,-5.08);
+        \draw [black] (17.5,-10) -- (27.3,-10);
+        \fill [black] (27.3,-10) -- (26.5,-9.5) -- (26.5,-10.5);
+        \draw [black] (17.24,-11.22) -- (27.56,-15.78);
+        \fill [black] (27.56,-15.78) -- (27.03,-15) -- (26.62,-15.92);
+        \draw [black] (17.24,-30.38) -- (27.56,-25.82);
+        \fill [black] (27.56,-25.82) -- (26.62,-25.68) -- (27.03,-26.6);
+        \draw [black] (17.5,-31.6) -- (27.3,-31.6);
+        \fill [black] (27.3,-31.6) -- (26.5,-31.1) -- (26.5,-32.1);
+        \draw [black] (17.24,-32.82) -- (27.56,-37.38);
+        \fill [black] (27.56,-37.38) -- (27.03,-36.6) -- (26.62,-37.52);
+        \draw [black] (17.26,-51.31) -- (27.54,-46.89);
+        \fill [black] (27.54,-46.89) -- (26.61,-46.74) -- (27.01,-47.66);
+        \draw [black] (17.5,-52.5) -- (27.3,-52.5);
+        \fill [black] (27.3,-52.5) -- (26.5,-52) -- (26.5,-53);
+        \draw [black] (17.29,-53.6) -- (27.51,-57.6);
+        \fill [black] (27.51,-57.6) -- (26.95,-56.85) -- (26.58,-57.78);
+        \draw [black] (33.3,-3.1) -- (41.9,-3.1);
+        \fill [black] (41.9,-3.1) -- (41.1,-2.6) -- (41.1,-3.6);
+        \draw [black] (33.3,-10) -- (41.9,-10);
+        \fill [black] (41.9,-10) -- (41.1,-9.5) -- (41.1,-10.5);
+        \draw [black] (33.3,-17) -- (41.9,-17);
+        \fill [black] (41.9,-17) -- (41.1,-16.5) -- (41.1,-17.5);
+        \draw [black] (33.3,-24.6) -- (41.9,-24.6);
+        \fill [black] (41.9,-24.6) -- (41.1,-24.1) -- (41.1,-25.1);
+        \draw [black] (33.3,-31.6) -- (41.9,-31.6);
+        \fill [black] (41.9,-31.6) -- (41.1,-31.1) -- (41.1,-32.1);
+        \draw [black] (33.3,-38.6) -- (41.9,-38.6);
+        \fill [black] (41.9,-38.6) -- (41.1,-38.1) -- (41.1,-39.1);
+        \draw [black] (33.3,-45.7) -- (41.9,-45.7);
+        \fill [black] (41.9,-45.7) -- (41.1,-45.2) -- (41.1,-46.2);
+        \draw [black] (33.3,-52.5) -- (41.9,-52.5);
+        \fill [black] (41.9,-52.5) -- (41.1,-52) -- (41.1,-53);
+        \draw [black] (33.3,-58.7) -- (41.9,-58.7);
+        \fill [black] (41.9,-58.7) -- (41.1,-58.2) -- (41.1,-59.2);
+        \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+\section{Máximo Común Divisor (GCD)}
+La notación ha utilizar será GCD(a, b) = g, dónde:
+\begin{itemize}
+    \item {$g$ divide a $a$}
+    \item {$g$ divide a $b$}
+    \item {$g$ es el máximo entero que cumple las propiedades}
+\end{itemize}
+
+Por ejemplo, ¿Cuáles son los divisores comúnes de 48 y 72? \newline
+$\{ 1, 2, 3, 4, 6, 8, 12, 24 \}$ \newline
+El divisor común con valor mayor es el 24, este es el GCD(48, 72) \newline
+\paragraph{Algunas propiedades}
+\begin{itemize}
+    \item {El GCD entre 0 y N es N es decir $GCD(0, N) = N$}
+    \item {El GCD entre 1 y N es 1 es decir $GCD(1, N) = 1$}
+    \item {El GCD entre N y N + 1 siempre es 1 es decir $GCD(N, N + 1) = 1$}
+    \item {Si el GCD entre a y b es igual con 1 esos números son comprimos es decir $GCD(A, B) = 1$}
+    \item {EL GCD entre un primo $P_{1}$ y un primo $P_{2}$ siempre es 1 ya que ambos números tienen como único divisor y el número mismo, por tanto el único divisor común es 1 es decir $GCD(P_{1}, P_{2}) = 1$}
+\end{itemize}
+
+\subsection{Algoritmo de Euclides}
+Dado un número a y un número b, ¿Cómo podemos encontrar su GCD?
+\begin{lstlisting}
+    int Euclides( int a, int b ){
+        if( a > b )
+            swap(a, b);
+        while( a != 0 ){
+            b %= a;
+            swap(a, b)
+        }
+        return b;
+    }
+\end{lstlisting}
+Lo anterior sirve si y solo si 
+Si $a > b$ \newline
+Si se cumple esa condición sabemos que siempre:
+$b \% a < a$ \newline
+También existe una desigualdad la cual dice que:
+$b \% a \leq \frac{b}{2}$ \newline
+La cual es demostrable si separamos en dos casos:
+\begin{enumerate}
+    \item {$a \leq \frac{b}{2}$}
+    \item {$a > \frac{b}{2}$}
+\end{enumerate}
+
+Otra versión del algoritmo de euclides es:
+
+\begin{lstlisting}
+    int Euclides( int a, int b ){
+        return a ? ( b % a, a ) : b;
+    }
+\end{lstlisting}
+
+Si usamos C++ podemos usar 
+
+\begin{lstlisting}
+    g = __gcd(a, b);
+\end{lstlisting}
+
+\section{Mínimo común multiplo (LCM)}
+Dados dos números a y b se cumple que:
+\begin{itemize}
+    \item {$a$ divide a $l$}
+    \item {$b$ divide a $l$}
+    \item {$l$ es el menor entero que cumple}
+\end{itemize}
+\textsf{Ejemplo}\newline
+El MCM entre 10 y 15 es el 30 ya que:
+\begin{itemize}
+    \item {$\frac{10}{30} = 3$}
+    \item {$\frac{15}{30} = 2$}
+\end{itemize}
+¿Como obtenemos esto? consideremos que 
+\[
+    a * b = GCD(a, b) * LCM(a, b);
+\]
+Despejando 
+\[
+    LCM(a, b) = \frac{a * b}{GCD(a, b)}
+\]
+También debemos preguntarnos ¿Cómo es que $a * b = GCD(a, b) * LCM(a, b);$ es verdad? \newline
+Sea:
+\begin{itemize}
+    \item {$a = P_{1}^{\alpha_{1}}P_{2}^{\alpha_{2}}...P_{k}^{\alpha_{k}}$}
+    \item {$b = P_{1}^{\beta{1}}P_{2}^{\beta{2}}...P_{k}^{\beta{k}}$}
+    \item {$g = P_{1}^{\gamma{1}}P_{2}^{\gamma{2}}...P_{k}^{\gamma{k}}$}
+\end{itemize}
+Sabemos que las potencias $\alpha$ seran menores que las potencias de $\gamma$ lo mismo con las potencias de $\beta$, es decir:
+\begin{itemize}
+    \item {$\gamma_{k} \leq \alpha_{k}$}
+    \item {$\gamma_{k} \leq \beta_{k}$}
+\end{itemize}
+El GCD lo obtenemos de el mínimo entre ambas potencias es decir \newline
+$\gamma_{k} = min(\alpha_{k}, \beta_{k})$ \newline
+Mientras que el LCM lo obtenemos de entre el máximo de las potencias, tomemos en cuenta que 
+\begin{itemize}
+    \item {$a = P_{1}^{\alpha_{1}}P_{2}^{\alpha_{2}}...P_{k}^{\alpha_{k}}$}
+    \item {$b = P_{1}^{\beta{1}}P_{2}^{\beta{2}}...P_{k}^{\beta{k}}$}
+    \item {$l = P_{1}^{\pi_{1}}P_{2}^{\pi_{2}}...P_{k}^{\pi_{k}}$}
+\end{itemize}
+Nuevamente
+\begin{itemize}
+    \item {$\pi_{k} \leq \alpha_{k}$}
+    \item {$\pi_{k} \leq \beta_{k}$}
+\end{itemize}
+El LCM lo obtenemos de el máximo entre ambas potencias es decir: \newline
+$\pi_{k} = min(\alpha_{k}, \beta_{k})$ \newline
+
+Si utilizamos la definición de LCM que mencionamos anteriormente pero sustituyendo los valores: \newline
+$a * b = (P_{1}^{\alpha_{1}}P_{2}^{\alpha_{2}}...P_{k}^{\alpha_{k}})(P_{1}^{\beta{1}}P_{2}^{\beta{2}}...P_{k}^{\beta{k}})$ \newline
+Esto es igual a la suma de las potencias es decir 
+$P_{1}^{\alpha_{1} + \beta_{1}}P_{2}^{\alpha_{2} + \beta_{2}}...P_{k}^{\alpha_{k} + \beta_{k}}$\newline
+Por tanto \newline
+$GCD(a, b)*LCM(a, b) = \left ( P_{1}^{ min(\alpha_{1}, \beta_{1})} \dots P_{k}^{ min(\alpha_{k}, \beta_{k}) }  \right )$
