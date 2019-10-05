@@ -23,11 +23,12 @@ int main(){
             swap( numbers[ i ], numbers[ i + 1 ] );
         }
     }
+    lli last = pairs[pairs.size() - 1];
 
     if( ( pairs.size() % 2 ) != 0 ){
         for( int i = 0; i < n; i++ ){
-            if( numbers[ pairs[pairs.size() - 1] ] != (i + 1) && numbers[ i ] != pairs[ pairs.size() - 1 ]){
-                cout << (i + 1) << " " << pairs[ pairs.size() - 1 ] << endl; 
+            if( numbers[ last ] != (i + 1) && numbers[ i ] != pairs[ pairs.size() - 1 ]){
+                cout << (i + 1) << " " << last << endl; 
                 return 0;
             }
         }
