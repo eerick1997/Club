@@ -2097,3 +2097,158 @@ Esto es igual a la suma de las potencias es decir
 $P_{1}^{\alpha_{1} + \beta_{1}}P_{2}^{\alpha_{2} + \beta_{2}}...P_{k}^{\alpha_{k} + \beta_{k}}$\newline
 Por tanto \newline
 $GCD(a, b)*LCM(a, b) = \left ( P_{1}^{ min(\alpha_{1}, \beta_{1})} \dots P_{k}^{ min(\alpha_{k}, \beta_{k}) }  \right )$
+
+\section{Aritmética modular}
+Anteriormente se ha utilizado el módulo para saber por ejemplo si un número es par o impar, es decir hacemos:
+\begin{lstlisting}
+    if( (a % 2) == 0 )
+        cout << "Es par" << endl;
+    else 
+        cout << "Es impar" << endl;
+\end{lstlisting}
+Formalmente el módulo lo definimos como \newline
+\[
+    a = b * q + r
+\]
+
+dónde:
+\begin{itemize}
+    \item a = número 
+    \item b = módulo 
+    \item q = entero multiplicado tal que nos da un valor igual o menos que el a
+    \item r = residuo
+\end{itemize}
+
+Por ejemplo si tenemos el 7 
+
+\[
+    7 = 2 * 3 + 1
+\]
+
+Entonces el módulo es el residuo de una división. Esto solo aplica a números enteros no para reales. El módulo nos forma familias, las familias son cíclicas. También debemos mencionar que al aplicar módulo n obtendremos un número que está entre $[ 0, 1, 2, \dots, n - 1 ]$ 
+
+\subsection{Congruencia}
+Un número es congruente si se cumple que:
+\[
+    n \equiv a mod b
+\]
+Por ejemplo los números pares
+\[
+    4 mod 2 = 0
+\]
+\[
+    6 mod 2 = 0
+\]
+
+Estos siempre ''viven'' en las mismas familias \newline
+
+\subsection{Operaciones}
+\subsubsection{Suma}
+Supongamos que tenemos lo siguiente
+\[
+    (a + b) \% N    
+\]
+
+Podemos representar esto como 
+\[
+    ( ( a \% n ) + ( b \% n ) ) \% n    
+\]
+
+Siempre debemos de modular después de una suma ya que si no modulamos nos saldríamos de la familia en la que estamos.
+
+\subsubsection{Multiplicación}
+\[
+    (a + b) \% N    
+\]
+
+Podemos representar esto como 
+\[
+    ( ( a \% n ) * ( b \% n ) ) \% n    
+\]
+
+\subsection{Inverso modular}
+Ya sabemos que exite la suma y la multiplicación modular, pero ¿existe la división? realmente no hay una definición para esto, pero si sabemos que:
+\[
+    \frac{a}{b} = a*b^{-1}    
+\]
+Sabiendo esto y también conociendo la regla de congruencia, podemos calcular ese $b^{-1}$ es decir:
+\[
+    a * x \equiv 1 mod N    
+\]
+\[
+    a * a^{-1} \equiv 1 mod N    
+\]
+
+\section{Exponenciación binaria}
+Hasta ahora sabemos que podemos exponenciar un número $n$ a una potencia $b$ es decir 
+\begin{lstlisting}
+    pow(n, b);
+\end{lstlisting}
+También podemos hacer esto multiplicando nuestro $n$, $b$ veces 
+\begin{lstlisting}
+    int res = 1;
+    for( int i = 0; i < b; i++ )
+        res *= a;
+\end{lstlisting}
+El problema de lo anterior es que la complejidad es $O(b)$ es muy ineficiente. \newline 
+
+Ya sabemos que: 
+\[
+    a^{\alpha} * a^{\beta} = a^{\alpha + \beta}    
+\]
+Y también sabemos que 
+\[
+    \left ( a^{\alpha} \right )^{\beta}    
+\]
+
+Tomemos $3^{11}$ sabemos que podemos descomponer este número en $3^{8}*3^{2}*3^{1}$. Ahora, vamos a convertir a base binaria la potencia:
+\begin{figure}[H]
+    \begin{longtable}[c]{llll}
+    \hline
+    \rowcolor[HTML]{EFEFEF} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{EFEFEF}{\color[HTML]{333333} 3}} & \multicolumn{1}{l|}{\cellcolor[HTML]{EFEFEF}{\color[HTML]{333333} 2}} & \multicolumn{1}{l|}{\cellcolor[HTML]{EFEFEF}1} & \multicolumn{1}{l|}{\cellcolor[HTML]{EFEFEF}0} \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    \rowcolor[HTML]{FFFFFF} 
+    \multicolumn{1}{|l|}{\cellcolor[HTML]{FFFFFF}1} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}{\color[HTML]{333333} 0}} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}1} & \multicolumn{1}{l|}{\cellcolor[HTML]{FFFFFF}1} \\ \hline
+    3\textasciicircum{}\{8\} &  & 3\textasciicircum{}\{2\} & 3\textasciicircum{}\{1\}
+    \end{longtable}
+\end{figure}
+
+\begin{lstlisting}
+    int res = 1;
+    while( b ){
+        if( b & 1 )
+            res *= a;
+        b >>= 1;
+        a *= a;
+    }
+\end{lstlisting}
+
+Si queremos modular entonces tenemos 
+
+\begin{lstlisting}
+    a = a % N;
+    int res = 1;
+    while( b ){
+        if( b & 1 )
+            res = ( res * a ) % N;
+        b >>= 1;
+        a = ( a % a ) % N;
+    }
+\end{lstlisting}
+
+Sea $p$ primo y $a \epsilon Z$ entonces $a^{p} \equiv 1 mod p $ \newline
+
+Si $p | a$ entonces $a^{p-1} \equiv 1 mod p$ además $p | a = gcd(a, b)$ \newline
+
+También debemos considerar la definición de inverso modular \newline
+
+Sean $a$ y $b \epsilon Z$ si $ab \equiv 1 mod n$, entonces $b$ es el inverso multiplicativo de $a$ módulo $n$. También $a^{-1} \equiv b mod n$, por ejemplo: \newline
+\[
+    2^{-1} = 4 mod 7    
+\]
+
+Es decir $(4 * 2) mod 7 = 8 mod 7 = 1$ \newline

@@ -36,3 +36,10 @@
 \contentsline {paragraph}{Algunas propiedades}{32}{section.6.6}% 
 \contentsline {subsection}{\numberline {6.6.1}Algoritmo de Euclides}{33}{subsection.6.6.1}% 
 \contentsline {section}{\numberline {6.7}M\IeC {\'\i }nimo com\IeC {\'u}n multiplo (LCM)}{33}{section.6.7}% 
+\contentsline {section}{\numberline {6.8}Aritm\IeC {\'e}tica modular}{34}{section.6.8}% 
+\contentsline {subsection}{\numberline {6.8.1}Congruencia}{35}{subsection.6.8.1}% 
+\contentsline {subsection}{\numberline {6.8.2}Operaciones}{35}{subsection.6.8.2}% 
+\contentsline {subsubsection}{Suma}{35}{subsection.6.8.2}% 
+\contentsline {subsubsection}{Multiplicaci\IeC {\'o}n}{35}{subsection.6.8.2}% 
+\contentsline {subsection}{\numberline {6.8.3}Inverso modular}{35}{subsection.6.8.3}% 
+\contentsline {section}{\numberline {6.9}Exponenciaci\IeC {\'o}n binaria}{35}{section.6.9}% 

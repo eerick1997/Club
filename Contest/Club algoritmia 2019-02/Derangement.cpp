@@ -20,7 +20,7 @@ int main(){
     if( pairs.size() > 0 ){
         for( int i = 0; i < pairs.size() - 1; i += 2 ){
             cout << pairs[ i ] << " " << pairs[ i + 1 ] << endl;
-            swap( numbers[ i ], numbers[ i + 1 ] );
+            //swap( numbers[ i ], numbers[ i + 1 ] );
         }
     }
     lli last = pairs[pairs.size() - 1];
