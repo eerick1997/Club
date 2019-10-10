@@ -2,7 +2,8 @@
 
 using namespace std;
 typedef long long int lli;
-
+// 1000 = 200
+// 1000 = 333
 int main(){
     ios::sync_with_stdio( false );
     cout.tie( nullptr );
