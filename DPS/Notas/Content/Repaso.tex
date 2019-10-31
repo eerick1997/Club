@@ -2270,7 +2270,7 @@ Sabemos que los divisores de 6 son ${1, 2, 3, 6}$ y los divisores de 15 son ${1,
 
 \subsubsection{Teorema}
 Si $a = bq + r$ entonces $gcd(a, b) = gcd(b, r)$ \newline
-\paragraph{Demostración} \newline
+\paragraph{Demostración}
 Sea $d = gcd(a, b)$ Queremos probar que $d = gcd(b, r)$ ya sabemos que $d|a$, $d|b$ y $d > 0$ \newline
 \begin{itemize}
     \item {$d|b$ \\ $r = a - bq$ }
@@ -2298,3 +2298,720 @@ Versión iterativa
 \end{lstlisting}
 
 La complejidad de el GCD es $O(log_{\Phi}( min(a, b) ) )$ 
+
+\section{Combinatoria}
+Generalmente lo utilizamos cuando debemos contar cosas. Por ejemplos, cuantos conjuntos cumplen con X propiedad. Generalmente son números muy grandes así que la respuesta usualmente va modulada.
+Así que los temás más importantes a utilizar son: \newline
+\begin{itemize}
+    \item Aritmética modular
+    \item Inverso modular
+\end{itemize}
+
+En combinatoria utilizaremos dos principios:
+\subsection{Principio del producto}
+Si algo puede ser hecho de $n$ formas y luego otra cosa puede ser hecha de $m$ formas entonces ambas se pueden hacer de $mn$ formas. Un ejemplo clásico es el siguiente: \newline
+Supongamos que tenemos
+\begin{itemize}
+    \item 3 Pantalones (V, R, A)
+    \item 2 Camisas (B, N)
+\end{itemize}
+¿De cuantas formas me puedo vestir? \newline
+
+Podemos solucionarlo con un árbol de decision
+\begin{figure}[H]
+    \begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (4,-25.5) circle (3);
+    \draw [black] (36.1,-8.2) circle (3);
+    \draw (36.1,-8.2) node {$V$};
+    \draw [black] (36.1,-28.1) circle (3);
+    \draw (36.1,-28.1) node {$R$};
+    \draw [black] (36.1,-51.8) circle (3);
+    \draw (36.1,-51.8) node {$A$};
+    \draw [black] (68.2,-3.6) circle (3);
+    \draw (68.2,-3.6) node {$B$};
+    \draw [black] (68.2,-14.5) circle (3);
+    \draw (68.2,-14.5) node {$N$};
+    \draw [black] (68.2,-25.5) circle (3);
+    \draw (68.2,-25.5) node {$B$};
+    \draw [black] (68.2,-35.7) circle (3);
+    \draw (68.2,-35.7) node {$N$};
+    \draw [black] (68.2,-47.4) circle (3);
+    \draw (68.2,-47.4) node {$B$};
+    \draw [black] (68.2,-57.8) circle (3);
+    \draw (68.2,-57.8) node {$N$};
+    \draw [black] (6.64,-24.08) -- (33.46,-9.62);
+    \fill [black] (33.46,-9.62) -- (32.52,-9.56) -- (32.99,-10.44);
+    \draw [black] (6.99,-25.74) -- (33.11,-27.86);
+    \fill [black] (33.11,-27.86) -- (32.35,-27.29) -- (32.27,-28.29);
+    \draw [black] (6.32,-27.4) -- (33.78,-49.9);
+    \fill [black] (33.78,-49.9) -- (33.48,-49) -- (32.84,-49.78);
+    \draw [black] (39.07,-7.77) -- (65.23,-4.03);
+    \fill [black] (65.23,-4.03) -- (64.37,-3.64) -- (64.51,-4.63);
+    \draw [black] (39.04,-8.78) -- (65.26,-13.92);
+    \fill [black] (65.26,-13.92) -- (64.57,-13.28) -- (64.37,-14.26);
+    \draw [black] (39.09,-27.86) -- (65.21,-25.74);
+    \fill [black] (65.21,-25.74) -- (64.37,-25.31) -- (64.45,-26.31);
+    \draw [black] (39.02,-28.79) -- (65.28,-35.01);
+    \fill [black] (65.28,-35.01) -- (64.62,-34.34) -- (64.39,-35.31);
+    \draw [black] (39.07,-51.39) -- (65.23,-47.81);
+    \fill [black] (65.23,-47.81) -- (64.37,-47.42) -- (64.5,-48.41);
+    \draw [black] (39.05,-52.35) -- (65.25,-57.25);
+    \fill [black] (65.25,-57.25) -- (64.56,-56.61) -- (64.37,-57.59);
+    \draw [black] (68.2,-28.5) -- (68.2,-32.7);
+    \fill [black] (68.2,-32.7) -- (68.7,-31.9) -- (67.7,-31.9);
+    \end{tikzpicture}
+    \end{center}        
+\end{figure}[H]
+
+Como respuesta tenemos 6 formas de vestirnos.
+
+\subsection{Principio de la suma}
+Si algo se puede hacer de $n$ formas y luego se puede hacer otra cosa de $m$ formas pero no se pueden hacer al mismo tiempo, entonces alguna de las dos se puede hacer de $m + n$ formas. \newline
+Un ejemplo clásico es: \newline
+Si hay un grupo e 20 alumnos y otro con 30 alumnos entonces podemos elegir 50 alumnos de cualquiera de los grupos.
+
+\subsubsection{Problema}
+¿Cuantos números enteros entre 1 y 100 hay que no tengas dígitos pares (0, 2, 4, 6, 8)? \newline
+Podemos separar en dos conjuntos, el primero son los números compuestos por un dígito y el segundo que tiene dos dígitos. Imaginemos que tenemos casillas, entonces con un dígito solo podemos tener: 1, 3, 5, 7, 9 en el caso de dos dígitos podemos poner cualquiera de los antes mencionados en la primer casilla y lo mismo en una segunda casilla es decir tenemos 5 * 5 resultados posibles, por principio de la suma el total de números es 5 * 5 + 5 = 30.
+
+\section{Permutaciones}
+Variación en el órden de una colección de números.
+\subsection{Permutaciones sin repetición}
+Dado un conjunto de n elementos, ¿De cuantas formas se pueden colocar en una permutación de tamaño $n$? \newline
+Como ejemplo tenemos ${1, 2, 3}$ tenemos los subconjuntos:
+\begin{itemize}
+    \item ${1, 2, 3}$
+    \item ${1, 3, 2}$
+    \item ${2, 1, 3}$
+    \item ${2, 3, 1}$
+    \item ${3, 1, 2}$ 
+    \item ${3, 2, 1}$
+\end{itemize}
+
+En total tenemos 6 permutaciones de ${1, 2, 3}$.\newline
+
+De manera más formal de n elementos vamos a tener como opciones 
+\[
+    n(n - 1)(n - 2) \dots 1 = n!    
+\]
+
+\subsection{Permutacion de un subconjunto de $n$ elementos}
+¿Cuantas formas hay de acomodar $K$ elementos de un conjunto de tamaño n en una permutacion? \newline
+Por ejemplo tomemos un $n = 4$ y un $m = 2$ es decir tenemos ${1, 2, 3, 4}$
+\begin{itemize}
+    \item {${1, 2}$
+            \begin{itemize}
+                \item {$[1, 2]$}
+                \item {$[2, 1]$}
+            \end{itemize}
+    }
+    \item {${1, 2}$
+            \begin{itemize}
+                \item {$[1, 2]$}
+                \item {$[2, 1]$}
+            \end{itemize}
+    }
+    \item {${1, 3}$
+            \begin{itemize}
+                \item {$[1, 3]$}
+                \item {$[3, 1]$}
+            \end{itemize}
+    }
+    \item {${1, 4}$
+            \begin{itemize}
+                \item {$[1, 4]$}
+                \item {$[4, 1]$}
+            \end{itemize}
+    }
+    \item {${2, 3}$
+            \begin{itemize}
+                \item {$[2, 3]$}
+                \item {$[3, 2]$}
+            \end{itemize}
+    }
+    \item {${2, 4}$
+            \begin{itemize}
+                \item {$[2, 4]$}
+                \item {$[4, 2]$}
+            \end{itemize}
+    }
+    \item {${3, 4}$
+            \begin{itemize}
+                \item {$[3, 4]$}
+                \item {$[4, 2]$}
+            \end{itemize}
+    }
+\end{itemize}
+
+Nuevamente si generalizamos para $n$ elementos si tenemos un arreglo de tamaño $k$ tenemos:
+\[
+    P_{k}^{n} = n(n - 1)(n - 2) \dots (n - k + 1) \frac{(n - k)}{(n - k)} \frac{(n - k - 1)}{n - k - 1} \dots \frac{1}{1} = \frac{n!}{(n - k)!}   
+\]
+
+\subsection{Permutación con repeticiones}
+Es un ordenamiento de $n$ elementos donde hay $n_{1}$ del tipo 1, $n_{2}$ del tipo 2, ... $n_{k}$ del tipo $k$, y $n_{1} + n_{2} + \dots + n_{k} = n$  \newline
+Tomemos un ejemplo\newline
+n = 5, $n_{1} = 3$, $n_{2} = 2$ \newline
+${1, 2, 1, 1, 2}$ \newline
+$[1a, 2a, 1a, 1a, 2a]$ \newline
+¿Cuantas permutaciones hay? Como solución tenemos 3! x 2! que es el producto del factorial de los grupos que existen \newline
+
+Formalmente podemos decir que este tipo de permutación la obtenemos de la siguiente manera:
+\[
+    P_{n_{1}, n_{2}, \dots n_{k} }^{ n } n_{1}!n_{2}! \dots n_{k}! = n!
+\]
+
+\[
+    P_{n_{1}, n_{2}, \dots n_{k} }^{ n } = \frac{n!}{n_{1}!n_{2}! \dots n_{k} }
+\]
+
+\subsection{Combinaciones}
+Dada una colección de $n$ elementos, queremos saber de cuantas formas podemos elegir $k$ elementos (no importa el órden) \newline
+Dado ${1, 2, 3, 4}$ y $n = 4$, $k = 2$
+\begin{itemize}
+    \item { ${1, 2}$ }
+    \item { ${1, 3}$ }
+    \item { ${1, 4}$ }
+    \item { ${2, 3}$ }
+    \item { ${2, 4}$ }
+    \item { ${3, 4}$ }
+\end{itemize}
+
+\subsection{Coeficiente binomial}
+Podemos elegir $k$ elementos de un conjunto de $n$ \newline
+
+De manera formar la obtenemos con la siguiente ecuación:
+\[
+    P_{k}^{n} = \frac{n!}{k!(n - k)!}
+\]
+
+En código 
+\begin{lstlisting}
+    long long Combinatorics(int n, int k){
+        return factorial[ n ] * inverse[ k ] % mod * inverse[ n - k ] % mod
+    }
+\end{lstlisting}
+
+La ecuación anterior solo funciona si y solo si $0 \leq k \leq n$ en el caso de que $k > n$ el resultado es cero. \newline
+
+Ahora vamos a tratar de deducir la siguiente fórmula
+\[
+    {n \choose k} = { {n - 1} \choose k } + { {n - 1} \choose {k - 1} }
+\]
+Si y solo si $0 \leq k \leq n$
+\[
+    {n \choose k} = 1    
+\]
+Si y solo si $n = 0$ o $k = n$
+
+La deducción es la siguiente: \newline
+
+Tenemos un conjunto de tamaño $n$ y queremos elegir $k$ de ellos, si tomamos el iésimo elemento tenemos como opciones elegir k - 1 elementos o bien elegir k elementos
+
+\begin{figure}[H]
+    \begin{center}
+    \begin{tikzpicture}[scale=0.2]
+    \tikzstyle{every node}+=[inner sep=0pt]
+    \draw [black] (38.6,-19.5) circle (3);
+    \draw (38.6,-19.5) node {$n$};
+    \draw (22.5,-40.5) node {${1,2,...,n-1}$};
+    \draw (55,-40.5) node {${1,2,...,n-1}$};
+    \draw (53.7,-22.8) node {${1,2,...,n-1}$};
+    \draw (22.5,-48.5) node {$elegir\mbox{ }k\mbox{ }-\mbox{ }1\mbox{ }elementos$};
+    \draw (55,-48.5) node {$elegir\mbox{ }k\mbox{ }elementos$};
+    \draw [black] (36.77,-21.88) -- (24.33,-38.12);
+    \fill [black] (24.33,-38.12) -- (25.21,-37.79) -- (24.42,-37.18);
+    \draw (29.98,-28.59) node [left] {$meterlo\mbox{ }a\mbox{ }la\mbox{ }combinacion$};
+    \draw [black] (40.45,-21.86) -- (53.15,-38.14);
+    \fill [black] (53.15,-38.14) -- (53.06,-37.2) -- (52.27,-37.81);
+    \draw (46.23,-31.41) node [left] {$No\mbox{ }meterlo$};
+    \draw [black] (38.6,-7.9) -- (38.6,-16.5);
+    \draw (38.6,-7.4) node [above] {${1,2,...,n}$};
+    \fill [black] (38.6,-16.5) -- (39.1,-15.7) -- (38.1,-15.7);
+    \end{tikzpicture}
+    \end{center}
+\end{figure}[H]
+
+En código tenemos lo siguiente:
+\begin{lstlisting}
+    long long mem[MAXN][MAXN]; //Inicializado en -1
+    long long comb( int n, int k ){
+        if( n == k || k == 0 )
+            return 1;
+        if( mem[ n ][ k ] != -1 )
+            return mem[ n ][ k ];
+        mem[ n ][ k ] = ( comb( n - 1, k ) + comb( n - 1, k - 1 ) ) % mod
+        return mem[ n ][ k ];
+    }
+\end{lstlisting}
+
+\subsubsection{Algunas identidades utilizadas en el coeficiente binomial}
+\[
+    { n \choose k } = { n \choose { n - k } }    
+\]
+\[
+    { n \choose k } = \frac{ n! }{ k! (n - k)! }    
+\]
+\[
+    { n \choose { n - k } } = \frac{ n! }{ (n - k)! (n - (n - k)! )} = \frac{n!}{(n - k)!k!}    
+\]
+
+\subsection{Triángulo de pascal}
+\begin{figure}[H]
+    \begin{longtable}[c]{
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l 
+    >{\columncolor[HTML]{FFFFFF}}l }
+     & {\color[HTML]{333333} } & {\color[HTML]{333333} } &  &  &  & 1 &  &  &  &  &  &  \\
+    \endfirsthead
+    %
+    \endhead
+    %
+     &  & {\color[HTML]{333333} } &  &  & 1 & 2 & 1 &  &  &  &  &  \\
+     &  &  &  & 1 & 3 &  & 3 & 1 &  &  &  &  \\
+     &  &  & 1 & 4 &  & 6 &  & 4 & 1 &  &  &  \\
+     &  & 1 & 5 &  & 10 &  & 10 &  & 5 & 1 &  &  \\
+     &  &  &  &  &  &  &  &  &  &  &  &  \\
+    ${n \choose 0 }$ & ${n \choose 1 }$ &  &  & . &  & . &  & . &  &  & ${n \choose {n - 1} }$ & ${n \choose n}$
+    \end{longtable}
+\end{figure}
+
+\subsubsection{Identidad del palo de Hockey (Hockey stick)}
+Usando el triángulo de pascal podemos obtener gráficamente varias propiedades, por ejemplo la identidad del palo de Hockey (Hockey Stick). Formalmente se define como:
+\[
+    \sum_{i = 0}^{r} { {k + i} \choose i } = { { k + r + 1 } \choose r }    
+\]
+
+\subsubsection{Propiedades}
+La suma de la n-ésima fila es igual a $2^{n}$ \newline
+$\sum_{i = 0}^{n} {n \choose i } = 2^{n} $ 
+
+\subsection{Binomio de Newton}
+\[
+    (a + b)^{n} = \sum_{i = 0}^{n} {n \choose i} a^{i}b^{n - i}    
+\]
+
+\subsection{Biyecciones}
+Dados dos conjuntos $A$ y $B$, existe una biyección entre $A$ y $B$ si para cada elemento en $A$ se puede establecer una relación con un y solo un elemento en $B$ y para conjunto en $B$ se puede establecer una relación con un y solo un elemento en $A$. \newline
+
+Ej: \newline
+Sea $A = {0, 1, 2, 3}$ \newline
+Sea $B = {5, 6, 7, 8}$ \newline 
+para cada elemento 
+
+\section{Problema de las barras y las estrellas}
+Si tengo $n$ estrellas y $m$ barras ¿De cuantas formas puedo ordenarlas?, ejemplo: \newline
+Tengo 2 estrellas y 2 barras, la solución es 6, es decir:
+\begin{itemize}
+    \item **||
+    \item *|*|
+    \item *||*
+    \item |**|
+    \item |*|*
+    \item ||**
+\end{itemize}
+O bien:
+\[
+    { 4 \choose 2 } = \frac{4!}{2! 2!} = \frac{24}{4 * 4} = 6    
+\]
+
+Es decir que de forma general tenemos:
+\[
+    { { n + m } \choose n } = { { n + m } \choose m }
+\]
+
+En otras palabras de un arreglo de n + m espacios elegimos n espacios para poner las estrellas \newline
+
+Otra posible solución es considerar esto como una permutacion con repeticiones, donde tenemos dos grupos, uno para barras y otro para estrellas. De forma general es:
+
+\[
+    \frac{(n + m)!}{n! m!}    
+\]
+
+Ahora supongamos que queremos resolver lo siguiente: ¿Cuántas formas hay de asignarle valores enteros no negativos a k variables $(x_{1}, x_{2}, \dots , x_{k})$ tal que la suma $x_{1} + x_{2} + x_{3} + \dots + x_{k} = n$, primero analicemos un caso más sencillo: \newline
+K = 2, n = 6, solución = 7\newline
+\begin{itemize}
+    \item 6 + 0 = 6
+    \item 5 + 1 = 6
+    \item 4 + 2 = 6
+    \item 3 + 3 = 6
+    \item 2 + 4 = 6
+    \item 1 + 5 = 6
+    \item 0 + 6 = 6
+\end{itemize}
+Si tengo un ordenamiento con $n$ estrellas y $k - 1$ barras, consideramos que las barras dividen $k$ bloques, y el valor de $x_{i}$ será la cantidad de estrellas del i-ésimo bloque, por ejemplo 
+\begin{figure}[H]
+    \begin{longtable}[c]{|
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |
+    >{\columncolor[HTML]{FFFFFF}}l |}
+    \hline
+     & {\color[HTML]{333333} |} & {\color[HTML]{333333} *} & | & * \\ \hline
+    \endfirsthead
+    %
+    \endhead
+    %
+    0 &  & {\color[HTML]{333333} 1} &  & 1 \\ \hline
+    \end{longtable}
+\end{figure}
+Es decir:
+\begin{enumerate}
+    \item $x_{1} = 0$
+    \item $x_{2} = 1$
+    \item $x_{3} = 1$ 
+    \item $\therefore 0 + 1 + 1 = 2$
+\end{enumerate} 
+
+Colocamos $x_{1}$ extrellas en el primer bloque, luego una barra, luego $x_{2}$ estrellas, luego una barra y así sucesivamente hasta haber colocado $k - 1$ barras y finalmente $x_{k}$ estrellas. De forma general:
+
+\[
+    { { n + k - 1 } \choose { n } } = { {n + k - 1} \choose {k - 1} } = \frac{( n + k - 1 )!}{n!(k - 1)!    }
+\]
+
+\subsubsection{Problema}
+¿Cuántos árboles binarios con $n$ nodos existen? \newline
+Primero recordemos que es un árbol: \newline
+Un árbol es un tipo especial de grafo, el cual no contiene ciclos además es totalmente conexo, por ejemplo:
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (41.2,-6.9) circle (3);
+        \draw [black] (29.2,-26.8) circle (3);
+        \draw [black] (41.2,-26.8) circle (3);
+        \draw [black] (52.6,-26.8) circle (3);
+        \draw [black] (49.2,-50.6) circle (3);
+        \draw [black] (34.9,-50.6) circle (3);
+        \draw [black] (39.65,-9.47) -- (30.75,-24.23);
+        \fill [black] (30.75,-24.23) -- (31.59,-23.8) -- (30.73,-23.29);
+        \draw [black] (41.2,-9.9) -- (41.2,-23.8);
+        \fill [black] (41.2,-23.8) -- (41.7,-23) -- (40.7,-23);
+        \draw [black] (42.69,-9.5) -- (51.11,-24.2);
+        \fill [black] (51.11,-24.2) -- (51.14,-23.25) -- (50.28,-23.75);
+        \draw [black] (40.43,-29.7) -- (35.67,-47.7);
+        \fill [black] (35.67,-47.7) -- (36.36,-47.05) -- (35.39,-46.8);
+        \draw [black] (42.16,-29.64) -- (48.24,-47.76);
+        \fill [black] (48.24,-47.76) -- (48.46,-46.84) -- (47.52,-47.16);
+        \end{tikzpicture}
+    \end{center}
+\end{figure}[H]
+
+Árbol binario: es un árbol con raiz y cada nodo tiene a lo más 2 hijos (hijo izquierdo y/o hijo derecho), por ejemplo 
+
+\begin{figure}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (34.9,-8.6) circle (3);
+        \draw (34.9,-8.6) node {$raiz$};
+        \draw [black] (34.9,-8.6) circle (2.4);
+        \draw [black] (29.2,-26.8) circle (3);
+        \draw [black] (41.2,-26.8) circle (3);
+        \draw [black] (49.2,-50.6) circle (3);
+        \draw [black] (34.9,-50.6) circle (3);
+        \draw [black] (34,-11.46) -- (30.1,-23.94);
+        \fill [black] (30.1,-23.94) -- (30.81,-23.32) -- (29.86,-23.02);
+        \draw [black] (35.88,-11.43) -- (40.22,-23.97);
+        \fill [black] (40.22,-23.97) -- (40.43,-23.05) -- (39.48,-23.37);
+        \draw [black] (40.43,-29.7) -- (35.67,-47.7);
+        \fill [black] (35.67,-47.7) -- (36.36,-47.05) -- (35.39,-46.8);
+        \draw [black] (42.16,-29.64) -- (48.24,-47.76);
+        \fill [black] (48.24,-47.76) -- (48.46,-46.84) -- (47.52,-47.16);
+        \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+Regresando a nuestro problema, hagamos el análisis por casos, primero, ¿Cuántos árboles de cero nodos tenemos? solo 1: \newline
+
+¿Cuántos árboles de 2 nodos, tenemos?
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (13.5,-20.4) circle (3);
+        \draw [black] (22.1,-5.8) circle (3);
+        \draw [black] (59.5,-5.8) circle (3);
+        \draw [black] (67.4,-20.4) circle (3);
+        \draw [black] (20.58,-8.38) -- (15.02,-17.82);
+        \fill [black] (15.02,-17.82) -- (15.86,-17.38) -- (15,-16.87);
+        \draw [black] (60.93,-8.44) -- (65.97,-17.76);
+        \fill [black] (65.97,-17.76) -- (66.03,-16.82) -- (65.15,-17.3);
+        \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+¿Cuántos árboles de 3 nodos, tenemos?
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (9.9,-11.3) circle (3);
+        \draw [black] (4,-21.6) circle (3);
+        \draw [black] (14.9,-21.6) circle (3);
+        \draw [black] (37.3,-11.3) circle (3);
+        \draw [black] (30.1,-21.6) circle (3);
+        \draw [black] (23.1,-31.2) circle (3);
+        \draw [black] (54.2,-10.4) circle (3);
+        \draw [black] (46.6,-18.7) circle (3);
+        \draw [black] (53.1,-29.5) circle (3);
+        \draw [black] (68.1,-10) circle (3);
+        \draw [black] (75.5,-19.5) circle (3);
+        \draw [black] (67.1,-29.5) circle (3);
+        \draw [black] (31.3,-40.3) circle (3);
+        \draw [black] (39.9,-46.6) circle (3);
+        \draw [black] (48.3,-53.5) circle (3);
+        \draw [black] (8.41,-13.9) -- (5.49,-19);
+        \fill [black] (5.49,-19) -- (6.32,-18.55) -- (5.45,-18.05);
+        \draw [black] (11.21,-14) -- (13.59,-18.9);
+        \fill [black] (13.59,-18.9) -- (13.69,-17.96) -- (12.79,-18.4);
+        \draw [black] (35.58,-13.76) -- (31.82,-19.14);
+        \fill [black] (31.82,-19.14) -- (32.69,-18.77) -- (31.87,-18.2);
+        \draw [black] (28.33,-24.02) -- (24.87,-28.78);
+        \fill [black] (24.87,-28.78) -- (25.74,-28.42) -- (24.93,-27.83);
+        \draw [black] (52.17,-12.61) -- (48.63,-16.49);
+        \fill [black] (48.63,-16.49) -- (49.53,-16.24) -- (48.8,-15.56);
+        \draw [black] (48.15,-21.27) -- (51.55,-26.93);
+        \fill [black] (51.55,-26.93) -- (51.57,-25.99) -- (50.71,-26.5);
+        \draw [black] (69.94,-12.37) -- (73.66,-17.13);
+        \fill [black] (73.66,-17.13) -- (73.56,-16.19) -- (72.77,-16.81);
+        \draw [black] (73.57,-21.8) -- (69.03,-27.2);
+        \fill [black] (69.03,-27.2) -- (69.93,-26.91) -- (69.16,-26.27);
+        \draw [black] (33.72,-42.07) -- (37.48,-44.83);
+        \fill [black] (37.48,-44.83) -- (37.13,-43.95) -- (36.54,-44.76);
+        \draw [black] (42.22,-48.5) -- (45.98,-51.6);
+        \fill [black] (45.98,-51.6) -- (45.68,-50.7) -- (45.05,-51.47);
+        \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+¿Cuántos árboles de 4 nodos tenemos?, de aquí tenemos dos sub casos, el primero un hijo izauierdo con cero nodos y uno derecho con 3 nodos
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (6,-6.5) circle (3);
+        \draw [black] (16,-12.7) circle (3);
+        \draw [black] (8.8,-21.6) circle (3);
+        \draw [black] (22.2,-21.6) circle (3);
+        \draw [black] (34.7,-5.8) circle (3);
+        \draw [black] (44.1,-9.9) circle (3);
+        \draw [black] (38.3,-17.7) circle (3);
+        \draw [black] (32.3,-25.8) circle (3);
+        \draw [black] (57.2,-6.3) circle (3);
+        \draw [black] (66.1,-9.9) circle (3);
+        \draw [black] (57.8,-17.7) circle (3);
+        \draw [black] (65.2,-25.4) circle (3);
+        \draw [black] (9,-35.5) circle (3);
+        \draw [black] (16,-41) circle (3);
+        \draw [black] (24,-46.6) circle (3);
+        \draw [black] (18.7,-54.7) circle (3);
+        \draw [black] (46.1,-37.8) circle (3);
+        \draw [black] (53.6,-42.5) circle (3);
+        \draw [black] (60.7,-46.8) circle (3);
+        \draw [black] (68.8,-52.3) circle (3);
+        \draw [black] (8.55,-8.08) -- (13.45,-11.12);
+        \fill [black] (13.45,-11.12) -- (13.03,-10.27) -- (12.51,-11.12);
+        \draw [black] (14.11,-15.03) -- (10.69,-19.27);
+        \fill [black] (10.69,-19.27) -- (11.58,-18.96) -- (10.8,-18.33);
+        \draw [black] (17.71,-15.16) -- (20.49,-19.14);
+        \fill [black] (20.49,-19.14) -- (20.44,-18.2) -- (19.62,-18.77);
+        \draw [black] (37.45,-7) -- (41.35,-8.7);
+        \fill [black] (41.35,-8.7) -- (40.82,-7.92) -- (40.42,-8.84);
+        \draw [black] (42.31,-12.31) -- (40.09,-15.29);
+        \fill [black] (40.09,-15.29) -- (40.97,-14.95) -- (40.17,-14.35);
+        \draw [black] (36.51,-20.11) -- (34.09,-23.39);
+        \fill [black] (34.09,-23.39) -- (34.96,-23.04) -- (34.16,-22.45);
+        \draw [black] (59.98,-7.42) -- (63.32,-8.78);
+        \fill [black] (63.32,-8.78) -- (62.76,-8.01) -- (62.39,-8.94);
+        \draw [black] (63.91,-11.95) -- (59.99,-15.65);
+        \fill [black] (59.99,-15.65) -- (60.91,-15.46) -- (60.23,-14.73);
+        \draw [black] (59.88,-19.86) -- (63.12,-23.24);
+        \fill [black] (63.12,-23.24) -- (62.93,-22.31) -- (62.21,-23.01);
+        \draw [black] (11.36,-37.35) -- (13.64,-39.15);
+        \fill [black] (13.64,-39.15) -- (13.32,-38.26) -- (12.7,-39.05);
+        \draw [black] (18.46,-42.72) -- (21.54,-44.88);
+        \fill [black] (21.54,-44.88) -- (21.17,-44.01) -- (20.6,-44.83);
+        \draw [black] (22.36,-49.11) -- (20.34,-52.19);
+        \fill [black] (20.34,-52.19) -- (21.2,-51.79) -- (20.36,-51.25);
+        \draw [black] (48.64,-39.39) -- (51.06,-40.91);
+        \fill [black] (51.06,-40.91) -- (50.65,-40.06) -- (50.11,-40.91);
+        \draw [black] (56.17,-44.05) -- (58.13,-45.25);
+        \fill [black] (58.13,-45.25) -- (57.71,-44.4) -- (57.19,-45.26);
+        \draw [black] (63.18,-48.49) -- (66.32,-50.61);
+        \fill [black] (66.32,-50.61) -- (65.94,-49.75) -- (65.38,-50.58);
+        \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+Segundo caso, la raiz tiene un hijo izquierdo con 1 nodo y uno derecho con dos nodos
+
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (12.5,-7) circle (3);
+        \draw [black] (7.1,-15.8) circle (3);
+        \draw [black] (20.9,-15.4) circle (3);
+        \draw [black] (15.6,-28.4) circle (3);
+        \draw [black] (51.3,-6.4) circle (3);
+        \draw [black] (43.3,-15) circle (3);
+        \draw [black] (57.6,-16.4) circle (3);
+        \draw [black] (64.1,-25.1) circle (3);
+        \draw [black] (10.93,-9.56) -- (8.67,-13.24);
+        \fill [black] (8.67,-13.24) -- (9.51,-12.82) -- (8.66,-12.3);
+        \draw [black] (14.62,-9.12) -- (18.78,-13.28);
+        \fill [black] (18.78,-13.28) -- (18.57,-12.36) -- (17.86,-13.07);
+        \draw [black] (19.77,-18.18) -- (16.73,-25.62);
+        \fill [black] (16.73,-25.62) -- (17.5,-25.07) -- (16.57,-24.69);
+        \draw [black] (49.26,-8.6) -- (45.34,-12.8);
+        \fill [black] (45.34,-12.8) -- (46.25,-12.56) -- (45.52,-11.88);
+        \draw [black] (52.9,-8.94) -- (56,-13.86);
+        \fill [black] (56,-13.86) -- (56,-12.92) -- (55.15,-13.45);
+        \draw [black] (59.4,-18.8) -- (62.3,-22.7);
+        \fill [black] (62.3,-22.7) -- (62.23,-21.76) -- (61.43,-22.36);
+        \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+Otro caso es que el hijo izquierda tenga 2 nodos y el derecho tiene 1
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (19.6,-7.9) circle (3);
+        \draw [black] (13,-17.4) circle (3);
+        \draw [black] (7.8,-27.7) circle (3);
+        \draw [black] (26.5,-17.4) circle (3);
+        \draw [black] (59.8,-8.7) circle (3);
+        \draw [black] (52.2,-18.3) circle (3);
+        \draw [black] (67.7,-17.2) circle (3);
+        \draw [black] (57.8,-27.1) circle (3);
+        \draw [black] (17.89,-10.36) -- (14.71,-14.94);
+        \fill [black] (14.71,-14.94) -- (15.58,-14.56) -- (14.76,-13.99);
+        \draw [black] (11.65,-20.08) -- (9.15,-25.02);
+        \fill [black] (9.15,-25.02) -- (9.96,-24.53) -- (9.07,-24.08);
+        \draw [black] (21.36,-10.33) -- (24.74,-14.97);
+        \fill [black] (24.74,-14.97) -- (24.67,-14.03) -- (23.86,-14.62);
+        \draw [black] (61.84,-10.9) -- (65.66,-15);
+        \fill [black] (65.66,-15) -- (65.48,-14.08) -- (64.75,-14.76);
+        \draw [black] (57.94,-11.05) -- (54.06,-15.95);
+        \fill [black] (54.06,-15.95) -- (54.95,-15.63) -- (54.17,-15.01);
+        \draw [black] (53.81,-20.83) -- (56.19,-24.57);
+        \fill [black] (56.19,-24.57) -- (56.18,-23.63) -- (55.34,-24.16);
+        \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+Finalmente, si el hijo izauierdo tiene 4 nodos y el derecho tiene 0
+\begin{figure}[H]
+    \begin{center}
+        \begin{tikzpicture}[scale=0.2]
+        \tikzstyle{every node}+=[inner sep=0pt]
+        \draw [black] (18.8,-7.9) circle (3);
+        \draw [black] (13.8,-14.9) circle (3);
+        \draw [black] (8,-22.6) circle (3);
+        \draw [black] (19.6,-22.2) circle (3);
+        \draw [black] (47.9,-7.3) circle (3);
+        \draw [black] (42.6,-14.9) circle (3);
+        \draw [black] (37.5,-22.2) circle (3);
+        \draw [black] (32.4,-29.6) circle (3);
+        \draw [black] (68.3,-7.3) circle (3);
+        \draw [black] (62.2,-14.3) circle (3);
+        \draw [black] (55.8,-22.2) circle (3);
+        \draw [black] (62.8,-28.2) circle (3);
+        \draw [black] (12.5,-35.1) circle (3);
+        \draw [black] (8.1,-43.4) circle (3);
+        \draw [black] (13.5,-49.5) circle (3);
+        \draw [black] (18.8,-55.8) circle (3);
+        \draw [black] (52.9,-32.5) circle (3);
+        \draw [black] (44.9,-38.7) circle (3);
+        \draw [black] (51.2,-46.6) circle (3);
+        \draw [black] (44.2,-54.1) circle (3);
+        \draw [black] (17.06,-10.34) -- (15.54,-12.46);
+        \fill [black] (15.54,-12.46) -- (16.42,-12.1) -- (15.6,-11.52);
+        \draw [black] (12,-17.3) -- (9.8,-20.2);
+        \fill [black] (9.8,-20.2) -- (10.69,-19.87) -- (9.89,-19.26);
+        \draw [black] (15.67,-17.25) -- (17.73,-19.85);
+        \fill [black] (17.73,-19.85) -- (17.63,-18.91) -- (16.84,-19.54);
+        \draw [black] (46.18,-9.76) -- (44.32,-12.44);
+        \fill [black] (44.32,-12.44) -- (45.18,-12.07) -- (44.36,-11.5);
+        \draw [black] (40.88,-17.36) -- (39.22,-19.74);
+        \fill [black] (39.22,-19.74) -- (40.09,-19.37) -- (39.27,-18.8);
+        \draw [black] (35.8,-24.67) -- (34.1,-27.13);
+        \fill [black] (34.1,-27.13) -- (34.97,-26.75) -- (34.14,-26.19);
+        \draw [black] (66.33,-9.56) -- (64.17,-12.04);
+        \fill [black] (64.17,-12.04) -- (65.07,-11.76) -- (64.32,-11.11);
+        \draw [black] (60.31,-16.63) -- (57.69,-19.87);
+        \fill [black] (57.69,-19.87) -- (58.58,-19.56) -- (57.8,-18.93);
+        \draw [black] (58.08,-24.15) -- (60.52,-26.25);
+        \fill [black] (60.52,-26.25) -- (60.24,-25.35) -- (59.59,-26.11);
+        \draw [black] (11.09,-37.75) -- (9.51,-40.75);
+        \fill [black] (9.51,-40.75) -- (10.32,-40.28) -- (9.44,-39.81);
+        \draw [black] (10.09,-45.65) -- (11.51,-47.25);
+        \fill [black] (11.51,-47.25) -- (11.36,-46.32) -- (10.61,-46.99);
+        \draw [black] (15.43,-51.8) -- (16.87,-53.5);
+        \fill [black] (16.87,-53.5) -- (16.74,-52.57) -- (15.97,-53.21);
+        \draw [black] (49.15,-48.79) -- (46.25,-51.91);
+        \fill [black] (46.25,-51.91) -- (47.16,-51.66) -- (46.43,-50.98);
+        \draw [black] (46.77,-41.05) -- (49.33,-44.25);
+        \fill [black] (49.33,-44.25) -- (49.22,-43.32) -- (48.44,-43.94);
+        \draw [black] (50.53,-34.34) -- (47.27,-36.86);
+        \fill [black] (47.27,-36.86) -- (48.21,-36.77) -- (47.6,-35.98);
+        \end{tikzpicture}
+    \end{center}
+\end{figure}
+
+Y con cinco noos, ¿Podemos calcular rápidamente todo?
+\begin{itemize}
+    \item {I = 0, D = 4 } \hfill (1)(14) = 14 
+    \item {I = 1, D = 3 } \hfill (1)(5) = 5
+    \item {I = 2, D = 2 } \hfill (2)(2) = 4
+    \item {I = 3, D = 1 } \hfill (5)(1) = 5
+    \item {I = 4, D = 0 } \hfill (14)(1) = 14
+\end{itemize}
+
+La suma de todo es 42 \newline
+
+Por tanto lo que hemos hecho es 
+\[
+    f(n) = f(0)f(n - 1) + f(1)f(n-2) + f(2)f(n - 1) + f(3)f(n - 3) + \dots + f(n - 2)f(2) + f(n - 1)f(0) = \sum_{i = 0}^{ n - 1 } f(i)f(n - i - 1)
+\] 
+
+Esta fórmula nos da los \textbf{números de Catalan}, en código tenemos lo siguiente
+
+\begin{lstlisting}
+    long long f[ 1000 ] = { 0 };
+    f[ 0 ] = 1;
+    for( int n = 0; n < 1000; n++ )
+        for( int i = 0; i <= n - 1; i++ )
+            f[ n ] = ( f[ n ] + f[ i ] * f[ n - i - 1 ] ) % mod;
+\end{lstlisting}
+
+Otras definiciones de los números de Catalán son:
+\[
+    C_{n} = \sum_{ i = 0 }^{n - 1} C_{i} * C_{ n - i - 1 }
+\]
+
+\[
+    C_{n} = \frac{1}{n + 1} { {2n} \choose {n} } = \frac{(2n)!}{n!(n + 1)!}    
+\]
+
+\[
+    C_{n} = { {2n} \choose {n} } - { {2n} \choose { n + 1} }     
+\]

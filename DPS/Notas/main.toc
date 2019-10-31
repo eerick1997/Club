@@ -43,3 +43,24 @@
 \contentsline {subsubsection}{Multiplicaci\IeC {\'o}n}{35}{subsection.6.8.2}% 
 \contentsline {subsection}{\numberline {6.8.3}Inverso modular}{35}{subsection.6.8.3}% 
 \contentsline {section}{\numberline {6.9}Exponenciaci\IeC {\'o}n binaria}{35}{section.6.9}% 
+\contentsline {section}{\numberline {6.10}Algoritmo extendido de euclides}{36}{section.6.10}% 
+\contentsline {subsubsection}{Teorema}{37}{Item.5}% 
+\contentsline {paragraph}{Demostraci\IeC {\'o}n}{37}{Item.5}% 
+\contentsline {section}{\numberline {6.11}Combinatoria}{37}{section.6.11}% 
+\contentsline {subsection}{\numberline {6.11.1}Principio del producto}{37}{subsection.6.11.1}% 
+\contentsline {subsection}{\numberline {6.11.2}Principio de la suma}{38}{subsection.6.11.2}% 
+\contentsline {subsubsection}{Problema}{38}{subsection.6.11.2}% 
+\contentsline {section}{\numberline {6.12}Permutaciones}{38}{section.6.12}% 
+\contentsline {subsection}{\numberline {6.12.1}Permutaciones sin repetici\IeC {\'o}n}{39}{subsection.6.12.1}% 
+\contentsline {subsection}{\numberline {6.12.2}Permutacion de un subconjunto de $n$ elementos}{39}{subsection.6.12.2}% 
+\contentsline {subsection}{\numberline {6.12.3}Permutaci\IeC {\'o}n con repeticiones}{40}{subsection.6.12.3}% 
+\contentsline {subsection}{\numberline {6.12.4}Combinaciones}{40}{subsection.6.12.4}% 
+\contentsline {subsection}{\numberline {6.12.5}Coeficiente binomial}{40}{subsection.6.12.5}% 
+\contentsline {subsubsection}{Algunas identidades utilizadas en el coeficiente binomial}{41}{lstnumber.-53.9}% 
+\contentsline {subsection}{\numberline {6.12.6}Tri\IeC {\'a}ngulo de pascal}{42}{subsection.6.12.6}% 
+\contentsline {subsubsection}{Identidad del palo de Hockey (Hockey stick)}{42}{table.6.8}% 
+\contentsline {subsubsection}{Propiedades}{42}{table.6.8}% 
+\contentsline {subsection}{\numberline {6.12.7}Binomio de Newton}{42}{subsection.6.12.7}% 
+\contentsline {subsection}{\numberline {6.12.8}Biyecciones}{42}{subsection.6.12.8}% 
+\contentsline {section}{\numberline {6.13}Problema de las barras y las estrellas}{42}{section.6.13}% 
+\contentsline {subsubsection}{Problema}{44}{Item.9}% 

@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1568411357 "/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.tex" "/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.pdf" "Resume" 1568411358
-  "/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.aux" 1568411358 2240 ef28e466543954ce5b32bdd2697eb703 ""
-  "/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.tex" 1568410756 3402 d3938b2b03819a4256f6c410425fb125 ""
+["pdflatex"] 1571065801 "/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.tex" "/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.pdf" "Resume" 1571065802
+  "/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.aux" 1571065801 2239 0ad9d8f98c78053bb47342f932f17c59 ""
+  "/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.tex" 1571065800 3291 ef054fc15cea1377a5457e4acedc174c ""
   "/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomeone.enc" 1557554766 1687 f004baecce60175c6453d0e3f808cf20 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc" 1557554766 2437 443c81fb50993bacedc5f9a206c322b0 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1557554766 2679 32dd8ae231bf4a0752b98f62dc097183 ""
@@ -129,14 +129,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1557554374 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1567686355 3233970 ab845fc2b5afa9d5e4a65f288842af78 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1567686346 7979415 5a707af91abd8c5055f54f21ee94daa1 ""
-  "Resume.aux" 1568411358 2240 ef28e466543954ce5b32bdd2697eb703 "pdflatex"
-  "Resume.out" 1568411358 515 a14420ff5d70b342a218f6b31578e73c "pdflatex"
-  "Resume.tex" 1568410756 3402 d3938b2b03819a4256f6c410425fb125 ""
+  "Resume.aux" 1571065801 2239 0ad9d8f98c78053bb47342f932f17c59 "pdflatex"
+  "Resume.out" 1571065801 515 a14420ff5d70b342a218f6b31578e73c "pdflatex"
+  "Resume.tex" 1571065800 3291 ef054fc15cea1377a5457e4acedc174c ""
   "resume.cls" 1568411357 2161 f27d49e04339982a1594b07306fb9878 ""
   (generated)
-  "Resume.aux"
-  "/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.log"
   "Resume.log"
-  "Resume.out"
+  "/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.log"
   "Resume.pdf"
+  "Resume.aux"
   "/home/erick/Documentos/GitHub/Club/Interview/Resume/Resume.pdf"
+  "Resume.out"

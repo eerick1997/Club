@@ -5,7 +5,7 @@ typedef long long int lli;
 typedef pair< lli, lli > plli;
 
 lli getIntersection( plli &eD, plli &eJ ){
-    return abs( abs( abs( eD.first - eJ.first ) - abs( eD.second - eJ.second ) ) );
+    return abs( max( eD.first, eJ.first ) - min( eD.second, eJ.second ) );
 }
 
 
@@ -37,11 +37,11 @@ int main(){
             cout << eD.first << " | " << eD.second << endl; 
             cout << eJ.first << " | " << eJ.second << endl; 
             ans = max( ans, getIntersection( eD, eJ ));
-            ptrJ++, ptrD++;
-        } else if( eD.first > eJ.second ){
-            ptrD++;
-        } else
             ptrJ++;
+        } else if( eD.first > eJ.second || eD.second < eJ.first ){
+            ptrJ++;
+        } else
+            ptrD++;
 
     }
 
