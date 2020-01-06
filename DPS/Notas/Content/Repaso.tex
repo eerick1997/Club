@@ -3015,3 +3015,245 @@ Otras definiciones de los números de Catalán son:
 \[
     C_{n} = { {2n} \choose {n} } - { {2n} \choose { n + 1} }     
 \]
+
+\subsubsection{Relaciones de recurrencia}
+Una relación de recurrencia para una suceción de números $a_{0}, a_{1}, a_{2}, \dots , a_{n}$ es una expresión que relaciona cada término $a_{n}$ con los términos anteriores $a_{0}, a_{1}, \dots , a_{n - 1}$ para cualquier $n \geq m$ teniendo $m$ valores iniciales. Por ejemplo \break
+Como ejemplos tenemos Fibonacii
+\begin{itemize}
+    \item {f(0) = 0}
+    \item {f(1) = 1}
+    \item {f(n) = f(n - 1) + f( n - 2 ), $n \geq 2$}
+\end{itemize}
+
+También tenemos el factorial
+\begin{itemize}
+    \item {0! = 1}
+    \item {n! = n * ( n - 1 ), $ n \geq 1 $}
+\end{itemize}
+
+Números de catalán:
+\begin{itemize}
+    \item { $C_{1} = 1$ }
+    \item { $C_{n} = \sum_{i = 1}^{n - 1} C_{i}C_{n - i}$, $n \geq 2$}
+\end{itemize}
+
+Problema de las torres de Hanoi
+\begin{itemize}
+    \item {$T_{1} = 1$}
+    \item {$T_{n} = 2T_{n - 1} + 1$, $ n \geq 2$}
+\end{itemize}
+
+Problema de Josefo
+\begin{itemize}
+    \item {$J(2) = 1$}
+    \item {$J(2k) = 2J(k) - 1$}
+    \item {$J(2k + 1) = 2J(k) + 1$}
+\end{itemize}
+
+Para las demostraciones y más información: \textsf{Concrete mathematics, Donald knuth, Graham, Patashnik} \break
+
+\subsubsection{Recurrencias lineales coeficientes constantes y homogeneas}
+$a_{n} = C_{1}a_{n-1} + C_{2}a_{n-2} + C_{3}a_{n-3} + \dots + C_{d}a_{n-d} + g(n), n \geq d$
+
+dónde $C_{1}, \dots , C_{d}$ son constantes y $C_{d} \neq 0$ y $g(n) = 0$ \newline
+
+Decimos que la recurrencia es de órden $d$
+
+\subsubsection{Resolver la recurerencia}
+Hallar el n-ésimo término, podemos utilizar:
+\begin{itemize}
+    \item {Programación dinámica:
+        \begin{enumerate}
+            \item {recursiva}
+            \item {iterativa}
+        \end{enumerate}}
+    \item { Hallar una fórmula cerrada, por ejemplo usando Fibonacci
+        \begin{itemize}
+            \item {$F(0) = 1$}
+            \item {$F(n) = 2F(n-1)$, $n \geq 2$}
+            \item {$F(n) = 2^{n}$}
+        \end{itemize}}
+    \item {Matrices O($d^{3}log(n)$)}
+    \item {Ecuaciones características O($d^{2}log(n)$)}
+    \item {Fourier ($O(dlog(n)log(d))$)}
+\end{itemize}
+
+Para entenderlo mejor vamos a tratar de resolver con el siguiente ejeplo:
+\begin{itemize}
+    \item {$a(0) = 3$}
+    \item {$a(1) = 2$}
+    \item {$a(2) = -3$}
+\end{itemize}
+
+De forma general:
+\[
+    a(n) = a(n-1) + 3a(n-3), n \geq 3, d = 3
+\]
+
+\begin{lstlisting}
+    int find_nth_term( int n ){
+        vector< int > a_last( 3 );
+        a_last[ 0 ] = -3;
+        a_last[ 1 ] = 2;
+        a_last[ 2 ] = 3;
+        for( int i = 3; i <= n; i++ ){
+            int new_t = a_last[ 0 ] + 3 * a_last[ 2 ];
+            for( int j = 2; j > 0; j -- )
+                a_last[ j ] = a_last[ j - 1 ];
+            a_last[ 0 ] = new_t;
+        }
+        return a_last[ 0 ];
+    }
+\end{lstlisting}
+
+\subsection{Matrices}
+\subsubsection{Matrices cuadradas}
+\[
+    \begin{pmatrix}
+        a_{1,1} & a_{1, 2} & \dots & a_{1, n} \\
+        a_{2,1} & a_{2, 2} & \dots & a_{2, n} \\
+        \vdots  & \vdots   & \ddots           \\
+        a_{n,1} & a_{n, 2} & \dots & a_{n, n} \\
+    \end{pmatrix}
+\]
+
+\subsubsection{Multiplicación de matrices}
+\[
+    {\begin{pmatrix}
+        3 & 0 \\
+        2 & 1
+    \end{pmatrix}}
+    *
+    {\begin{pmatrix}
+        0 & 2 \\
+        1 & 3
+    \end{pmatrix}}
+    =
+    {\begin{pmatrix}
+        3 * 0 + 0 * 2 & 3 * 2 + 0 * 3 \\
+        2 * 0 + 1 * 1 & 2 * 2 + 3 * 1
+    \end{pmatrix}}
+    =
+    {\begin{pmatrix}
+        0 & 6 \\
+        1 & 7
+    \end{pmatrix}}
+\]
+
+Debemos tomar en cuenta que:
+\begin{itemize}
+    \item No es conmutativa es decir $A*B \neq B*A$
+    \item El producto es asociativo es decir $A * B * C = (A * B) * C = A * (B * C)$
+    \item Hay una matriz identidad tal que $A * I = A$
+\end{itemize}
+
+dónde:
+\[
+    I = \begin{pmatrix}
+        1 & 0 & \dots & 0 \\
+        0 & 1 & \dots & 0 \\
+        \vdots & & \ddots  \\
+        0 & 0 & \dots & 1
+    \end{pmatrix}
+\]
+
+Aquí tenemos un pequeño programa para multiplicar matrices.
+
+\begin{lstlisting}
+    typedef vector< vector< int > > Matrix;
+    Matrix multiply( Matrix &A, Matrix &B, int n ){
+        Matrix C;
+        C.assign(n, vector< int >(n, 0));
+        for( int i = 0; i < n; i++)
+            for( int j = 0; j < n; j++ )
+                for( int k = 0; k < n; k++ )
+                    C[ i ][ j ] += A[ i ][ k ] * B[ k ][ j ];
+        return C;
+    }
+\end{lstlisting}
+
+Ahora tratemos de resolver el ejecicio que ya se ha hecho anteriormente pero en lugar de utilizar programación dinámica utilicemos matrices. Recordemos que tenemos
+\begin{itemize}
+    \item a(0) = 3
+    \item a(1) = 2
+    \item a(2) = -3
+\end{itemize}
+
+\[a(n) = a(n - 1) + 3 * a(n - 3)\]
+
+\[
+    { \begin{bmatrix}
+        -3 \\
+        2 \\
+        3 \\
+    \end{bmatrix} }
+    \rightarrow
+    { \begin{bmatrix}
+        6 \\
+        -3 \\
+        2 \\
+    \end{bmatrix} }
+    \rightarrow
+    { \begin{bmatrix}
+        12 \\
+        6 \\
+        -3 \\
+    \end{bmatrix} }
+    \rightarrow
+    { \begin{bmatrix}
+        3 \\
+        12 \\
+        6 \\
+    \end{bmatrix} }
+\]
+
+\[
+    {\begin{bmatrix}
+        1 & 0 & 3 \\
+        1 & 0 & 0 \\
+        0 & 1 & 0
+    \end{bmatrix}}
+    {\begin{bmatrix}
+        -3 \\
+        2 \\
+        3
+    \end{bmatrix}}
+    =
+    {\begin{bmatrix}
+        6 \\
+        -3 \\
+        2
+    \end{bmatrix}}
+\]
+
+Si repetimos vamos a realizar esta multiplicación $n - 3 + 1$ veces, es decir 
+
+\[
+    {\begin{bmatrix}
+        1 & 0 & 3 \\ 
+        1 & 0 & 0 \\
+        0 & 1 & 0
+    \end{bmatrix}}^{n - 3 + 1}
+    {\begin{bmatrix}
+        3 \\
+        2 \\
+        -3
+    \end{bmatrix}}
+\]
+
+La complejidad de esto es $O(d^{3}n)$ Pero podemos optimizar utilizando la idea ade la exponenciación binaria
+
+\begin{lstlisting}
+    Matrix matrixPow( Matrix &b, int p ){
+        Matrix ans = Identidy( n );
+        while( p ){
+            if( p & 1 )
+                ans = multiply( ans, b );
+            b = multiply( b, b );
+            p /= 2;
+        }
+        return ans;
+    }
+\end{lstlisting}
+
+Este algoritmo tiene una complejidad de $O(log(n) d^{3})$
