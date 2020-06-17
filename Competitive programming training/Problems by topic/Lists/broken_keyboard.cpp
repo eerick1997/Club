@@ -50,19 +50,38 @@ int main() {
         Linked_List *right = new Linked_List();
 
         bool flag = RIGHT;
+        bool last_flag = RIGHT;
+
         for( char c : input ) {
             
             if( c == '[' ) {
+                last_flag = flag;
                 flag = LEFT;
-            } else if( c == ']' ) {
-                flag = RIGHT;
-                if( left -> head != nullptr ) {
-                    left -> tail -> next = right -> head;
-                    left -> tail = right -> tail;
-                    right -> head = left -> head;
+                if( right -> head != nullptr ){
+                    if( left -> head != nullptr ) 
+                        right -> tail -> next = left -> head;
+                    else 
+                        right -> tail = left -> head;
                     right -> tail = left -> tail;
-                    left -> head = left -> tail = nullptr;
+                    left = right;
+                    right -> head = right -> tail = nullptr;
+                    
                 }
+            } else if( c == ']' ) {
+                last_flag = flag;
+                flag = RIGHT;
+                
+                    if( left -> head != nullptr ){
+                        if( right -> tail == nullptr )
+                            right -> tail = right -> head = left -> head;
+                        else 
+                            right -> tail -> next = left -> head;
+
+                        right -> tail = left -> tail;
+                        left = right;
+                        right -> head = right -> tail = nullptr;
+                    }
+                
             } else {
                 if( flag == LEFT )
                     left -> insert( c );
@@ -71,18 +90,8 @@ int main() {
             }
         }
         
-        /*if( left -> head != nullptr ) {
-            left -> tail -> next = right -> head;
-            left -> tail = right -> tail;
-            right -> head = left -> head;
-            right -> tail = left -> tail;
-            left -> head = left -> tail = nullptr;
-        }*/
-
-        /*if( right -> head == nullptr )
-            left -> print();
-        else 
-            right -> print();*/
+        left -> print();
+        right -> print();
     }
 
     return 0;
