@@ -14,7 +14,7 @@ int count( int n, int m, vector<string> &big, vector<string> &small ) {
                         flag = false;
                 }
             }
-            if( flag )
+            if( flag )  
                 ans++;
         }
     }
@@ -22,7 +22,12 @@ int count( int n, int m, vector<string> &big, vector<string> &small ) {
 }
 
 vector< string > rotate( int m, vector< string > &small ){
-    vector< string > rot_small( small );
+    vector< vector< char > > rot_small( m, vector<char>( m ) );
+    for( int i = 0; i < n; i++ ){
+        for( int j = 0; j < n; j++ ) {
+            
+        }
+    }
     
 }
 
@@ -33,17 +38,21 @@ int main() {
     vector< vector< char > > small_square;
     string buffer;
     while( cin >> dim_big_square >> dim_small_square and dim_small_square and dim_small_square ) {
-        big_square.resize( n, vector<char>( n ) );
-        small_square.resize( m, vector< char >( m ) );
-        small_square.resize( n );
+        big_square.resize( dim_big_square, vector<char>( dim_big_square ) );
+        small_square.resize( dim_small_square, vector< char >( dim_small_square ) );
+
         for( int i = 0; i < dim_big_square; i++ ) {
             cin >> buffer;
-            big_square.push_back( buffer );
+            
+            for( int j = 0; j < dim_big_square; j++ ) 
+                big_square[ i ][ buffer[ j ] ];
         }
     
         for( int i = 0; i < dim_small_square; i++) {
             cin >> buffer;
-            small_square.push_back( buffer );
+        
+            for( int j = 0; j < dim_small_square; j++ ) 
+                small_square[ i ][ buffer[ j ] ];
         }
 
 
