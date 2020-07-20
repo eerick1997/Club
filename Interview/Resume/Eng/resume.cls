@@ -2,9 +2,9 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{resume}[2019/09/04 erick's resume class]
 
-\RequirePackage[margin=0.5in]{geometry}
+\RequirePackage[margin=0.25in]{geometry}
 \RequirePackage{titling}
-\RequirePackage{titlesec}
+\RequirePackage[compact]{titlesec}
 \RequirePackage{tikz}
 \RequirePackage{fontawesome}
 \RequirePackage{multicol}
@@ -35,7 +35,7 @@
 }
 
 \newcommand{\link}[2]{
-    \href{#2}{#1\faExternalLink}
+    \href{#2}{#1}
 }
 
 %School name
@@ -65,7 +65,7 @@
 }
 
 \newcommand{\technology}[2]{
-    \textsf{#1} \hfill {#2} \break
+    \textsf{#1} \hfill {#2}
 }
 
 \newcommand{\platform}[2]{
@@ -85,11 +85,22 @@
 }
 
 \newcommand{\name}[1]{
-    \centerline{\color{deepblue}\textbf{\Huge{#1}}}
+    \centerline{\color{deepblue}\textbf{\huge{#1}}}
 }
 
 \newcommand{\partitle}[1]{
     \textbf{\Large{\color{deepblue} #1 }}\break
+}
+
+%Title
+%place
+%description
+\newcommand{\experienceitem}[3]{
+    \subsection[#1]{\textbf{\color{deepblue}#1} / \textsf{#2}} \raggedright#3
+}
+
+\newcommand{\extrainfo}[1]{
+    \textsf{#1} \break
 }
 
 %1.Email
@@ -98,8 +109,8 @@
 %4.Mobile phone
 \newcommand\contact[4]{
     \begin{longtable}[c]{ll}
-        \color{deepblue}\raggedright{\faGoogle: }{#1} & \color{deepblue}{\faGithub: }{#2} \\
-        \color{deepblue}\raggedright{\faLinkedin: }{#3} & \color{deepblue}{\faMobilePhone: }{#4}
+        \color{deepblue}\raggedright{\faGoogle: }{\large{#1}} & \color{deepblue}{\faGithub: }{\large{#2}} \\
+        \color{deepblue}\raggedright{\faLinkedin: }{\large{#3}} & \color{deepblue}{\faMobilePhone: }{\large{#4}}
         \endfirsthead
         \endhead
     \end{longtable}
