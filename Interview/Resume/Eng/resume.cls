@@ -2,7 +2,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{resume}[2019/09/04 erick's resume class]
 
-\RequirePackage[margin=0.25in]{geometry}
+\RequirePackage[margin=0.2in]{geometry}
 \RequirePackage{titling}
 \RequirePackage[compact]{titlesec}
 \RequirePackage{tikz}
@@ -108,8 +108,8 @@
 %3.Linkedin
 %4.Mobile phone
 \newcommand\contact[4]{
-    \begin{longtable}[c]{ll}
-        \color{deepblue}\raggedright{\faGoogle: }{\large{#1}} & \color{deepblue}{\faGithub: }{\large{#2}} \\
+    \begin{longtable}{l|l|l|l}
+        \color{deepblue}\raggedright{\faGoogle: }{\large{#1}} & \color{deepblue}{\faGithub: }{\large{#2}} &
         \color{deepblue}\raggedright{\faLinkedin: }{\large{#3}} & \color{deepblue}{\faMobilePhone: }{\large{#4}}
         \endfirsthead
         \endhead

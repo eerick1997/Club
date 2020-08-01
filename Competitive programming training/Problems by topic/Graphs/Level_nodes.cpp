@@ -46,13 +46,15 @@ int BFS(int u, int target) {
     return 0;
 }
 
-void DFS(int u, int target, int level) {
+void DFS(int u, int target, int level, int &ans) {
     int v;
+    if(level == target)
+        ans++;
     graph[u].visited = true;
     for(int i = 0; i < graph[u].neighbors.size(); i++) {
         v = graph[u].neighbors[i];
         if(!graph[v].visited) {
-            DFS(v, target, level + 1);
+            DFS(v, target, level + 1, ans);
         }
     }
 }
