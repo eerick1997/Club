@@ -11,6 +11,7 @@
 \RequirePackage{hyperref}
 \RequirePackage{longtable}
 \usetikzlibrary{fit, positioning, calc}
+\RequirePackage[framemethod=TikZ]{mdframed}
 
 %%%%%%%%%%%%%%%%%% SOME COLORS %%%%%%%%%%%%%%%%%%
 \definecolor{deepblue}{RGB}{0, 9, 100}
@@ -85,7 +86,7 @@
 }
 
 \newcommand{\name}[1]{
-    \centerline{\color{deepblue}\textbf{\huge{#1}}}
+    \centerline{\color{white}\textbf{\LARGE{#1}}}
 }
 
 \newcommand{\partitle}[1]{
@@ -109,8 +110,8 @@
 %4.Mobile phone
 \newcommand\contact[4]{
     \begin{longtable}{l|l|l|l}
-        \color{deepblue}\raggedright{\faGoogle: }{\large{#1}} & \color{deepblue}{\faGithub: }{\large{#2}} &
-        \color{deepblue}\raggedright{\faLinkedin: }{\large{#3}} & \color{deepblue}{\faMobilePhone: }{\large{#4}}
+        \color{white}\raggedright{\faGoogle: }{\Large{#1}} & \color{white}{\faGithub: }{\Large{#2}} &
+        \color{white}\raggedright{\faLinkedin: }{\Large{#3}} & \color{white}{\faMobilePhone: }{\Large{#4}}
         \endfirsthead
         \endhead
     \end{longtable}

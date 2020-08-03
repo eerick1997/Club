@@ -1,10 +1,26 @@
 \documentclass{resume}
+
+%%%% STYLE %%%%%
+\mdfdefinestyle{headerstyle}{%
+    linecolor=deepblue,
+    outerlinewidth=0.5pt,
+    roundcorner=5pt,
+    innertopmargin=5pt,
+    innerbottommargin=5pt,
+    innerrightmargin=5pt,
+    innerleftmargin=5pt,
+    backgroundcolor=deepblue
+}
+
 \begin{document}
-\name{Erick Efraín Vargas Romero}
-\contact{vargas.erick030997@gmail.com}
-{\link{eerick1997}{https://www.github.com/eerick1997}}
-{\link{eerick1997}{https://www.linkedin.com/in/eerick1997}}
-{(+52) 55 8395 1416}
+
+\begin{mdframed}[style=headerstyle]
+    \name{Erick Efraín Vargas Romero}
+    \contact{vargas.erick030997@gmail.com}
+    {\link{eerick1997}{https://www.github.com/eerick1997}}
+    {\link{eerick1997}{https://www.linkedin.com/in/eerick1997}}
+    {(+52) 55 8395 1416}
+\end{mdframed}
 
 \resumesection{\faGraduationCap}{Education}
 \school{\link{Escuela Superior de Cómputo (ESCOM-\link{IPN}{https://www.ipn.mx/}).}{http://www.escom.ipn.mx/}}
@@ -66,11 +82,11 @@
 \resumesection{\faCode}{Technical skills}
 \begin{multicols}{2}
     \partitle{Programming languages}
-    {4 years: Java\\2 years: C / C++\\1 year: C\#\\Beginner: PHP, JavaScript, Dart and Visual Basic, Python}
+    {4 years: Java.\\2 years: C / C++.\\1 year: C\#.\\Beginner: PHP, JavaScript, Dart and Visual Basic, Python.}
     \break
     \divider
     \partitle{Other technologies}
-    \technology{Git, \LaTeX, HTML, CSS, Java for android, Flutter, JQuery, ReactJS, SQL}{}
+    \technology{Git, \LaTeX, HTML, CSS, Java for android, Flutter, JQuery, ReactJS, SQL.}{}
     \break \break
     \partitle{Courses}
     Introduction to flutter development by\link{App Brewery.}{https://github.com/eerick1997/Flutter-course/blob/master/certificate.pdf}
