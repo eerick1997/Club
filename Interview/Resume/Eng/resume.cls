@@ -10,6 +10,7 @@
 \RequirePackage{multicol}
 \RequirePackage{hyperref}
 \RequirePackage{longtable}
+\RequirePackage{xcolor, colortbl}
 \usetikzlibrary{fit, positioning, calc}
 \RequirePackage[framemethod=TikZ]{mdframed}
 
@@ -104,6 +105,7 @@
     \textsf{#1} \break
 }
 
+\arrayrulecolor{white}
 %1.Email
 %2.Github
 %3.Linkedin
