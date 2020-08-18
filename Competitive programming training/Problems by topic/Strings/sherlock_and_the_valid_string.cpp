@@ -3,29 +3,43 @@
 using namespace std;
 
 // Complete the isValid function below.
-string isValid(string s) {
-    int difference;
-    vector<int> frequencies(26, 0);
-    set<int> unique_frequencies;
-
+string isValid(string &s) {
+    vector<long> frequencies(26, 0);
+    long begin = 0;
+    bool flag = true;
     for(const char c : s)
         frequencies[c - 'a']++;
+    
+    sort(frequencies.begin(), frequencies.end());
 
-    for(const int n : frequencies)
-        if(n != 0)
-            unique_frequencies.insert(n);
+    while(frequencies[begin] == 0)
+        begin++;
 
-    if(unique_frequencies.size() > 2)
+    if(frequencies[begin] != 1 and frequencies[25] - frequencies[begin] > 1)
         return "NO";
     
     
-    auto first_element = unique_frequencies.begin();
-    auto second_element = unique_frequencies.begin()++;
-    cout << *first_element << endl;
-    cout << *second_element << endl;
-    difference = *second_element - *first_element;
-    cout << difference << endl;
-    return (difference <= 1 ? "YES" : "NO");
+    for(long i = begin; i < 25; i++)
+        if(frequencies[i] != frequencies[i + 1])
+            flag = false;
+
+    if(flag) return "YES";
+
+    flag = true;
+    frequencies[begin]--;
+    for(long i = begin; i < 25; i++)
+        if(frequencies[i] != 0 and frequencies[i] != frequencies[i + 1])
+            flag = false;
+
+    if(flag) return "YES";
+    
+    flag = true;    
+    frequencies[begin]++, frequencies[25]--;
+    for(long i = begin; i < 25; i++)
+        if(frequencies[i] != frequencies[i + 1])
+            flag = false;
+
+    return (flag ? "YES" : "NO");
 }
 
 
