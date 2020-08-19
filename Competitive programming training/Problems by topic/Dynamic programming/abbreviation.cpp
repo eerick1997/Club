@@ -2,52 +2,55 @@
 
 using namespace std;
 
-vector<vector<int>> DP;
+vector<vector<bool>> DP;
 vector<vector<bool>> visited;
 
 string a, b;
 
-int solve(int i, int j) {
-
-    
-    if(i == a.size() or j == b.size())
-        return 0;
-    
-    if(visited[i][j])
-        return DP[i][j];
-
-    if(a[i] == b[i] or toupper(a[i]) == b[j]) {
-        visited[i][j] == true;
-        return DP[i][j] = solve(i + 1, j + 1) + 1;
-    }
-
-    visited[i][j] = true;
-    return DP[i][j] = isupper(a[i]) ? 0 : solve(i + 1, j);
+bool hasUpperCaseLetters(int begin) {
+    for(int i = begin; i < a.size(); i++)
+        if(isupper(a[i]))
+            return true;
+    return false;
 }
 
-void print_dp() {
-    cout << endl;
-    for(int i = 0; i < a.size(); i++) {
-        for(int j = 0; j < b.size(); j++)
-            cout << DP[i][j] << " ";
-        cout << endl;
+int solve(int index_a, int index_b) {
+
+    //Check if at right we have uppercase letters
+    if(index_b == b.size())
+        return !hasUpperCaseLetters(index_a);
+
+    if(index_a == a.size())
+        return false;
+
+    if(isupper(a[index_a]) and a[index_a] != b[index_b])
+        return false;
+
+    //We already calculated the current subproblem    
+    if(visited[index_a][index_b])
+        return DP[index_a][index_b];
+
+    if(a[index_a] == b[index_b] or toupper(a[index_a]) == b[index_b]) {
+        visited[index_a][index_b] = true;
+        int ignore = (isupper(a[index_a]) ? false : solve(index_a + 1, index_b));
+        return DP[index_a][index_b] = solve(index_a + 1, index_b + 1) or ignore;
     }
+
+    visited[index_a][index_b] = true;
+    return DP[index_a][index_b] = solve(index_a + 1, index_b);
 }
 
 string abbreviation(string a, string b) {
     if(a.size() < b.size())
         return "NO";
-
-    cout << "\nsolve = " << solve(0, 0) << endl;
-    print_dp();
-    return solve(0, 0) == b.size() ? "YES" : "NO";
+    return solve(0, 0) ? "YES" : "NO";
 }
 
 int main() {
     int n_queries;
     cin >> n_queries;
     while(n_queries--) {
-        DP.assign(1005, vector<int>(1005, 0));
+        DP.assign(1005, vector<bool>(1005, false));
         visited.assign(1005, vector<bool>(1005, false));
         cin >> a >> b;
         cout << abbreviation(a, b) << endl;
