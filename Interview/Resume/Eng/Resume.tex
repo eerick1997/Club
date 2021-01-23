@@ -11,7 +11,10 @@
     innerleftmargin=5pt,
     backgroundcolor=deepblue
 }
-
+\setlength{\textwidth}{206mm}
+\setlength{\textheight}{300mm}
+\setlength{\topmargin}{-36mm}
+\setlength{\marginparsep}{1pt}
 \begin{document}
 
 \begin{mdframed}[style=headerstyle]
@@ -21,7 +24,7 @@
     {\link{eerick1997}{https://www.linkedin.com/in/eerick1997}}
     {(+52) 55 8395 1416}
 \end{mdframed}
-
+\vspace*{-\baselineskip}
 \resumesection{\faGraduationCap}{Education}
 \school{\link{Escuela Superior de Cómputo (ESCOM-\link{IPN}{https://www.ipn.mx/}).}{http://www.escom.ipn.mx/}}
 {B.S. in Computers System Engineer.}
@@ -32,25 +35,30 @@
 {2012 - 2015} 
 {GPA 81 out of 100 \textbf{(2.7/4.0)}}
 
-\begin{multicols}{2}
-    \resumesection{\faSearch}{Research project (in progress)}
-    \project{Exploration of complex discrete universes using two-dimensional cellular automata.}{
+\begin{multicols}{2}    
+    \resumesection{\faSearch}{Research project}
+    \vspace*{0.1em}
+    \project{Exploration of complex discrete universes using two-dimensional cellular automata (CA).}{
         \begin{itemize}
-            \setlength\itemsep{0cm}
+            \setlength\itemsep{0em}
             \item {Collaborated developing a CA simulator and implementing an algorithm to make the analysis of each rule easier using mean field theory.}
             \item {Collaborated analyzing and exploring random rules of this CA.}
-            \item {Collaborated writing a thesis.}
+            \item {Participated in the third interpolytechnic meeting of the network of experts in complex systems with the topic ``Complex behavior emerging in two-dimsional discrete dynamic systems''}
         \end{itemize}
-    }
+    }\par\vspace{2.5cm}
     \resumesection{\faTrophy}{Awards and participation}
     \award{\link{Grand prize of Mexico (ACM-ICPC)}{https://icpc.baylor.edu/regionals/finder/mcapgp-2018/standings}}
-    {Participant in `Grand Prize of Mexico' with team called `MXerCoders' (2018) and `ANSIosos' in place 30 of 316 (2019).}
+    {Participant in `Grand Prize of Mexico' with team called `MXerCoders' (2018) and `ANSIosos' in place 30 of 316 (2019) and in place 41 of 351 (2020).}
     {}
-    \award{\link{Hacking health Monterrey}{https://hacking-health.org/es/monterrey-es/} }
-    {Participant on Hacking health Monterrey with project called \link{`Peditriage'}{https://hh-tec-mty-healthathon2018.sparkboard.com/project/5bbb8fa1e4d28a001e63ae75}. The main objective of this application was make a pedriatic triage more efficient (2018).}
+    \award{\link{Hacking health Monterrey(2018)}{https://hacking-health.org/es/monterrey-es/} }
+    {\begin{itemize}
+        \item {Participated on Hacking health Monterrey with a project called \link{`Peditriage'}{https://hh-tec-mty-healthathon2018.sparkboard.com/project/5bbb8fa1e4d28a001e63ae75} in a multidisciplinary team up of medical and computer systems engineering students.}
+        \item {Developed a mobile application in order to make a pediatric triage more efficient.}
+    \end{itemize}}
     {}
+    \vspace*{-\baselineskip}
 \end{multicols}
-
+\vspace*{-\baselineskip}
 \resumesection{\faBriefcase}{Experience}
 \experienceitem{Professional Practices}{Banco de México (Bank of Mexico) [Jan 2020 - present]}{
     Worked in a system to generate automatically reports getting the information from all the departments using SSRS that works with \textbf{Visual Basic} and it is powered by \textbf{SQL Server} and \textbf{Sharepoint}.
@@ -77,9 +85,11 @@
         \item {Heavily used and learned Google firebase services.}
     \end{itemize}
 }
+\vspace*{-\baselineskip}
 }
 
 \resumesection{\faCode}{Technical skills}
+\vspace*{-\baselineskip}
 \begin{multicols}{2}
     \partitle{Programming languages}
     {4 years: Java.\\2 years: C / C++.\\1 year: C\#.\\Beginner: PHP, JavaScript, Dart and Visual Basic, Python.}
