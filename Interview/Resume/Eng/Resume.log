@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.19)  22 JAN 2021 19:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.1.19)  5 FEB 2021 18:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -591,6 +591,14 @@ File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
 \c@mdf@env@ii=\count307
 \c@mdf@zref@counter=\count308
 Package zref Info: New property: mdf@pagevalue on input line 895.
+) (/usr/share/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip131
+\enit@outerparindent=\dimen276
+\enit@toks=\toks33
+\enit@inbox=\box117
+\enit@count@id=\count309
+\enitdp@description=\count310
 )) (/home/erickevr/Documents/GitHub/Club/Interview/Resume/Eng/Resume.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
@@ -645,17 +653,17 @@ LaTeX Font Info:    ... okay on input line 18.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count309
-\scratchdimen=\dimen276
-\scratchbox=\box117
-\nofMPsegments=\count310
-\nofMParguments=\count311
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count312
-\MPscratchDim=\dimen277
-\MPnumerator=\count313
-\makeMPintoPDFobject=\count314
-\everyMPtoPDFconversion=\toks34
+\scratchcounter=\count311
+\scratchdimen=\dimen277
+\scratchbox=\box118
+\nofMPsegments=\count312
+\nofMParguments=\count313
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count314
+\MPscratchDim=\dimen278
+\MPnumerator=\count315
+\makeMPintoPDFobject=\count316
+\everyMPtoPDFconversion=\toks35
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -670,7 +678,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count315
+\c@section@level=\count317
 )
 LaTeX Info: Redefining \ref on input line 18.
 LaTeX Info: Redefining \pageref on input line 18.
@@ -705,39 +713,39 @@ LaTeX Font Warning: Font shape `U/fontawesometwo/bx/sc' undefined
 
 
 LaTeX Font Warning: Font shape `U/fontawesomethree/bx/sc' undefined
-(Font)              using `U/fontawesomethree/m/n' instead on input line 49.
+(Font)              using `U/fontawesomethree/m/n' instead on input line 48.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <12> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 70.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 72.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 70.
+(Font)              <7> on input line 72.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 70.
+(Font)              <5> on input line 72.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (/home/erickevr/Documents/GitHub/Club/Interview/Resume/Eng/Resume.aux)
 Package rerunfilecheck Info: File `Resume.out' has not changed.
-(rerunfilecheck)             Checksum: 7D4EAFEF7535D44C5B83A15FEB58725C;728.
+(rerunfilecheck)             Checksum: 1A1ECEE5896A9B19959FB55104C872EC;726.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 19443 strings out of 479383
- 362024 string characters out of 5875830
- 686704 words of memory out of 5000000
- 36168 multiletter control sequences out of 15000+600000
+ 19764 strings out of 479383
+ 367442 string characters out of 5875830
+ 695756 words of memory out of 5000000
+ 36485 multiletter control sequences out of 15000+600000
  408411 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,10n,124p,507b,1071s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 122i,10n,124p,528b,1071s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomeone.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/usr/share/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}</usr/share/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on /home/erickevr/Documents/GitHub/Club/Interview/Resume/Eng/Resume.pdf (1 page, 139061 bytes).
+Output written on /home/erickevr/Documents/GitHub/Club/Interview/Resume/Eng/Resume.pdf (1 page, 139025 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 135 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  15 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

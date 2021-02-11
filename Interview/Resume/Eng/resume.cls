@@ -13,6 +13,7 @@
 \RequirePackage{xcolor, colortbl}
 \usetikzlibrary{fit, positioning, calc}
 \RequirePackage[framemethod=TikZ]{mdframed}
+\usepackage{enumitem}
 
 %%%%%%%%%%%%%%%%%% SOME COLORS %%%%%%%%%%%%%%%%%%
 \definecolor{deepblue}{RGB}{0, 9, 100}
@@ -46,7 +47,7 @@
 %Score
 \newcommand{\school}[4]{
     \raggedright\textbf{#1} \hfill \raggedright{#3} \break
-    \raggedright\textbf{#2} \hfill \raggedright#4
+    \raggedright\textbf{#2} \hfill \raggedright#4 \vspace*{0.2cm}
 }
 
 %Title
@@ -118,3 +119,9 @@
         \endhead
     \end{longtable}
 }
+
+\newenvironment{itemize*}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{-0.5cm}%
+    \setlength{\parskip}{-0.5cm}}%
+{\end{itemize}}
