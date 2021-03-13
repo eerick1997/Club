@@ -1,17 +1,6 @@
-
-*.ipch
-Interview/Notes/.vscode/ipch/137116b67a79bc0f/mmap_address.bin
-Interview/Notes/.vscode/ipch/3b753bcfbb82f707/mmap_address.bin
-Interview/Notes/.vscode/ipch/4963d7c625ee4b7e/mmap_address.bin
-Interview/Notes/.vscode/ipch/758799bf149f6cd6/mmap_address.bin
-Interview/Notes/.vscode/ipch/9c88fe23fc981658/mmap_address.bin
-Interview/Notes/.vscode/ipch/ee150394a35434cc/mmap_address.bin
-Interview/Notes/.vscode/ipch/6b0dfacdb868eb65/mmap_address.bin
-Interview/Notes/.vscode/ipch/934ed4ac29538d15/mmap_address.bin
-Interview/Notes/.vscode/ipch/ef0a6ddbb32e9e06/mmap_address.bin
-*.bin
-*.json
-*.out
-*.out
-*.out
-Interview/Problems/Linked list/.TAD.cpp.kate-swp
+Club/Interview/Resume/Eng/*.dvi
+Club/Interview/Resume/Eng/*.fdb_latexmk
+Club/Interview/Resume/Eng/*.fls
+Club/Interview/Resume/Eng/*.log
+Club/Interview/Resume/Eng/*.gz
+Club/Interview/Resume/Eng/*.aux
