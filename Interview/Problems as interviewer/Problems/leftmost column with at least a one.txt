@@ -1,0 +1,40 @@
+https://leetcode.com/problems/leftmost-column-with-at-least-a-one/
+
+Given a binary matrix which every row is sorted in non-decreasing order return the leftmost column index with at least a 1 in it.
+
+You can’t access the Binary Matrix directly. You may only access the matrix using a BinaryMatrix interface:
+
+-BinaryMatrix.get(x, y) returns the element of the matrix at index (x, y) (0-indexed).
+
+-BinaryMatrix.dimensions() returns a vector of 2 elements [m, n], which means the matrix is m * n.
+
+Example 1:
+
+matrix = [[0,0], 
+		  [1,1]]
+
+output: 0
+
+
+Example 2:
+matrix = [[0,0], 
+		  [0,1]]
+
+output: 1
+
+
+Example 3:
+matrix = [[0,0,0,1], 
+		  [0,0,1,1],
+		  [0,1,1,1]]
+
+output: 1
+
+
+Constraints:
+Matrix can be empty
+Matrix dimensions at most 1000 x 1000
+
+Accepted solutions
+Runtime: O(nlogm) or O(n + m)
+Memory: O(1)

@@ -1,0 +1,31 @@
+https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
+
+Given a sorted dictionary (array of words) of an alien language, 
+find order of characters in the language.
+
+Example 1:
+
+Input: words[] = {"baa", "abcd", "abca", "cab", "cad"}
+Output: "bdac"
+
+Example 2:
+
+Input: words[] = {"caa", "aaa", "aab"}
+Output: "cab"
+
+
+Constraints:
+
+Input will consist of lowercase English letters
+The dictionary may not contain duplicated words
+
+Solutions:
+
+Topological sort:
+
+1. Create a DAG with each character
+2. Use topological sort to get the start point of the graph
+3. Traverse the graph to get the alien alphabet
+
+Runtime: O(numberOfNodes + numberOfVertex)
+Memory: O(numberOfNodes)
