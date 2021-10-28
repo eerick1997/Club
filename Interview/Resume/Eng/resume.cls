@@ -46,7 +46,8 @@
 %Date 
 %Score
 \newcommand{\school}[4]{
-    \raggedright\textbf{#1} \hfill \raggedright{#3} \break
+    
+    \hspace{-0.1cm}\raggedright\textbf{#1} \hfill \raggedright{#3} \break
     \raggedright\textbf{#2} \hfill \raggedright#4 \vspace*{0.2cm}
 }
 
